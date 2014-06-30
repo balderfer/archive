@@ -52,7 +52,7 @@ $(document).ready(function() {
     });
     $(".nav-mobile-home").click(function(event) {
         /* Act on the event */
-        location.href = "./index.html";
+        location.href = "./";
     });
     $(".nav-mobile-journal").click(function(event) {
         /* Act on the event */
