@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <title>
+            BoilerMake
+        </title>
+        <link rel="icon" href="./img/favicon.png">
+        <meta name="description" content="The life and work of Ben Alderfer">
+        <meta name="author" content="Ben Alderfer">
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+        <link rel="stylesheet" href="css/dashboard.css" type="text/css">
+    </head>
+    <body>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript"></script>
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'>
+        <script src="js/index.js" type="text/javascript"></script>
+
+        <div class="header">
+            <div class="container">
+                <div class="logo"></div>
+                <a class="button outline" id="logout" style="cursor:pointer;">Log Out</a>
+            </div>
+        </div>
+        <div class="head">
+            <h1>WELCOME</h1>
+        </div>
+        <div class="nav">
+            <div class="nav-active">
+                Application
+            </div>
+            <a href="./teams.html">
+                <div class="nav-notactive">
+                    Team
+                </div>
+            </a>
+        </div>
+        <div class="container">
+            <div class="application">
+                <div class="form">
+                    <div class="input" id="firstname">
+                        <div class="label">
+                            First Name
+                        </div>
+                        <input type="text"/>
+                    </div>
+                    <div class="input" id="lastname">
+                        <div class="label">
+                            Last Name
+                        </div>
+                        <input type="text"/>
+                    </div>
+                    <div class="input search" id="school">
+                        <div class="label">
+                            School
+                        </div>
+                        <input type="text"/>
+                    </div>
+                    <div class="input" id="address-line-1">
+                        <div class="label">
+                            Gender
+                        </div>
+                        <select class="gender">
+                            <option value="">Please select one...</option>
+                            <option value="female">Female</option>
+                            <option value="male">Male</option>
+                            <option value="notspecified">Prefer not to specify</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="input" id="address-line-1">
+                        <div class="label">
+                            Address Line 1
+                        </div>
+                        <input type="text"/>
+                    </div>
+                    <div class="input" id="address-line-2">
+                        <div class="label">
+                            Address Line 2
+                        </div>
+                        <input type="text"/>
+                    </div>
+                    <div class="input" id="address-city-state-zip">
+                        <div class="label">
+                            City, State, Zip
+                        </div>
+                        <input class="span-6" type="text"/>
+                        <input class="span-2" type="text" maxlength="2"/>
+                        <input class="span-4" type="text"/>
+                    </div>
+                    <div class="input link" id="github">
+                        <div class="label">
+                            GitHub
+                        </div>
+                        <input type="text"/>
+                    </div>
+                    <div class="input field" id="description">
+                        <div class="label">
+                            Experience
+                            <div class="sub-label">
+                                Tell us a little bit more about who you are and what you’ve done.
+                            </div>
+                        </div>
+                        <textarea rows="8"></textarea>
+                    </div>
+                    <div class="submit">
+                        <input class="button outline" id="save" type="submit" value="Save" style="cursor:pointer;"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
