@@ -1,7 +1,7 @@
 function adjustHeight() {
     var windowWidth = $(window).width();
     var unitHeight = 0;
-    if (windowWidth >= 768) {
+    if (windowWidth > 768) {
         // height = 790 - ((1280 - wW) / (512 / 22))
         unitHeight = (windowWidth / 12) * 0.67;
         $(".height-1").css("height", unitHeight);
@@ -18,7 +18,7 @@ function adjustHeight() {
         $(".height-12").css("height", (unitHeight * 12));
     } else {
         // height = 540px
-        unitHeight = 300;
+        unitHeight = "auto";
         $(".height-1").css("height", unitHeight);
         $(".height-2").css("height", unitHeight);
         $(".height-3").css("height", unitHeight);
