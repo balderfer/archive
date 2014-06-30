@@ -124,6 +124,10 @@ h3 #work:active {
 .ellipsis {
     height: 100%;
 }
+.footer p {
+    font-family: "brandon-grotesque", sans-serif;
+    font-weight: 100;
+}
 
 
 
@@ -224,6 +228,7 @@ body {
 .entry-1:hover p, .entry-2:hover p, .entry-3:hover p, .entry:hover p a {
     color: #22313F;
 }
+
 @media only screen and (max-width: 768px) {
     /*Smartphones*/
     .nav {
@@ -295,6 +300,13 @@ body {
         margin-bottom: 8px;
         box-shadow: 0 0 4px #777777;
     }
+    .mobile-footer-container {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin-bottom: 8px;
+        box-shadow: 0 0 4px #777777;
+    }
     .mobile {
         height: 140px;
         bottom: 0;
@@ -302,6 +314,14 @@ body {
         left: 0;
         right: 0;
         padding: 30px;
+    }
+    .mobile-footer {
+        height: 60px;
+        bottom: 0;
+        top: 30px;
+        left: 0;
+        right: 0;
+        padding: 15px 30px 0 30px;
     }
     .story {
     }
@@ -451,6 +471,9 @@ body {
         -webkit-animation: scaleTwo 0.5s;
         animation: scaleTwo 0.5s;
         text-align: center;
+    }
+    .footer {
+        margin-top: 20px;
     }
 }
 @keyframes scaleTwo
