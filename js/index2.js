@@ -1,3 +1,5 @@
+var menuOpen = false;
+
 function adjustHeight() {
     var windowWidth = $(window).width();
     var unitHeight = 0;
@@ -47,5 +49,47 @@ $(document).ready(function() {
     $(window).resize(function(event) {
         /* Act on the event */
         adjustHeight();
+    });
+    $(".nav-mobile-home").click(function(event) {
+        /* Act on the event */
+        window.location.href = "index.html";
+    });
+    $(".nav-mobile-journal").click(function(event) {
+        /* Act on the event */
+        window.location.href = "journal.html";
+    });
+    $(".nav-mobile-work").click(function(event) {
+        /* Act on the event */
+        window.location.href = "work.html";
+    });
+    $(".nav-mobile").click(function(event) {
+        if (menuOpen) {
+            $(".nav").css({
+                height: '60px'
+            });
+            $(".nav-mobile-work").fadeOut('fast', function() {
+                $(".nav-mobile-journal").fadeOut('fast', function() {
+                    $(".nav-mobile-home").fadeOut('fast', function() {
+
+                    });
+                });
+            });
+
+            menuOpen = false;
+        } else {
+            menuOpen = true;
+
+            $(".nav-mobile-home").fadeIn('fast', function() {
+                $(".nav-mobile-journal").fadeIn('fast', function() {
+                    $(".nav-mobile-work").fadeIn('fast', function() {
+                        $(".nav").css({
+                            height: '252px'
+                        });
+
+                    });
+                });
+            });
+
+        }
     });
 });
