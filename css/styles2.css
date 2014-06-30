@@ -443,6 +443,14 @@ body {
         width: auto;
         height: 100%;
     }
+    .nav-mobile {
+        display: none;
+    }
+    .nav-mobile-menu {
+        display: none;
+        width: 0;
+        height: 0;
+    }
     .nav-buttons h3 {
         position: relative;
         display: inline-block;
@@ -456,9 +464,6 @@ body {
         margin-top: 78px;
         margin-right: 20px;
         font-weight: 100;
-    }
-    .nav-mobile {
-        visibility: hidden;
     }
 
 
