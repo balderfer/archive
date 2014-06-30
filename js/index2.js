@@ -52,15 +52,15 @@ $(document).ready(function() {
     });
     $(".nav-mobile-home").click(function(event) {
         /* Act on the event */
-        location.href = "http://benalderfer.com/";
+        document.location = "http://benalderfer.com/";
     });
     $(".nav-mobile-journal").click(function(event) {
         /* Act on the event */
-        location.href = "http://benalderfer.com/journal.html";
+        document.location = "http://benalderfer.com/journal.html";
     });
     $(".nav-mobile-work").click(function(event) {
         /* Act on the event */
-        location.href = "http://benalderfer.com/work.html";
+        document.location = "http://benalderfer.com/work.html";
     });
     $(".nav-mobile").click(function(event) {
         if (menuOpen) {
