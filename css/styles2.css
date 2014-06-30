@@ -189,7 +189,7 @@ body {
 .entry h1 {
     font-size: 3em;
 }
-.entry p, .entry p a {
+.entry p {
     font-size: 1.5em;
 }
 .entry-1:hover {
