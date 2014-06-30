@@ -118,16 +118,6 @@ h3 #work:active {
 .italics {
     font-style: italic;
 }
-.container {
-    display: block;
-    position: absolute;
-    height: auto;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-    padding: 30px;
-}
 .container h1 {
     margin-top: 10px;
 }
@@ -185,26 +175,6 @@ body {
     height: 100%;
     padding: 0;
     margin: 0;
-}
-.content-wrapper {
-    display: block;
-    position: absolute;
-    height:auto;
-    bottom:0;
-    top:0;
-    left:0;
-    right:0;
-    padding: 2px;
-}
-.block {
-    display: block;
-    position:absolute;
-    height:auto;
-    bottom:0;
-    top:0;
-    left:0;
-    right:0;
-    margin: 2px;
 }
 .entry {
     margin: 30px 0 45px 118px;
@@ -309,6 +279,36 @@ body {
 }
 @media only screen and (min-width: 768px) {
     /* tablets and desktop */
+    .container {
+        display: block;
+        position: absolute;
+        height: auto;
+        bottom: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 30px;
+    }
+    .content-wrapper {
+        display: block;
+        position: absolute;
+        height:auto;
+        bottom:0;
+        top:0;
+        left:0;
+        right:0;
+        padding: 2px;
+    }
+    .block {
+        display: block;
+        position:absolute;
+        height:auto;
+        bottom:0;
+        top:0;
+        left:0;
+        right:0;
+        margin: 2px;
+    }
     .nav {
         position: relative;
         float: left;
