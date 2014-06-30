@@ -52,15 +52,15 @@ $(document).ready(function() {
     });
     $(".nav-mobile-home").click(function(event) {
         /* Act on the event */
-        window.location.href = "./index.html";
+        location.href = "./index.html";
     });
     $(".nav-mobile-journal").click(function(event) {
         /* Act on the event */
-        window.location.href = "./journal.html";
+        location.href = "./journal.html";
     });
     $(".nav-mobile-work").click(function(event) {
         /* Act on the event */
-        window.location.href = "./work.html";
+        location.href = "./work.html";
     });
     $(".nav-mobile").click(function(event) {
         if (menuOpen) {
