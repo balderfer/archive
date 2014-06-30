@@ -293,7 +293,7 @@ body {
         width: 100%;
         height: 200px;
         margin-bottom: 8px;
-        box-shadow: 0 0 4px black;
+        box-shadow: 0 0 4px #777777;
     }
     .mobile {
         height: 140px;
