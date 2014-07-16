@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.0.4 (8054) - http://www.bohemiancoding.com/sketch -->
+    <title>8note</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="8note" sketch:type="MSArtboardGroup" fill="#FFFFFF">
+            <path d="M15,8.47107673 L15,20.4013465 C14.4116533,20.1460914 13.7285743,20 13,20 C10.7908609,20 9,21.3431457 9,23 C9,24.6568543 10.7908609,26 13,26 C15.2091391,26 17,24.6568543 17,23 L17,10.4566151 L23,12 L23,8 L15,6 L15,8.47107673 Z" id="Left-" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

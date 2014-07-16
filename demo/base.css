@@ -7,7 +7,6 @@ video#bgvid {
 position: fixed; right: 0; bottom: 0;
 min-width: 100%; min-height: 100%;
 width: auto; height: auto; z-index: -100;
-background: url(polina.jpg) no-repeat;
 background-size: cover;
 }
 
@@ -31,7 +30,7 @@ background-size: cover;
 }
 .nav-logo {
     width: 190px;
-    background-image: url('/images/logo-dark.png');
+    background-image: url('./images/logo-dark.png');
     background-size: 190px 60px;
 }
 
@@ -73,7 +72,7 @@ background-size: cover;
     padding: 0 30px;
     border: 1px solid #333333;
     border-radius: 4px 0 0 4px;
-    background-image: url('/images/hero-input.png');
+    background-image: url('./images/hero-input.png');
     background-repeat: no-repeat;
     font-family: 'Vollkorn', serif;
     font-size: 1.5em;
@@ -151,10 +150,10 @@ p {
     height: 32px;
 }
 .symbol.light.eighth-note {
-    background-image: url('/images/symbols-light/8note-32.png');
+    background-image: url('./images/symbols-light/8note-32.png');
 }
 .symbol.light.sixteenth-notes {
-    background-image: url('/images/symbols-light/16notes-32.png');
+    background-image: url('./images/symbols-light/16notes-32.png');
 }
 
 
