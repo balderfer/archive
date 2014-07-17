@@ -8,6 +8,7 @@ position: fixed; right: 0; bottom: 0;
 min-width: 100%; min-height: 100%;
 width: auto; height: auto; z-index: -100;
 background-size: cover;
+opacity: .2;
 }
 
 /*
@@ -49,7 +50,7 @@ background-size: cover;
 }
 .hero {
     width: 600px;
-    margin: 120px auto 0 auto;
+    margin: 100px auto 0 auto;
     text-align: center;
 }
 .hero h1, .hero h3, .hero p {
@@ -58,40 +59,7 @@ background-size: cover;
 .hero p {
     width: 460px;
 }
-.hero .input {
-    position: relative;
-    width: 460px;
-    margin: 0 auto;
-    top: -16px;
-}
-.hero input {
-    display: inline-block;
-    position: relative;
-    width: 344px;
-    height: 52px;
-    padding: 0 30px;
-    border: 1px solid #333333;
-    border-radius: 4px 0 0 4px;
-    background-image: url('./images/hero-input.png');
-    background-repeat: no-repeat;
-    font-family: 'Vollkorn', serif;
-    font-size: 1.5em;
-    line-height: 0;
-    color: #000000;
-}
-.hero .input-button {
-    display: inline-block;
-    position: relative;
-    vertical-align: top;
-    height: 54px;
-    width: 54px;
-    border-radius: 0 4px 4px 0;
-    background-color: #333333;
-}
-.hero .input-button .symbol.light {
-    position: relative;
-    top: 9px;
-}
+
 /*
 +=============================+
 |                             |
@@ -127,11 +95,17 @@ h1 {
 h3 {
     font-family: 'Vollkorn', serif;
     font-size: 2em;
-    font-style: italic;
     font-weight: 400;
 }
 p {
     font-family: 'Vollkorn', serif;
+    font-size: 1.5em;
+    color: #000000;
+}
+a {
+    text-decoration: underline;
+    font-family: 'Vollkorn', serif;
+    font-style: italic;
     font-size: 1.5em;
     color: #000000;
 }
@@ -160,30 +134,138 @@ p {
 /*
 +=============================+
 |                             |
-|   6. Buttons                |
+|   6. Buttons and Inputs     |
 |                             |
 +=============================+
 */
 
+/* --- Colors --- */
+
+.button-dark {
+    background-color: #333333;
+    -webkit-transition: background-color .25s ease-in-out;
+       -moz-transition: background-color .25s ease-in-out;
+        -ms-transition: background-color .25s ease-in-out;
+         -o-transition: background-color .25s ease-in-out;
+            transition: background-color .25s ease-in-out;
+    color: #ffffff;
+}
+.button-dark:hover {
+    background-color: #000000;
+    -webkit-transition: background-color .25s ease-in-out;
+       -moz-transition: background-color .25s ease-in-out;
+        -ms-transition: background-color .25s ease-in-out;
+         -o-transition: background-color .25s ease-in-out;
+            transition: background-color .25s ease-in-out;
+            cursor: pointer;
+}
+
+/* --- End Colors --- */
 
 /* --- Nav Button --- */
 
 .nav-button {
-    background-color: #333333;
+    display: block;
     border-radius: 4px;
-    height: 60px;
-    padding: 0 16px;
+    height: 36px;
+    top: 14px;
+    padding: 0 12px 0 0;
 }
 .nav-button p {
     display: inline-block;
     position: relative;
-    top: 8px;
-    font-size: 2em;
-    color: #ffffff;
+    top: 0;
+    font-size: 1em;
+    color: inherit;
 }
 .nav-button .symbol.light {
     position: relative;
-    top: 12px;
-    left: -4px;
+    width: 24px;
+    height: 24px;
+    background-size: 24px 24px;
+    top: 6px;
+    left: 3px;
 }
+
 /* ---End Nav Button--- */
+
+/* ---Nav Sign In--- */
+
+.nav-signin {
+    display: none;
+    position: relative;
+    top: 50px;
+}
+
+.nav input {
+    border-radius: 4px;
+    height: 36px;
+    width: 240px;
+    padding: 0 12px;
+    display: block;
+    position: relative;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    border: 1px solid #333333;
+    font-family: 'Vollkorn', serif;
+    font-size: 1em;
+    color: #000000;
+}
+
+.signin-button {
+    border-radius: 4px;
+    height: 36px;
+    width: 266px;
+    text-align: center;
+
+}
+.signin-button p {
+    display: inline-block;
+    position: relative;
+    top: 8px;
+    font-size: 1em;
+    color: inherit;
+}
+
+/* --- End Nav Sign In --- */
+
+/* ---Hero Input--- */
+
+.hero .input {
+    position: relative;
+    width: 460px;
+    height: 54px;
+    margin: 0 auto;
+    top: -16px;
+}
+.hero input {
+    display: inline-block;
+    position: absolute;
+    width: 344px;
+    height: 52px;
+    left: 0; top: 0;
+    padding: 0 30px;
+    border: 1px solid #333333;
+    border-radius: 4px 0 0 4px;
+    background-image: url('./images/hero-input.png');
+    background-repeat: no-repeat;
+    font-family: 'Vollkorn', serif;
+    font-size: 1.5em;
+    line-height: 0;
+    color: #000000;
+}
+.hero .input-button {
+    display: inline-block;
+    position: absolute;
+    vertical-align: top;
+    height: 54px;
+    width: 54px;
+    left: 406px; top: 0;
+    border-radius: 0 4px 4px 0;
+}
+.hero .input-button .symbol.light {
+    position: relative;
+    top: 9px;
+}
+
+/* ---End Hero Input--- */
