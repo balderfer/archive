@@ -27,7 +27,7 @@ function titleAnimation() {
             callback: function() {
                 setTimeout(function() {
                     $(".hero h1").textillate('in');
-                }, 5000);
+                }, 15000);
             }
         }
     });
