@@ -136,7 +136,7 @@ a {
 .column, .columns {
     padding-left: (12 / 960) * 100%;
     padding-right: (12 / 960) * 100%;
-    margin-bottom: (12 / 960) * 100%;
+    margin-bottom: 12px;
     width: 100%;
     float: left;
     &:first-child {

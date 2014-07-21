@@ -102,7 +102,7 @@ a {
 .column, .columns {
   padding-left: 1.25%;
   padding-right: 1.25%;
-  margin-bottom: 1.25%;
+  margin-bottom: 12px;
   width: 100%;
   float: left; }
   .column:first-child, .columns:first-child {
