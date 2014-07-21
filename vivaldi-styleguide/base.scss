@@ -1,9 +1,17 @@
+@charset "UTF-8";
+
 // --- VARIABLES ------------------
 $gray: #333333;
 $white: #ffffff;
 $logo: url('/images/logo-dark.png');
 $abril: 'Abril Fatface', 'Helvetica', 'Arial';
 $vollkorn: 'Vollkorn', serif;
+$columns: 12;
+
+// --- MIXINS ---------------------
+@mixin col-sm {
+
+}
 
 // --- SETUP ----------------------
 html, body {
@@ -112,6 +120,85 @@ a {
 }
 .t-right {
     text-align: right;
+}
+
+// --- GRID -----------------------
+.row {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 60em;
+    .row {
+        width: auto;
+        margin: 0 -0.75em;
+        max-width: none;
+    }
+}
+.column, .columns {
+    padding-left: (12 / 960) * 100%;
+    padding-right: (12 / 960) * 100%;
+    margin-bottom: (12 / 960) * 100%;
+    width: 100%;
+    float: left;
+    &:first-child {
+        padding-left: 0;
+    }
+    &:last-child {
+        padding-right: 0;
+    }
+}
+[class*="column"] + [class*="column"]:last-child {
+  float: right; }
+
+[class*="column"] + [class*="column"].end {
+  float: left; }
+
+@media only screen {
+    @for $i from 1 through $columns {
+        .col-sm-#{$i} {
+            width: ((58 / 960) * $i * 100%) + ((24 / 960) * ($i - 1) * 100%);
+        }
+    }
+    @for $i from 1 through $columns - 1 {
+        .col-offset-sm-#{$i} {
+            margin-left: (58 / 696) * $i * 100% !important;
+        }
+    }
+    @for $i from 0 through $columns - 1 {
+        .col-push-sm-#{$i} {
+            position: relative;
+            left: (58 / 696) * $i * 100%;
+            right: auto;
+        }
+        .col-pull-sm-#{$i} {
+            position: relative;
+            right: (58 / 696) * $i * 100%;
+            left: auto;
+        }
+    }
+}
+@media only screen and (min-width: 768px) {
+    @for $i from 1 through $columns {
+        .col-md-#{$i} {
+            width: (58 / 696) * $i * 100%;
+        }
+    }
+    @for $i from 1 through $columns - 1 {
+        .col-offset-md-#{$i} {
+            margin-left: (58 / 696) * $i * 100% !important;
+        }
+    }
+    @for $i from 0 through $columns - 1 {
+        .col-push-md-#{$i} {
+            position: relative;
+            left: (58 / 696) * $i * 100%;
+            right: auto;
+        }
+        .col-pull-md-#{$i} {
+            position: relative;
+            right: (58 / 696) * $i * 100%;
+            left: auto;
+        }
+    }
 }
 
 // --- MISCELLANEOUS --------------

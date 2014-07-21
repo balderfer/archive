@@ -20,6 +20,14 @@
             width: 540px;
             margin: 60px;
         }
+        .grid-container {
+            width: 100%;
+            max-width: 960px;
+            margin: 60px;
+        }
+        .grid-container code {
+            width: 540px;
+        }
         .section-title::before {
             content: "~~";
             position: absolute;
@@ -34,9 +42,22 @@
             border-radius: 4px;
             width: auto;
         }
+        .column code {
+            margin-top: 0;
+        }
+        .row {
+            overflow: auto;
+        }
+        .block {
+            background-color:#efefef;
+            border-radius: 4px;
+            height: 50px;
+            padding:4px 6px;
+            vertical-align: top;
+        }
         @media screen (max-width: 768px) {
             .styleguide-navigation {
-                font-size: 24px;
+                font-size: 58px;
             }
         }
     </style>
@@ -144,12 +165,119 @@
             <code>&lt;p class="t-right>Lorem ipsum...&lt;p></code>
         </div>
         <div class="break-lg"></div>
+    </div>
 
+    <div class="styleguide-container grid-container">
         <div id="grid">
-            <h3 class="section-title">Grid (Coming Soon)</h3>
+            <h3 class="section-title">Grid</h3>
+            <h6><strong>columns - </strong>max-width: 960px, max-gutter: 24px</h6>
+            <div class="row">
+                <div class="column col-sm-1">
+                    <div class="block"><p>.col-sm-1</p></div>
+                </div>
+                <div class="column col-sm-1">
+                    <div class="block"><p>.col-sm-1</p></div>
+                </div>
+                <div class="column col-sm-1">
+                    <div class="block"><p>.col-sm-1</p></div>
+                </div>
+                <div class="column col-sm-1">
+                    <div class="block"><p>.col-sm-1</p></div>
+                </div>
+                <div class="column col-sm-1">
+                    <div class="block"><p>.col-sm-1</p></div>
+                </div>
+                <div class="column col-sm-1">
+                    <div class="block"><p>.col-sm-1</p></div>
+                </div>
+                <div class="column col-sm-1">
+                    <div class="block"><p>.col-sm-1</p></div>
+                </div>
+                <div class="column col-sm-1">
+                    <div class="block"><p>.col-sm-1</p></div>
+                </div>
+                <div class="column col-sm-1">
+                    <div class="block"><p>.col-sm-1</p></div>
+                </div>
+                <div class="column col-sm-1">
+                    <div class="block"><p>.col-sm-1</p></div>
+                </div>
+                <div class="column col-sm-1">
+                    <div class="block"><p>.col-sm-1</p></div>
+                </div>
+                <div class="column col-sm-1">
+                    <div class="block"><p>.col-sm-1</p></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column col-sm-8">
+                    <div class="block"><p>.col-sm-8</p></div>
+                </div>
+                <div class="column col-sm-4">
+                    <div class="block"><p>.col-sm-4</p></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column col-sm-2">
+                    <div class="block"><p>.col-sm-2</p></div>
+                </div>
+                <div class="column col-sm-2">
+                    <div class="block"><p>.col-sm-2</p></div>
+                </div>
+                <div class="column col-sm-3">
+                    <div class="block"><p>.col-sm-3</p></div>
+                </div>
+                <div class="column col-sm-5">
+                    <div class="block"><p>.col-sm-5</p></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column col-sm-6">
+                    <div class="block"><p>.col-sm-6</p></div>
+                </div>
+                <div class="column col-sm-6">
+                    <div class="block"><p>.col-sm-6</p></div>
+                </div>
+            </div>
+            <code>
+                &lt;div class="row"><br>
+                    &nbsp;&nbsp;&lt;div class="column col-sm-1">&lt;/div><br>
+                    &nbsp;&nbsp;&lt;div class="column col-sm-1">&lt;/div><br>
+                    &nbsp;&nbsp;&lt;div class="column col-sm-1">&lt;/div><br>
+                    &nbsp;&nbsp;&lt;div class="column col-sm-1">&lt;/div><br>
+                    &nbsp;&nbsp;&lt;div class="column col-sm-1">&lt;/div><br>
+                    &nbsp;&nbsp;&lt;div class="column col-sm-1">&lt;/div><br>
+                    &nbsp;&nbsp;&lt;div class="column col-sm-1">&lt;/div><br>
+                    &nbsp;&nbsp;&lt;div class="column col-sm-1">&lt;/div><br>
+                    &nbsp;&nbsp;&lt;div class="column col-sm-1">&lt;/div><br>
+                    &nbsp;&nbsp;&lt;div class="column col-sm-1">&lt;/div><br>
+                    &nbsp;&nbsp;&lt;div class="column col-sm-1">&lt;/div><br>
+                    &nbsp;&nbsp;&lt;div class="column col-sm-1">&lt;/div><br>
+                &lt;/div><br>
+                <br>
+                &lt;div class="row"><br>
+                    &nbsp;&nbsp;&lt;div class="column col-sm-8">&lt;/div><br>
+                    &nbsp;&nbsp;&lt;div class="column col-sm-4">&lt;/div><br>
+                &lt;/div><br>
+                <br>
+                &lt;div class="row"><br>
+                    &nbsp;&nbsp;&lt;div class="column col-sm-2">&lt;/div><br>
+                    &nbsp;&nbsp;&lt;div class="column col-sm-2">&lt;/div><br>
+                    &nbsp;&nbsp;&lt;div class="column col-sm-3">&lt;/div><br>
+                    &nbsp;&nbsp;&lt;div class="column col-sm-5">&lt;/div><br>
+                &lt;/div><br>
+                <br>
+                &lt;div class="row"><br>
+                    &nbsp;&nbsp;&lt;div class="column col-sm-6">&lt;/div><br>
+                    &nbsp;&nbsp;&lt;div class="column col-sm-6">&lt;/div><br>
+                &lt;/div><br>
+                <br>
+            </code>
         </div>
         <div class="break-lg"></div>
+    </div>
 
+    <div class="styleguide-container">
         <div id="miscellaneous">
             <h3 class="section-title">Miscellaneous</h3>
             <div class="break-md"></div>
