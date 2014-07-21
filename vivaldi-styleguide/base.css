@@ -1,6 +1,7 @@
 html, body {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  color: #333333; }
 
 .nav {
   position: relative;
@@ -32,32 +33,61 @@ html, body {
 
 h1, h2, h3, h4, h5, h6, p, a, span {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  color: inherit; }
 
 h1 {
   font-family: "Abril Fatface", "Helvetica", "Arial";
-  font-size: 3.75em;
-  color: #333333; }
+  font-size: 3.75em; }
 
 h2, h3, h4, h5, h6, p, a {
   font-family: "Vollkorn", serif;
-  font-weight: 400;
-  color: #333333; }
+  font-weight: 400; }
 
 h2 {
   font-size: 3em; }
 
 h3 {
-  font-size: 2.25em; }
+  font-size: 2.25em;
+  font-style: italic; }
 
 h4 {
   font-size: 1.875em; }
 
 h5 {
-  font-size: 1.5em; }
+  font-size: 1.5em;
+  font-style: italic; }
 
 h6 {
   font-size: 1.25em; }
+  h6 .italic {
+    font-style: italic; }
+  h6 .bold {
+    font-weight: bold; }
+
+p {
+  font-size: 1em; }
+  p .italic {
+    font-style: italic; }
+  p .bold {
+    font-weight: bold; }
+
+a {
+  font-size: 1em;
+  text-decoration: underline; }
+  a .italic {
+    font-style: italic; }
+  a .bold {
+    font-weight: bold; }
+
+.t-left {
+  text-align: left; }
+
+.t-center {
+  text-align: center; }
+
+.t-right {
+  text-align: right; }
 
 .break-sm {
   width: 100%;
@@ -69,4 +99,4 @@ h6 {
 
 .break-lg {
   width: 100%;
-  height: 60px; }
+  height: 80px; }

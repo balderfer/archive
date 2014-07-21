@@ -5,32 +5,178 @@
     <title>Vivaldi Style Guide</title>
 
     <link rel="stylesheet" type="text/css" href="base.css">
+    <style type="text/css">
+        .styleguide-navigation {
+            position: fixed;
+            display: block;
+            width: 200px;
+            top: 0;
+            right: 0;
+            padding: 60px 40px;
+            text-align: right;
+        }
+        .styleguide-container {
+            width: 540px;
+            margin: 60px;
+        }
+        .section-title::before {
+            content: "~~";
+            position: absolute;
+            left: 14px;
+        }
+        code {
+            display: block;
+            margin-top: 2px;
+            padding:4px 6px;
+            background-color:#cfcfcf;
+            border: 1px solid #c0c0c0;
+            border-radius: 4px;
+            width: auto;
+        }
+    </style>
 </head>
 <body>
-    <div style="width:540px;margin:60px;">
-    <h1>Vivaldi Style Guide</h1>
-    <h6>The magical place where you can copy any code to make stuff look good and stuff. As Eddie says, yay computers!</h6>
-    <div class="break-md"></div>
-    
-    <h3>Typography</h3>
-    <div class="break-sm"></div>
-    <h6><strong>h1 </strong>60px (3.75em), Abril Fatface</h6>
-    <h1>I Love Ben Alderfer</h1>
-    <div class="break-sm"></div>
-    <h6><strong>h2 </strong>48px (3em), Vollkorn</h6>
-    <h2>I Love Ben Alderfer</h2>
-    <div class="break-sm"></div>
-    <h6><strong>h3 </strong>36px (2.25em), Vollkorn</h6>
-    <h3>I Love Ben Alderfer</h3>
-    <div class="break-sm"></div>
-    <h6><strong>h6 </strong>30px (1.875em), Vollkorn</h6>
-    <h4>I Love Ben Alderfer</h4>
-    <div class="break-sm"></div>
-    <h6><strong>h5 </strong>24px (1.5em), Vollkorn</h6>
-    <h5>I Love Ben Alderfer</h5>
-    <div class="break-sm"></div>
-    <h6><strong>h6 </strong>20px (1.25em), Vollkorn</h6>
-    <h6>I Love Ben Alderfer</h6>
+    <div class="styleguide-navigation">
+        <h6><span class="italic">Click to Navigate</span></h6>
+        <p><a href="#top">Top</a><p>
+        <p><a href="#typography">Typography</a><p>
+        <p><a href="#grid">Grid</a><p>
+        <p><a href="#miscellaneous">Miscellaneous</a><p>
+    </div>
+
+    <div class="styleguide-container">
+        <h1>Vivaldi Style Guide</h1>
+        <h5>version: 1.0.0 - Last Updated: 7/21/14</h5>
+        <h6>The magical place where you can copy any code to make stuff look good and stuff. As Eddie says, yay computers!</h6>
+        <h6>Click to view <a href="base.css">base.css</a> and <a href="base.scss">base.scss</a>.</h6>
+        <div class="break-md"></div>
+
+        <h6><strong>jade</strong></h6>
+        <code>link(href='../stylesheets/base.css' rel='stylesheet' type='text/css')</code>
+        <div class="break-md"></div>
+
+        <h6><strong>html</strong></h6>
+        <code>&lt;link rel="stylesheet" type="text/css" href="../stylesheets/base.css"></code>
+
+        <div class="break-lg"></div>
+        
+        <div id="typography">
+            <h3 class="section-title">Typography</h3>
+            <div class="break-md"></div>
+            <h6><strong>h1 - </strong>60px (3.75em), Regular, Abril Fatface</h6>
+            <h1>I Love Ben Alderfer</h1>
+            <code>&lt;h1>I Love Ben Alderfer&lt;/h1></code>
+            <div class="break-md"></div>
+
+            <h6><strong>h2 - </strong>48px (3em), Regular, Vollkorn</h6>
+            <h2>I Love Ben Alderfer</h2>
+            <code>&lt;h2>I Love Ben Alderfer&lt;/h2></code>
+            <div class="break-md"></div>
+
+            <h6><strong>h3 - </strong>36px (2.25em), Italic, Vollkorn</h6>
+            <h3>I Love Ben Alderfer</h3>
+            <code>&lt;h3>I Love Ben Alderfer&lt;/h3></code>
+            <div class="break-md"></div>
+
+            <h6><strong>h6 - </strong>30px (1.875em), Regular, Vollkorn</h6>
+            <h4>I Love Ben Alderfer</h4>
+            <code>&lt;h4>I Love Ben Alderfer&lt;/h4></code>
+            <div class="break-md"></div>
+
+            <h6><strong>h5 - </strong>24px (1.5em), Italic, Vollkorn</h6>
+            <h5>I Love Ben Alderfer</h5>
+            <code>&lt;h5>I Love Ben Alderfer&lt;/h5></code>
+            <div class="break-md"></div>
+
+            <h6><strong>h6 - </strong>20px (1.25em), Regular, Vollkorn</h6>
+            <h6>I Love Ben Alderfer</h6>
+            <code>&lt;h6>I Love Ben Alderfer&lt;/h6></code>
+            <div class="break-md"></div>
+
+            <h6><strong>h6 - </strong>20px (1.25em), Italic, Vollkorn</h6>
+            <h6><span class="italic">I Love Ben Alderfer</span></h6>
+            <code>&lt;h6>&lt;span class="italic">I Love Ben Alderfer&lt;/span>&lt;/h6></code>
+            <div class="break-md"></div>
+
+            <h6><strong>h6 - </strong>20px (1.25em), Bold, Vollkorn</h6>
+            <h6><span class="bold">I Love Ben Alderfer</span></h6>
+            <code>&lt;h6>&lt;span class="bold">I Love Ben Alderfer&lt;/span>&lt;/h6></code>
+            <div class="break-md"></div>
+
+            <h6><strong>p - </strong>16px (1em), Regular, Vollkorn</h6>
+            <p>I love Ben Alderfer so so so much.</p>
+            <code>&lt;p>I love Ben Alderfer so so so much.&lt;/p></code>
+            <div class="break-md"></div>
+
+            <h6><strong>p - </strong>16px (1em), Italic, Vollkorn</h6>
+            <p><span class="italic">"I love Ben Alderfer so so so much."</span> - Eddie Williams</p>
+            <code>&lt;p>&lt;span class="italic">"I love Ben Alderfer so so so much."&lt;/span> - Eddie Williams&lt;/p></code>
+            <div class="break-md"></div>
+
+            <h6><strong>p - </strong>16px (1em), Bold, Vollkorn</h6>
+            <p>I <span class="bold">love Ben Alderfer</span> so so so much.</p>
+            <code>&lt;p>I &lt;span class="bold">love Ben Alderfer&lt;/span> so so so much.&lt;/p></code>
+            <div class="break-md"></div>
+
+            <h6><strong>a - </strong>16px (1em), Regular, Vollkorn</h6>
+            <a href="#benisthebest">BenIsTheBest.com</a>
+            <code>&lt;a href="#benisthebest">BenIsTheBest.com&lt;/a></code>
+            <div class="break-md"></div>
+
+            <h6><strong>.t-left - </strong>text-align: left;</h6>
+            <p class="t-left">Lorem ipsum dolor sit amet, corrumpit inciderint id duo. Eros iriure menandri in vel, vis ad diam accusata eloquentiam. Est adhuc ceteros voluptua eu. Nulla nullam aliquam ut sea, eu everti persecuti sea.</p>
+            <code>&lt;p class="t-left>Lorem ipsum...&lt;p></code>
+            <div class="break-md"></div>
+
+            <h6><strong>.t-center - </strong>text-align: center;</h6>
+            <p class="t-center">Lorem ipsum dolor sit amet, corrumpit inciderint id duo. Eros iriure menandri in vel, vis ad diam accusata eloquentiam. Est adhuc ceteros voluptua eu. Nulla nullam aliquam ut sea, eu everti persecuti sea.</p>
+            <code>&lt;p class="t-center>Lorem ipsum...&lt;p></code>
+            <div class="break-md"></div>
+
+            <h6><strong>.t-right - </strong>text-align: right;</h6>
+            <p class="t-right">Lorem ipsum dolor sit amet, corrumpit inciderint id duo. Eros iriure menandri in vel, vis ad diam accusata eloquentiam. Est adhuc ceteros voluptua eu. Nulla nullam aliquam ut sea, eu everti persecuti sea.</p>
+            <code>&lt;p class="t-right>Lorem ipsum...&lt;p></code>
+        </div>
+        <div class="break-lg"></div>
+
+        <div id="grid">
+            <h3 class="section-title">Grid (Coming Soon)</h3>
+        </div>
+        <div class="break-lg"></div>
+
+        <div id="miscellaneous">
+            <h3 class="section-title">Miscellaneous</h3>
+            <div class="break-md"></div>
+
+            <h6><strong>break - </strong>small, 20px</h6>
+            <p>Lorem ipsum dolor sit amet, corrumpit inciderint id duo. Eros iriure menandri in vel, vis ad diam accusata eloquentiam.</p>
+            <div class="break-sm"></div>
+            <p>Est adhuc ceteros voluptua eu. Nulla nullam aliquam ut sea, eu everti persecuti sea.</p>
+            <code>&lt;div class="break-sm">&lt;/div></code>
+            <div class="break-md"></div>
+
+            <h6><strong>break - </strong>medium, 40px</h6>
+            <p>Lorem ipsum dolor sit amet, corrumpit inciderint id duo. Eros iriure menandri in vel, vis ad diam accusata eloquentiam.</p>
+            <div class="break-md"></div>
+            <p>Est adhuc ceteros voluptua eu. Nulla nullam aliquam ut sea, eu everti persecuti sea.</p>
+            <code>&lt;div class="break-md">&lt;/div></code>
+            <div class="break-md"></div>
+
+            <h6><strong>break - </strong>large, 80px</h6>
+            <p>Lorem ipsum dolor sit amet, corrumpit inciderint id duo. Eros iriure menandri in vel, vis ad diam accusata eloquentiam.</p>
+            <div class="break-lg"></div>
+            <p>Est adhuc ceteros voluptua eu. Nulla nullam aliquam ut sea, eu everti persecuti sea.</p>
+            <code>&lt;div class="break-lg">&lt;/div></code>
+            <div class="break-md"></div>
+
+            <h6><strong>.left - </strong>float: left;</h6>
+            <code>&lt;div class="left">&lt;/div></code>
+            <div class="break-md"></div>
+            <h6><strong>.right - </strong>float: right;</h6>
+            <code>&lt;div class="right">&lt;/div></code>
+            <div class="break-md"></div>
+
+        </div>
 
     </div>
 </body>
