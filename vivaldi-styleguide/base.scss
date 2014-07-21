@@ -63,7 +63,7 @@ h1, h2, h3, h4, h5, h6, p, a, span {
 }
 h1 {
     font-family: $abril;
-    font-size: 3.75em;
+    font-size: 3.25em;
     font-weight: normal;
 }
 h2, h3, h4, h5, h6, p, a {
@@ -71,7 +71,7 @@ h2, h3, h4, h5, h6, p, a {
     font-weight: 400;
 }
 h2 {
-    font-size: 3em;
+    font-size: 2.75em;
 }
 h3 {
     font-size: 2.25em;
@@ -124,18 +124,17 @@ a {
 
 // --- GRID -----------------------
 .row {
-    width: 100%;
+    width: 90%;
     margin: 0 auto;
     max-width: 60em;
+    overflow: auto;
     .row {
-        width: auto;
-        margin: 0 -0.75em;
-        max-width: none;
+        width: 100%;
     }
 }
 .column, .columns {
-    padding-left: (12 / 960) * 100%;
-    padding-right: (12 / 960) * 100%;
+    padding-left: 0;
+    padding-right: 0;
     margin-bottom: 12px;
     width: 100%;
     float: left;
@@ -156,6 +155,8 @@ a {
     @for $i from 1 through $columns {
         .col-sm-#{$i} {
             width: ((58 / 960) * $i * 100%) + ((24 / 960) * ($i - 1) * 100%);
+            padding-left: (12 / 960) * 100%;
+            padding-right: (12 / 960) * 100%;
         }
     }
     @for $i from 1 through $columns - 1 {
@@ -179,7 +180,9 @@ a {
 @media only screen and (min-width: 768px) {
     @for $i from 1 through $columns {
         .col-md-#{$i} {
-            width: (58 / 696) * $i * 100%;
+            width: ((58 / 960) * $i * 100%) + ((24 / 960) * ($i - 1) * 100%);
+            padding-left: (12 / 960) * 100%;
+            padding-right: (12 / 960) * 100%;
         }
     }
     @for $i from 1 through $columns - 1 {

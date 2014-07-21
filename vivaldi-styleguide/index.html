@@ -10,28 +10,14 @@
         .styleguide-navigation {
             position: fixed;
             display: block;
-            width: 200px;
+            width: 140px;
+            height: 100%;
             top: 0;
             right: 0;
             padding: 60px 40px;
             text-align: right;
-        }
-        .styleguide-container {
-            width: 540px;
-            margin: 60px;
-        }
-        .grid-container {
-            width: 100%;
-            max-width: 960px;
-            margin: 60px;
-        }
-        .grid-container code {
-            width: 540px;
-        }
-        .section-title::before {
-            content: "~~";
-            position: absolute;
-            left: 14px;
+            background-color: rgba(255,255,255,0.75);
+            border-left: 1px solid black;
         }
         code {
             display: block;
@@ -44,9 +30,6 @@
         }
         .column code {
             margin-top: 0;
-        }
-        .row {
-            overflow: auto;
         }
         .block {
             background-color:#efefef;
@@ -71,246 +54,519 @@
         <p><a href="#miscellaneous">Miscellaneous</a><p>
     </div>
 
-    <div class="styleguide-container">
-        <h1>Vivaldi Style Guide</h1>
-        <h5>version: 1.0.0 - Last Updated: Ben Alderfer, 7/21/14</h5>
-        <h6>The magical place where you can copy any code to make stuff look good and stuff. As Eddie says, yay computers!</h6>
-        <h6>Click to view <a href="base.css">base.css</a> and <a href="base.scss">base.scss</a>.</h6>
-        <div class="break-md"></div>
-
-        <h6><strong>jade</strong></h6>
-        <code>link(href='../stylesheets/base.css' rel='stylesheet' type='text/css')</code>
-        <div class="break-md"></div>
-
-        <h6><strong>html</strong></h6>
-        <code>&lt;link rel="stylesheet" type="text/css" href="../stylesheets/base.css"></code>
-
-        <div class="break-lg"></div>
-        
-        <div id="typography">
-            <h3 class="section-title">Typography</h3>
-            <div class="break-md"></div>
-            <h6><strong>h1 - </strong>60px (3.75em), Regular, Abril Fatface</h6>
-            <h1>I Love Ben Alderfer</h1>
-            <code>&lt;h1>I Love Ben Alderfer&lt;/h1></code>
-            <div class="break-md"></div>
-
-            <h6><strong>h2 - </strong>48px (3em), Regular, Vollkorn</h6>
-            <h2>I Love Ben Alderfer</h2>
-            <code>&lt;h2>I Love Ben Alderfer&lt;/h2></code>
-            <div class="break-md"></div>
-
-            <h6><strong>h3 - </strong>36px (2.25em), Italic, Vollkorn</h6>
-            <h3>I Love Ben Alderfer</h3>
-            <code>&lt;h3>I Love Ben Alderfer&lt;/h3></code>
-            <div class="break-md"></div>
-
-            <h6><strong>h6 - </strong>30px (1.875em), Regular, Vollkorn</h6>
-            <h4>I Love Ben Alderfer</h4>
-            <code>&lt;h4>I Love Ben Alderfer&lt;/h4></code>
-            <div class="break-md"></div>
-
-            <h6><strong>h5 - </strong>24px (1.5em), Italic, Vollkorn</h6>
-            <h5>I Love Ben Alderfer</h5>
-            <code>&lt;h5>I Love Ben Alderfer&lt;/h5></code>
-            <div class="break-md"></div>
-
-            <h6><strong>h6 - </strong>20px (1.25em), Regular, Vollkorn</h6>
-            <h6>I Love Ben Alderfer</h6>
-            <code>&lt;h6>I Love Ben Alderfer&lt;/h6></code>
-            <div class="break-md"></div>
-
-            <h6><strong>h6 - </strong>20px (1.25em), Italic, Vollkorn</h6>
-            <h6><span class="italic">I Love Ben Alderfer</span></h6>
-            <code>&lt;h6>&lt;span class="italic">I Love Ben Alderfer&lt;/span>&lt;/h6></code>
-            <div class="break-md"></div>
-
-            <h6><strong>h6 - </strong>20px (1.25em), Bold, Vollkorn</h6>
-            <h6><span class="bold">I Love Ben Alderfer</span></h6>
-            <code>&lt;h6>&lt;span class="bold">I Love Ben Alderfer&lt;/span>&lt;/h6></code>
-            <div class="break-md"></div>
-
-            <h6><strong>p - </strong>16px (1em), Regular, Vollkorn</h6>
-            <p>I love Ben Alderfer so so so much.</p>
-            <code>&lt;p>I love Ben Alderfer so so so much.&lt;/p></code>
-            <div class="break-md"></div>
-
-            <h6><strong>p - </strong>16px (1em), Italic, Vollkorn</h6>
-            <p><span class="italic">"I love Ben Alderfer so so so much."</span> - Eddie Williams</p>
-            <code>&lt;p>&lt;span class="italic">"I love Ben Alderfer so so so much."&lt;/span> - Eddie Williams&lt;/p></code>
-            <div class="break-md"></div>
-
-            <h6><strong>p - </strong>16px (1em), Bold, Vollkorn</h6>
-            <p>I <span class="bold">love Ben Alderfer</span> so so so much.</p>
-            <code>&lt;p>I &lt;span class="bold">love Ben Alderfer&lt;/span> so so so much.&lt;/p></code>
-            <div class="break-md"></div>
-
-            <h6><strong>a - </strong>16px (1em), Regular, Vollkorn</h6>
-            <a href="#benisthebest">BenIsTheBest.com</a>
-            <code>&lt;a href="#benisthebest">BenIsTheBest.com&lt;/a></code>
-            <div class="break-md"></div>
-
-            <h6><strong>.t-left - </strong>text-align: left;</h6>
-            <p class="t-left">Lorem ipsum dolor sit amet, corrumpit inciderint id duo. Eros iriure menandri in vel, vis ad diam accusata eloquentiam. Est adhuc ceteros voluptua eu. Nulla nullam aliquam ut sea, eu everti persecuti sea.</p>
-            <code>&lt;p class="t-left>Lorem ipsum...&lt;p></code>
-            <div class="break-md"></div>
-
-            <h6><strong>.t-center - </strong>text-align: center;</h6>
-            <p class="t-center">Lorem ipsum dolor sit amet, corrumpit inciderint id duo. Eros iriure menandri in vel, vis ad diam accusata eloquentiam. Est adhuc ceteros voluptua eu. Nulla nullam aliquam ut sea, eu everti persecuti sea.</p>
-            <code>&lt;p class="t-center>Lorem ipsum...&lt;p></code>
-            <div class="break-md"></div>
-
-            <h6><strong>.t-right - </strong>text-align: right;</h6>
-            <p class="t-right">Lorem ipsum dolor sit amet, corrumpit inciderint id duo. Eros iriure menandri in vel, vis ad diam accusata eloquentiam. Est adhuc ceteros voluptua eu. Nulla nullam aliquam ut sea, eu everti persecuti sea.</p>
-            <code>&lt;p class="t-right>Lorem ipsum...&lt;p></code>
-        </div>
-        <div class="break-lg"></div>
-    </div>
-
-    <div class="styleguide-container grid-container">
-        <div id="grid">
-            <h3 class="section-title">Grid</h3>
-            <h6><strong>columns - </strong>max-width: 960px, max-gutter: 24px</h6>
-            <div class="row">
-                <div class="column col-sm-1">
-                    <div class="block"><p>.col-sm-1</p></div>
-                </div>
-                <div class="column col-sm-1">
-                    <div class="block"><p>.col-sm-1</p></div>
-                </div>
-                <div class="column col-sm-1">
-                    <div class="block"><p>.col-sm-1</p></div>
-                </div>
-                <div class="column col-sm-1">
-                    <div class="block"><p>.col-sm-1</p></div>
-                </div>
-                <div class="column col-sm-1">
-                    <div class="block"><p>.col-sm-1</p></div>
-                </div>
-                <div class="column col-sm-1">
-                    <div class="block"><p>.col-sm-1</p></div>
-                </div>
-                <div class="column col-sm-1">
-                    <div class="block"><p>.col-sm-1</p></div>
-                </div>
-                <div class="column col-sm-1">
-                    <div class="block"><p>.col-sm-1</p></div>
-                </div>
-                <div class="column col-sm-1">
-                    <div class="block"><p>.col-sm-1</p></div>
-                </div>
-                <div class="column col-sm-1">
-                    <div class="block"><p>.col-sm-1</p></div>
-                </div>
-                <div class="column col-sm-1">
-                    <div class="block"><p>.col-sm-1</p></div>
-                </div>
-                <div class="column col-sm-1">
-                    <div class="block"><p>.col-sm-1</p></div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="column col-sm-8">
-                    <div class="block"><p>.col-sm-8</p></div>
-                </div>
-                <div class="column col-sm-4">
-                    <div class="block"><p>.col-sm-4</p></div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="column col-sm-2">
-                    <div class="block"><p>.col-sm-2</p></div>
-                </div>
-                <div class="column col-sm-2">
-                    <div class="block"><p>.col-sm-2</p></div>
-                </div>
-                <div class="column col-sm-3">
-                    <div class="block"><p>.col-sm-3</p></div>
-                </div>
-                <div class="column col-sm-5">
-                    <div class="block"><p>.col-sm-5</p></div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="column col-sm-6">
-                    <div class="block"><p>.col-sm-6</p></div>
-                </div>
-                <div class="column col-sm-6">
-                    <div class="block"><p>.col-sm-6</p></div>
-                </div>
-            </div>
-            <code>
-                &lt;div class="row"><br>
-                    &nbsp;&nbsp;&lt;div class="column col-sm-1">&lt;/div><br>
-                    &nbsp;&nbsp;&lt;div class="column col-sm-1">&lt;/div><br>
-                    &nbsp;&nbsp;&lt;div class="column col-sm-1">&lt;/div><br>
-                    &nbsp;&nbsp;&lt;div class="column col-sm-1">&lt;/div><br>
-                    &nbsp;&nbsp;&lt;div class="column col-sm-1">&lt;/div><br>
-                    &nbsp;&nbsp;&lt;div class="column col-sm-1">&lt;/div><br>
-                    &nbsp;&nbsp;&lt;div class="column col-sm-1">&lt;/div><br>
-                    &nbsp;&nbsp;&lt;div class="column col-sm-1">&lt;/div><br>
-                    &nbsp;&nbsp;&lt;div class="column col-sm-1">&lt;/div><br>
-                    &nbsp;&nbsp;&lt;div class="column col-sm-1">&lt;/div><br>
-                    &nbsp;&nbsp;&lt;div class="column col-sm-1">&lt;/div><br>
-                    &nbsp;&nbsp;&lt;div class="column col-sm-1">&lt;/div><br>
-                &lt;/div><br>
-                <br>
-                &lt;div class="row"><br>
-                    &nbsp;&nbsp;&lt;div class="column col-sm-8">&lt;/div><br>
-                    &nbsp;&nbsp;&lt;div class="column col-sm-4">&lt;/div><br>
-                &lt;/div><br>
-                <br>
-                &lt;div class="row"><br>
-                    &nbsp;&nbsp;&lt;div class="column col-sm-2">&lt;/div><br>
-                    &nbsp;&nbsp;&lt;div class="column col-sm-2">&lt;/div><br>
-                    &nbsp;&nbsp;&lt;div class="column col-sm-3">&lt;/div><br>
-                    &nbsp;&nbsp;&lt;div class="column col-sm-5">&lt;/div><br>
-                &lt;/div><br>
-                <br>
-                &lt;div class="row"><br>
-                    &nbsp;&nbsp;&lt;div class="column col-sm-6">&lt;/div><br>
-                    &nbsp;&nbsp;&lt;div class="column col-sm-6">&lt;/div><br>
-                &lt;/div><br>
-            </code>
-        </div>
-        <div class="break-lg"></div>
-    </div>
-
-    <div class="styleguide-container">
-        <div id="miscellaneous">
-            <h3 class="section-title">Miscellaneous</h3>
-            <div class="break-md"></div>
-
-            <h6><strong>break - </strong>small, 20px</h6>
-            <p>Lorem ipsum dolor sit amet, corrumpit inciderint id duo. Eros iriure menandri in vel, vis ad diam accusata eloquentiam.</p>
+    <div class="row" style="margin-top:60px;">
+        <div class="column col-md-6">
+            <h1>Vivaldi Style Guide</h1>
+            <h5>version: 1.0.0 - Last Updated: Ben Alderfer, 7/21/14</h5>
+            <h6>The magical place where you can copy any code to make stuff look good and stuff. As Eddie says, yay computers!</h6>
+            <h6>Click to view <a href="base.css">base.css</a> and <a href="base.scss">base.scss</a>.</h6>
             <div class="break-sm"></div>
-            <p>Est adhuc ceteros voluptua eu. Nulla nullam aliquam ut sea, eu everti persecuti sea.</p>
-            <code>&lt;div class="break-sm">&lt;/div></code>
-            <div class="break-md"></div>
 
-            <h6><strong>break - </strong>medium, 40px</h6>
-            <p>Lorem ipsum dolor sit amet, corrumpit inciderint id duo. Eros iriure menandri in vel, vis ad diam accusata eloquentiam.</p>
-            <div class="break-md"></div>
-            <p>Est adhuc ceteros voluptua eu. Nulla nullam aliquam ut sea, eu everti persecuti sea.</p>
-            <code>&lt;div class="break-md">&lt;/div></code>
-            <div class="break-md"></div>
+            <p><span class="italic">jade</span></p>
+            <code>link(href='../stylesheets/base.css' rel='stylesheet' type='text/css')</code>
+            <div class="break-sm"></div>
 
-            <h6><strong>break - </strong>large, 80px</h6>
-            <p>Lorem ipsum dolor sit amet, corrumpit inciderint id duo. Eros iriure menandri in vel, vis ad diam accusata eloquentiam.</p>
+            <p><span class="italic">html</span></p>
+            <code>&lt;link rel="stylesheet" type="text/css" href="../stylesheets/base.css"></code>
+
             <div class="break-lg"></div>
-            <p>Est adhuc ceteros voluptua eu. Nulla nullam aliquam ut sea, eu everti persecuti sea.</p>
-            <code>&lt;div class="break-lg">&lt;/div></code>
-            <div class="break-md"></div>
+            
+            <div id="typography">
+                <h3 class="section-title">Typography</h3>
+                <div class="break-md"></div>
 
-            <h6><strong>.left - </strong>float: left;</h6>
-            <code>&lt;div class="left">&lt;/div></code>
-            <div class="break-md"></div>
-            <h6><strong>.right - </strong>float: right;</h6>
-            <code>&lt;div class="right">&lt;/div></code>
-            <div class="break-md"></div>
+            <!-- h1 -->
+                <h6><strong>h1 - </strong>52px (3.25em), Regular, Abril Fatface</h6>
+                <h1>I Love Ben Alderfer</h1>
 
+                <p><span class="italic">jade</span></p>
+                <code>h1 I Love Ben Alderfer</code>
+                <div class="break-sm"></div>
+                <p><span class="italic">html</span></p>
+                <code>&lt;h1>I Love Ben Alderfer&lt;/h1></code>
+                <div class="break-md"></div>
+
+            <!-- h2 -->
+                <h6><strong>h2 - </strong>44px (2.75em), Regular, Vollkorn</h6>
+                <h2>I Love Ben Alderfer</h2>
+                
+                <p><span class="italic">jade</span></p>
+                <code>h2 I Love Ben Alderfer</code>
+                <div class="break-sm"></div>
+                <p><span class="italic">html</span></p>
+                <code>&lt;h2>I Love Ben Alderfer&lt;/h2></code>
+                <div class="break-md"></div>
+
+            <!-- h3 -->
+                <h6><strong>h3 - </strong>36px (2.25em), Italic, Vollkorn</h6>
+                <h3>I Love Ben Alderfer</h3>
+                
+                <p><span class="italic">jade</span></p>
+                <code>h3 I Love Ben Alderfer</code>
+                <div class="break-sm"></div>
+                <p><span class="italic">html</span></p>
+                <code>&lt;h3>I Love Ben Alderfer&lt;/h3></code>
+                <div class="break-md"></div>
+
+            <!-- h4 -->
+                <h6><strong>h4 - </strong>30px (1.875em), Regular, Vollkorn</h6>
+                <h4>I Love Ben Alderfer</h4>
+                
+                <p><span class="italic">jade</span></p>
+                <code>h4 I Love Ben Alderfer</code>
+                <div class="break-sm"></div>
+                <p><span class="italic">html</span></p>
+                <code>&lt;h4>I Love Ben Alderfer&lt;/h4></code>
+                <div class="break-md"></div>
+
+            <!-- h5 -->
+                <h6><strong>h5 - </strong>24px (1.5em), Italic, Vollkorn</h6>
+                <h5>I Love Ben Alderfer</h5>
+                
+                <p><span class="italic">jade</span></p>
+                <code>h5 I Love Ben Alderfer</code>
+                <div class="break-sm"></div>
+                <p><span class="italic">html</span></p>
+                <code>&lt;h5>I Love Ben Alderfer&lt;/h5></code>
+                <div class="break-md"></div>
+
+            <!-- h6 -->
+                <h6><strong>h6 - </strong>20px (1.25em), Regular, Vollkorn</h6>
+                <h6>I Love Ben Alderfer</h6>
+                
+                <p><span class="italic">jade</span></p>
+                <code>h6 I Love Ben Alderfer</code>
+                <div class="break-sm"></div>
+                <p><span class="italic">html</span></p>
+                <code>&lt;h6>I Love Ben Alderfer&lt;/h6></code>
+                <div class="break-md"></div>
+
+                <h6><strong>h6 - </strong>20px (1.25em), Italic, Vollkorn</h6>
+                <h6><span class="italic">I Love Ben Alderfer</span></h6>
+                
+                <p><span class="italic">jade</span></p>
+                <code>h6 #[span.italic I Love Ben Alderfer]</code>
+                <div class="break-sm"></div>
+                <p><span class="italic">html</span></p>
+                <code>&lt;h6>&lt;span class="italic">I Love Ben Alderfer&lt;/span>&lt;/h6></code>
+                <div class="break-md"></div>
+
+                <h6><strong>h6 - </strong>20px (1.25em), Bold, Vollkorn</h6>
+                <h6><span class="bold">I Love Ben Alderfer</span></h6>
+                
+                <p><span class="italic">jade</span></p>
+                <code>h6 #[span.bold I Love Ben Alderfer]</code>
+                <div class="break-sm"></div>
+                <p><span class="italic">html</span></p>
+                <code>&lt;h6>&lt;span class="bold">I Love Ben Alderfer&lt;/span>&lt;/h6></code>
+                <div class="break-md"></div>
+
+            <!-- p -->
+                <h6><strong>p - </strong>16px (1em), Regular, Vollkorn</h6>
+                <p>I love Ben Alderfer so so so much.</p>
+                
+                <p><span class="italic">jade</span></p>
+                <code>p I Love Ben Alderfer so so so much.</code>
+                <div class="break-sm"></div>
+                <p><span class="italic">html</span></p>
+                <code>&lt;p>I love Ben Alderfer so so so much.&lt;/p></code>
+                <div class="break-md"></div>
+
+                <h6><strong>p - </strong>16px (1em), Italic, Vollkorn</h6>
+                <p><span class="italic">"I love Ben Alderfer so so so much."</span> - Eddie Williams</p>
+                
+                <p><span class="italic">jade</span></p>
+                <code>p #[span.italic "I love Ben Alderfer so so so much."] - Eddie Williams</code>
+                <div class="break-sm"></div>
+                <p><span class="italic">html</span></p>
+                <code>&lt;p>&lt;span class="italic">"I love Ben Alderfer so so so much."&lt;/span> - Eddie Williams&lt;/p></code>
+                <div class="break-md"></div>
+
+                <h6><strong>p - </strong>16px (1em), Bold, Vollkorn</h6>
+                <p>I <span class="bold">love Ben Alderfer</span> so so so much.</p>
+                
+                <p><span class="italic">jade</span></p>
+                <code>p I #[span.bold love Ben Alderfer] so so so much.</code>
+                <div class="break-sm"></div>
+                <p><span class="italic">html</span></p>
+                <code>&lt;p>I &lt;span class="bold">love Ben Alderfer&lt;/span> so so so much.&lt;/p></code>
+                <div class="break-md"></div>
+
+            <!-- a -->
+                <h6><strong>a - </strong>16px (1em), Regular, Vollkorn</h6>
+                <a href="#benisthebest">BenIsTheBest.com</a>
+                
+                <p><span class="italic">jade</span></p>
+                <code>a(href="#benisthebest") BenIsTheBest.com</code>
+                <div class="break-sm"></div>
+                <p><span class="italic">html</span></p>
+                <code>&lt;a href="#benisthebest">BenIsTheBest.com&lt;/a></code>
+                <div class="break-md"></div>
+
+            <!-- text align -->
+                <h6><strong>.t-left - </strong>text-align: left;</h6>
+                <p class="t-left">Lorem ipsum dolor sit amet, corrumpit inciderint id duo. Eros iriure menandri in vel, vis ad diam accusata eloquentiam. Est adhuc ceteros voluptua eu. Nulla nullam aliquam ut sea, eu everti persecuti sea.</p>
+                
+                <p><span class="italic">jade</span></p>
+                <code>p.t-left Lorem ipsum...</code>
+                <div class="break-sm"></div>
+                <p><span class="italic">html</span></p>
+                <code>&lt;p class="t-left>Lorem ipsum...&lt;p></code>
+                <div class="break-md"></div>
+
+                <h6><strong>.t-center - </strong>text-align: center;</h6>
+                <p class="t-center">Lorem ipsum dolor sit amet, corrumpit inciderint id duo. Eros iriure menandri in vel, vis ad diam accusata eloquentiam. Est adhuc ceteros voluptua eu. Nulla nullam aliquam ut sea, eu everti persecuti sea.</p>
+                
+                <p><span class="italic">jade</span></p>
+                <code>p.t-center Lorem ipsum...</code>
+                <div class="break-sm"></div>
+                <p><span class="italic">html</span></p>
+                <code>&lt;p class="t-center>Lorem ipsum...&lt;p></code>
+                <div class="break-md"></div>
+
+                <h6><strong>.t-right - </strong>text-align: right;</h6>
+                <p class="t-right">Lorem ipsum dolor sit amet, corrumpit inciderint id duo. Eros iriure menandri in vel, vis ad diam accusata eloquentiam. Est adhuc ceteros voluptua eu. Nulla nullam aliquam ut sea, eu everti persecuti sea.</p>
+                
+                <p><span class="italic">jade</span></p>
+                <code>p.t-right Lorem ipsum...</code>
+                <div class="break-sm"></div>
+                <p><span class="italic">html</span></p>
+                <code>&lt;p class="t-right>Lorem ipsum...&lt;p></code>
+            </div>
+            <div class="break-lg"></div>
         </div>
+    </div>
 
+    <div class="row">
+        <div class="column-md-12">
+            <div id="grid">
+                <h3 class="section-title">Grid</h3>
+                <h6><strong>columns - </strong>desktop and mobile, max-width: 960px, max-gutter: 24px</h6>
+                <div class="row">
+                    <div class="column col-sm-1">
+                        <div class="block"><p>.col-sm-1</p></div>
+                    </div>
+                    <div class="column col-sm-1">
+                        <div class="block"><p>.col-sm-1</p></div>
+                    </div>
+                    <div class="column col-sm-1">
+                        <div class="block"><p>.col-sm-1</p></div>
+                    </div>
+                    <div class="column col-sm-1">
+                        <div class="block"><p>.col-sm-1</p></div>
+                    </div>
+                    <div class="column col-sm-1">
+                        <div class="block"><p>.col-sm-1</p></div>
+                    </div>
+                    <div class="column col-sm-1">
+                        <div class="block"><p>.col-sm-1</p></div>
+                    </div>
+                    <div class="column col-sm-1">
+                        <div class="block"><p>.col-sm-1</p></div>
+                    </div>
+                    <div class="column col-sm-1">
+                        <div class="block"><p>.col-sm-1</p></div>
+                    </div>
+                    <div class="column col-sm-1">
+                        <div class="block"><p>.col-sm-1</p></div>
+                    </div>
+                    <div class="column col-sm-1">
+                        <div class="block"><p>.col-sm-1</p></div>
+                    </div>
+                    <div class="column col-sm-1">
+                        <div class="block"><p>.col-sm-1</p></div>
+                    </div>
+                    <div class="column col-sm-1">
+                        <div class="block"><p>.col-sm-1</p></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column col-sm-8">
+                        <div class="block"><p>.col-sm-8</p></div>
+                    </div>
+                    <div class="column col-sm-4">
+                        <div class="block"><p>.col-sm-4</p></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column col-sm-2">
+                        <div class="block"><p>.col-sm-2</p></div>
+                    </div>
+                    <div class="column col-sm-2">
+                        <div class="block"><p>.col-sm-2</p></div>
+                    </div>
+                    <div class="column col-sm-3">
+                        <div class="block"><p>.col-sm-3</p></div>
+                    </div>
+                    <div class="column col-sm-2 end">
+                        <div class="block"><p>.col-sm-2</p></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column col-sm-6">
+                        <div class="block"><p>.col-sm-6</p></div>
+                    </div>
+                    <div class="column col-sm-6">
+                        <div class="block"><p>.col-sm-6</p></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column col-md-3">
+                    <p><span class="italic">jade</span></p>
+                        <code>
+                            .row<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;.column.col-sm-1<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;.column.col-sm-1<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;.column.col-sm-1<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;.column.col-sm-1<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;.column.col-sm-1<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;.column.col-sm-1<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;.column.col-sm-1<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;.column.col-sm-1<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;.column.col-sm-1<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;.column.col-sm-1<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;.column.col-sm-1<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;.column.col-sm-1<br>
+                            <br>
+                            .row<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;.column.col-sm-8<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;.column.col-sm-4<br>
+                            <br>
+                            .row<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;.column.col-sm-2<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;.column.col-sm-2<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;.column.col-sm-3<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;.column.col-sm-2.end<br>
+                            <br>
+                            .row<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;.column.col-sm-6<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;.column.col-sm-6<br>
+                            <br>
+                        </code>
+                        <div class="break-sm"></div>
+                    </div>
+                    <div class="column col-md-5 end">
+                        <p><span class="italic">html</span></p>
+                        <code>
+                            &lt;div class="row"><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="column col-sm-1">&lt;/div><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="column col-sm-1">&lt;/div><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="column col-sm-1">&lt;/div><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="column col-sm-1">&lt;/div><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="column col-sm-1">&lt;/div><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="column col-sm-1">&lt;/div><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="column col-sm-1">&lt;/div><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="column col-sm-1">&lt;/div><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="column col-sm-1">&lt;/div><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="column col-sm-1">&lt;/div><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="column col-sm-1">&lt;/div><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="column col-sm-1">&lt;/div><br>
+                            &lt;/div><br>
+                            <br>
+                            &lt;div class="row"><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="column col-sm-8">&lt;/div><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="column col-sm-4">&lt;/div><br>
+                            &lt;/div><br>
+                            <br>
+                            &lt;div class="row"><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="column col-sm-2">&lt;/div><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="column col-sm-2">&lt;/div><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="column col-sm-3">&lt;/div><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="column col-sm-2 end">&lt;/div><br>
+                            &lt;/div><br>
+                            <br>
+                            &lt;div class="row"><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="column col-sm-6">&lt;/div><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="column col-sm-6">&lt;/div><br>
+                            &lt;/div><br>
+                        </code>
+                    </div>
+                </div>
+            </div>
+            <div class="break-md"></div>
+
+            <h6><strong>columns - </strong>desktop, max-width: 960px, max-gutter: 24px</h6>
+                <div class="row">
+                    <div class="column col-md-1">
+                        <div class="block"><p>.col-md-1</p></div>
+                    </div>
+                    <div class="column col-md-1">
+                        <div class="block"><p>.col-md-1</p></div>
+                    </div>
+                    <div class="column col-md-1">
+                        <div class="block"><p>.col-md-1</p></div>
+                    </div>
+                    <div class="column col-md-1">
+                        <div class="block"><p>.col-md-1</p></div>
+                    </div>
+                    <div class="column col-md-1">
+                        <div class="block"><p>.col-md-1</p></div>
+                    </div>
+                    <div class="column col-md-1">
+                        <div class="block"><p>.col-md-1</p></div>
+                    </div>
+                    <div class="column col-md-1">
+                        <div class="block"><p>.col-md-1</p></div>
+                    </div>
+                    <div class="column col-md-1">
+                        <div class="block"><p>.col-md-1</p></div>
+                    </div>
+                    <div class="column col-md-1">
+                        <div class="block"><p>.col-md-1</p></div>
+                    </div>
+                    <div class="column col-md-1">
+                        <div class="block"><p>.col-md-1</p></div>
+                    </div>
+                    <div class="column col-md-1">
+                        <div class="block"><p>.col-md-1</p></div>
+                    </div>
+                    <div class="column col-md-1">
+                        <div class="block"><p>.col-md-1</p></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column col-md-8">
+                        <div class="block"><p>.col-md-8</p></div>
+                    </div>
+                    <div class="column col-md-4">
+                        <div class="block"><p>.col-md-4</p></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column col-md-2">
+                        <div class="block"><p>.col-md-2</p></div>
+                    </div>
+                    <div class="column col-md-2">
+                        <div class="block"><p>.col-md-2</p></div>
+                    </div>
+                    <div class="column col-md-3">
+                        <div class="block"><p>.col-md-3</p></div>
+                    </div>
+                    <div class="column col-md-5">
+                        <div class="block"><p>.col-md-5</p></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column col-md-6">
+                        <div class="block"><p>.col-md-6</p></div>
+                    </div>
+                    <div class="column col-md-6">
+                        <div class="block"><p>.col-md-6</p></div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="column col-md-3">
+                        <p><span class="italic">jade</span></p>
+                        <code>
+                            .row<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;.column.col-md-1<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;.column.col-md-1<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;.column.col-md-1<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;.column.col-md-1<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;.column.col-md-1<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;.column.col-md-1<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;.column.col-md-1<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;.column.col-md-1<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;.column.col-md-1<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;.column.col-md-1<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;.column.col-md-1<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;.column.col-md-1<br>
+                            <br>
+                            .row<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;.column.col-md-8<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;.column.col-md-4<br>
+                            <br>
+                            .row<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;.column.col-md-2<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;.column.col-md-2<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;.column.col-md-3<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;.column.col-md-5<br>
+                            <br>
+                            .row<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;.column.col-md-6<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;.column.col-md-6<br>
+                            <br>
+                        </code>
+                        <div class="break-sm"></div>
+                    </div>
+                    <div class="column col-md-5 end">
+                        <p><span class="italic">html</span></p>
+                        <code>
+                            &lt;div class="row"><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="column col-md-1">&lt;/div><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="column col-md-1">&lt;/div><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="column col-md-1">&lt;/div><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="column col-md-1">&lt;/div><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="column col-md-1">&lt;/div><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="column col-md-1">&lt;/div><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="column col-md-1">&lt;/div><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="column col-md-1">&lt;/div><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="column col-md-1">&lt;/div><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="column col-md-1">&lt;/div><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="column col-md-1">&lt;/div><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="column col-md-1">&lt;/div><br>
+                            &lt;/div><br>
+                            <br>
+                            &lt;div class="row"><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="column col-md-8">&lt;/div><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="column col-md-4">&lt;/div><br>
+                            &lt;/div><br>
+                            <br>
+                            &lt;div class="row"><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="column col-md-2">&lt;/div><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="column col-md-2">&lt;/div><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="column col-md-3">&lt;/div><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="column col-md-5">&lt;/div><br>
+                            &lt;/div><br>
+                            <br>
+                            &lt;div class="row"><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="column col-md-6">&lt;/div><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="column col-md-6">&lt;/div><br>
+                            &lt;/div><br>
+                        </code>
+                    </div>
+                </div>
+            </div>
+            <div class="break-lg"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="column col-md-6">
+            <div id="miscellaneous">
+                <h3 class="section-title">Miscellaneous</h3>
+                <div class="break-md"></div>
+
+                <h6><strong>break - </strong>small, 20px</h6>
+                <p>Lorem ipsum dolor sit amet, corrumpit inciderint id duo. Eros iriure menandri in vel, vis ad diam accusata eloquentiam.</p>
+                <div class="break-sm"></div>
+                <p>Est adhuc ceteros voluptua eu. Nulla nullam aliquam ut sea, eu everti persecuti sea.</p>
+                <code>&lt;div class="break-sm">&lt;/div></code>
+                <div class="break-md"></div>
+
+                <h6><strong>break - </strong>medium, 40px</h6>
+                <p>Lorem ipsum dolor sit amet, corrumpit inciderint id duo. Eros iriure menandri in vel, vis ad diam accusata eloquentiam.</p>
+                <div class="break-md"></div>
+                <p>Est adhuc ceteros voluptua eu. Nulla nullam aliquam ut sea, eu everti persecuti sea.</p>
+                <code>&lt;div class="break-md">&lt;/div></code>
+                <div class="break-md"></div>
+
+                <h6><strong>break - </strong>large, 80px</h6>
+                <p>Lorem ipsum dolor sit amet, corrumpit inciderint id duo. Eros iriure menandri in vel, vis ad diam accusata eloquentiam.</p>
+                <div class="break-lg"></div>
+                <p>Est adhuc ceteros voluptua eu. Nulla nullam aliquam ut sea, eu everti persecuti sea.</p>
+                <code>&lt;div class="break-lg">&lt;/div></code>
+                <div class="break-md"></div>
+
+                <h6><strong>.left - </strong>float: left;</h6>
+                <code>&lt;div class="left">&lt;/div></code>
+                <div class="break-md"></div>
+                <h6><strong>.right - </strong>float: right;</h6>
+                <code>&lt;div class="right">&lt;/div></code>
+                <div class="break-md"></div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
