@@ -92,9 +92,9 @@ a {
 
 .row {
   width: 90%;
+  height: auto;
   margin: 0 auto;
-  max-width: 60em;
-  overflow: auto; }
+  max-width: 60em; }
   .row .row {
     width: 100%; }
 
@@ -552,3 +552,17 @@ a {
 .break-lg {
   width: 100%;
   height: 80px; }
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0; }
+
+* html .clearfix {
+  zoom: 1; }
+
+*:first-child + html .clearfix {
+  zoom: 1; }
