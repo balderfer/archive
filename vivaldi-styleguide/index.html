@@ -5,10 +5,23 @@
     <meta name="viewport" content="width=device-width; initial-scale=1, maximum-scale=1">
     <title>Vivaldi Style Guide</title>
     
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
     <link href='http://fonts.googleapis.com/css?family=Abril+Fatface|Vollkorn:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="base.css">
+    
     <style type="text/css">
         .styleguide-navigation {
+            position: fixed;
+            display: block;
+            width: 140px;
+            top: 0;
+            right: 0;
+            padding: 10px 40px;
+            text-align: right;
+        }
+        .styleguide-navigation-expanded {
             position: fixed;
             display: block;
             width: 140px;
@@ -48,11 +61,14 @@
 </head>
 <body>
     <div class="styleguide-navigation">
-        <h6><span class="italic">Click to Navigate</span></h6>
-        <p><a href="#top">Top</a><p>
-        <p><a href="#typography">Typography</a><p>
-        <p><a href="#grid">Grid</a><p>
-        <p><a href="#miscellaneous">Miscellaneous</a><p>
+        <h6 id="collapsed-nav"><span class="italic">Click to Navigate</span></h6>
+        <div id="expanded-nav" style="display:none;">
+            <h6><span class="italic">Style Categories</span></h6>
+            <p><a href="#top">Top</a><p>
+            <p><a href="#typography">Typography</a><p>
+            <p><a href="#grid">Grid</a><p>
+            <p><a href="#miscellaneous">Miscellaneous</a><p>
+        </div>
     </div>
 
     <div class="row" style="margin-top:60px;">
@@ -569,5 +585,6 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript" src="styleguide.js"></script>
 </body>
 </html>
