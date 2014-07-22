@@ -1,0 +1,54 @@
+#forward {
+    position: fixed;
+    width: 20%;
+    height: 100%;
+    top: 0;
+    left: 80%;
+    z-index: 10;
+}
+#backward {
+    position: fixed;
+    width: 20%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+.fullwidth {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+#page1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+#delta {
+    display: block;
+    width: 80px;
+    margin: 240px auto 0 auto;
+
+}
+h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 96px;
+    text-align: center;
+    margin: 0;
+}
+h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 48px;
+    text-align: center;
+    font-weight: 300;
+    margin: 0;
+}
+#page2 {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+}

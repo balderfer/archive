@@ -560,9 +560,7 @@ a {
   content: " ";
   clear: both;
   height: 0; }
-
 * html .clearfix {
   zoom: 1; }
-
 *:first-child + html .clearfix {
   zoom: 1; }
