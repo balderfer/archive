@@ -1,15 +1,31 @@
 var unicornVisible = false;
 
 $(document).ready(function() {
-    $("#unicorn").click(function(event) {
-        if (unicornVisible) {
-            $("#unicorn-gif").slideUp("fast");
-            $(this).html("Designer, Developer,<br/>Entreprenuer");
-            unicornVisible = false;
-        } else if (!unicornVisible) {
-            $("#unicorn-gif").slideDown("fast");
-            $(this).html("Basically a Unicorn");
-            unicornVisible = true;
-        }
+    $(".nav h2").hover(function(event) {
+        event.stopPropagation();
+        $(this).animate({
+                'margin-left': '10px',
+            },
+            200, "linear"
+        );
+    }, function() {
+        $(this).animate({
+                'margin-left': '0',
+            },
+            200
+        );
+    });
+
+    $(".nav h2").click(function(event) {
+        $(this).animate({
+                'margin-left': '400px',
+                'opacity': '0'
+            },
+            300, function() {
+                $(this).css('margin-left', '0').animate({
+                    "opacity": '1'
+                }, 1500);
+            }
+        );
     });
 });
