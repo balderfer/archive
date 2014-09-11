@@ -1,3 +1,5 @@
+@import 'bourbon/bourbon';
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -137,51 +139,15 @@ h2 {
 
 
 
-#ba {
-    width: 60px;
-}
 .ba-svg {
-    fill: $darkblue;
-    -webkit-animation: cycleColors 10s ease-in-out infinite;
-    -moz-animation: cycleColors 10s ease-in-out infinite;
-    -ms-animation: cycleColors 10s ease-in-out infinite;
-    -o-animation: cycleColors 10s ease-in-out infinite;
-    animation: cycleColors 10s ease-in-out infinite;
-    
+    width: 240px;
+    path {
+        fill: $darkblue;
+        @include animation(cycleColors 10s ease-in-out infinite);
+    }
 }
-@-webkit-keyframes cycleColors {
-    0% {fill: $darkblue;}
-    20% {fill: $lightblue;}
-    40% {fill: $green;}
-    60% {fill: $yellow;}
-    80% {fill: $red;}
-    100% {fill: $darkblue;}
-}
-@-moz-keyframes cycleColors {
-    0% {fill: $darkblue;}
-    20% {fill: $lightblue;}
-    40% {fill: $green;}
-    60% {fill: $yellow;}
-    80% {fill: $red;}
-    100% {fill: $darkblue;}
-}
-@-ms-keyframes cycleColors {
-    0% {fill: $darkblue;}
-    20% {fill: $lightblue;}
-    40% {fill: $green;}
-    60% {fill: $yellow;}
-    80% {fill: $red;}
-    100% {fill: $darkblue;}
-}
-@-o-keyframes cycleColors {
-    0% {fill: $darkblue;}
-    20% {fill: $lightblue;}
-    40% {fill: $green;}
-    60% {fill: $yellow;}
-    80% {fill: $red;}
-    100% {fill: $darkblue;}
-}
-@keyframes cycleColors {
+
+@include keyframes(cycleColors) {
     0% {fill: $darkblue;}
     20% {fill: $lightblue;}
     40% {fill: $green;}

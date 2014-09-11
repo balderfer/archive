@@ -96,16 +96,13 @@ h2 {
   .nav .benalderfer h2:hover {
     color: black; }
 
-#ba {
-  width: 60px; }
-
 .ba-svg {
-  fill: #112f41;
-  -webkit-animation: cycleColors 10s ease-in-out infinite;
-  -moz-animation: cycleColors 10s ease-in-out infinite;
-  -ms-animation: cycleColors 10s ease-in-out infinite;
-  -o-animation: cycleColors 10s ease-in-out infinite;
-  animation: cycleColors 10s ease-in-out infinite; }
+  width: 240px; }
+  .ba-svg path {
+    fill: #112f41;
+    -webkit-animation: cycleColors 10s ease-in-out infinite;
+    -moz-animation: cycleColors 10s ease-in-out infinite;
+    animation: cycleColors 10s ease-in-out infinite; }
 
 @-webkit-keyframes cycleColors {
   0% {
@@ -126,42 +123,6 @@ h2 {
   100% {
     fill: #112f41; } }
 @-moz-keyframes cycleColors {
-  0% {
-    fill: #112f41; }
-
-  20% {
-    fill: #068587; }
-
-  40% {
-    fill: #6fb07f; }
-
-  60% {
-    fill: #fcb03c; }
-
-  80% {
-    fill: #fc5b3f; }
-
-  100% {
-    fill: #112f41; } }
-@-ms-keyframes cycleColors {
-  0% {
-    fill: #112f41; }
-
-  20% {
-    fill: #068587; }
-
-  40% {
-    fill: #6fb07f; }
-
-  60% {
-    fill: #fcb03c; }
-
-  80% {
-    fill: #fc5b3f; }
-
-  100% {
-    fill: #112f41; } }
-@-o-keyframes cycleColors {
   0% {
     fill: #112f41; }
 
