@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ben Alderfer</title>
+        <meta name="description" content="The life and work of Ben Alderfer">
+        <meta name="author" content="Ben Alderfer">
+
+        <!-- links -->
+        <link rel="stylesheet" href="./base.css" type="text/css">
+        
+        <!-- scripts -->
+        <script src="//use.typekit.net/qgi1ymt.js"></script>
+        <script>try{Typekit.load();}catch(e){}</script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="./main.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div class='container'>
+            <div class='header'>
+                <h1>BEN ALDERFER</h1>
+                <!-- <a id='designer'><h2>DESIGNER</h2></a>
+                <h2>|</h2>
+                <a id='entrepreneur'><h2>ENTREPRENEUR</h2></a>
+                <h2>|</h2>
+                <a id='developer'><h2>DEVELOPER</h2></a> -->
+                <h2><span id='designer'>DESIGNER</span>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<span id='entrepreneur'>ENTREPRENEUR</span>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<span id='developer'>DEVELOPER</span></h2>
+            </div>
+            <div class='rule'></div>
+            <div class='content cf'>
+                <div class='down-circle' onclick='openPage()'>
+                    <svg class='svg-down-circle' height='5em' width='5em'>
+                        <circle class='circle-back-down-circle' cx="2.5em" cy="2.5em" r="1.875em" stroke="#BDC3C7" stroke-width="0.05125em" fill="none" />
+                        <circle class='circle-down-circle' cx="2.5em" cy="2.5em" r="1.875em" stroke="black" stroke-width="0.05125em" fill="none" />
+                        <g class='arrow-down-circle'>
+                            <line x1="2.5em" y1="1.5em" x2="2.5em" y2="3.5em" style="stroke-width:0.05125em"/>
+                            <line x1="2.5em" y1="3.5em" x2="1.5em" y2="2.5em" style="stroke-width:0.05125em"/>
+                            <line x1="2.5em" y1="3.5em" x2="3.5em" y2="2.5em" style="stroke-width:0.05125em"/>
+                        </g>
+                    </svg>    
+                </div>
+                <div class='col-2' style='display:none;'>
+                    <div id='experience' class='section cf'>
+                        <h3 style='margin-bottom:0.5em;'>EXPERIENCE</h3>
+                        <div class='cf designer'>
+                            <svg height='1em' width='1em'>
+                                <circle cx='0.5em' cy='0.5em' r='0.4em' stroke='#F29A3F' fill='none' style='display:inline-block;'/>
+                            </svg>
+                            <h6>UX DESIGNER &mdash; GARMIN</h6>
+                            <h6 class='date'>Summer 2014</h6>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <div class='cf entrepreneur'>
+                            <svg height='1em' width='1em'>
+                                <circle cx='0.5em' cy='0.5em' r='0.4em' stroke='#44BF87' fill='none' style='display:inline-block;'/>
+                            </svg>
+                            <h6>CO-FOUNDER &mdash; AWA, LLC</h6>
+                            <h6 class='date'>Spring 2014</h6>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <div class='cf developer'>
+                            <svg height='1em' width='1em'>
+                                <circle cx='0.5em' cy='0.5em' r='0.4em' stroke='#DB634F' fill='none' style='display:inline-block;'/>
+                            </svg>
+                            <h6>FRONT-END DEV &mdash; FREELANCE</h6>
+                            <h6 class='date'></h6>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                    <div id='projects' class='section cf'>
+                        <h3 style='margin-bottom:0.5em;'>PROJECTS</h3>
+                        <div class='cf developer'>
+                            <svg height='1em' width='1em'>
+                                <circle cx='0.5em' cy='0.5em' r='0.4em' stroke='#DB634F' fill='none' style='display:inline-block;'/>
+                            </svg>
+                            <h6>VIVALDI &mdash; AWA, LLC</h6>
+                            <h6 class='date'>Present</h6>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <div class='cf designer'>
+                            <svg height='1em' width='1em'>
+                                <circle cx='0.5em' cy='0.5em' r='0.4em' stroke='#F29A3F' fill='none' style='display:inline-block;'/>
+                            </svg>
+                            <h6>BOWL BOUNCER &mdash; AWA, LLC</h6>
+                            <h6 class='date'>Fall 2013</h6>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                </div>
+                <div class='col-1' style='display:none;'>
+                    <div id='skills' class='section'>
+                        <h3>SKILLS</h3>
+                        <div class='skills-ranks cf'>
+                            <h6>AVERAGE</h6>
+                            <h6>GOOD</h6>
+                            <h6>GREAT</h6>
+                        </div>
+                        <div class='skills-verticals'>
+                            <div class='vertical'></div>
+                            <div class='vertical'></div>
+                            <div class='vertical'></div>
+                        </div>
+                        <div class='skills cf'>
+                            <div class='skill designer great' style='opacity:0;'>
+                                Illustrator CC
+                            </div>
+                            <div class='skill designer good' style='opacity:0;'>
+                                InDesign CC
+                            </div>
+                            <div class='skill designer average' style='opacity:0;'>
+                                Photoshop CC
+                            </div>
+                            <div class='skill designer good' style='opacity:0;'>
+                                Sketch
+                            </div>
+                            <div class='skill designer great' style='opacity:0;'>
+                                CSS/SASS
+                            </div>
+                            <div class='skill designer great' style='opacity:0;'>
+                                HTML
+                            </div>
+                            <div class='skill developer great' style='opacity:0;'>
+                                Javascript
+                            </div>
+                            <div class='skill developer average' style='opacity:0;'>
+                                C
+                            </div>
+                            <div class='skill developer good' style='opacity:0;'>
+                                Java
+                            </div>
+                            <div class='skill developer average' style='opacity:0;'>
+                                Python
+                            </div>
+                            <div class='skill developer great' style='opacity:0;'>
+                                Git
+                            </div>
+                            <div class='skill developer average' style='opacity:0;'>
+                                UNIX
+                            </div>
+                            <div class='skill entrepreneur great' style='opacity:0;'>
+                                Ideation
+                            </div>
+                            <div class='skill entrepreneur good' style='opacity:0;'>
+                                Goal Setting
+                            </div>
+                        </div>
+                    </div>
+                    <div id='contact' class='section'>
+                        <h3>CONTACT</h3>
+                        <p>317.650.2019</p>
+                        <p>ben.alderfer@gmail.com</p>
+                        <p>http://benalderfer.com</p>
+                        <p>http://github.com/balderfer</p>
+                    </div>
+                </div>
+            </div> <!-- .content -->
+            <div class='footer'>
+                
+            </div> <!-- .footer -->
+        </div> <!-- .container -->
+    </body>
+</html>
