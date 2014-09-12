@@ -7,31 +7,34 @@ $(document).ready(function() {
 
     // If scrolled
     $(window).scroll(function(event) {
+        var scrollHeight = $(this).scrollTop();
+        var y1 = $('#static-col-1').height();
+        var y2 = $('#col-2').height();
+        var windowH = $(window).height();
+        var b2 = $('#col-2').offset().top + y2;
+        var deltaD = b2 - windowH + 32;
+        var newTop = scrollHeight * ((y2 - y1) / deltaD);
         if (locked) {
-            locked = false;
-            $('.container').animate({
-                'padding-top': '2em'},
-                500, function() {
-                    $('.header').addClass('scrolled');
-                // $('.container').css('padding-top', '2em');
-            });
-            $('.container').addClass('open');
-            $('.content .down-circle').fadeOut(250, function() {
-                $('.col-1, .col-2, .col-3, .footer').fadeIn(250, function() {
-                    loadSections();
+            if (scrollHeight < 20) {
+                // locked = false;
+                $('.header').animate({top: 0}, 250);
+                $('.container').animate({top: '2em'}, 250);
+                        // $('.header').addClass('scrolled');
+                    // $('.container').css('padding-top', '2em');
+                $('.container').addClass('open');
+                $('.content .down-circle').fadeOut(250, function() {
+                    $('.col-1, .col-2, .col-3, .footer').fadeIn(250, function() {
+                        loadSections();
+                    });
                 });
-            });
-            $('#designer, #developer, #entrepreneur, .container .header h1, .container .header h2').removeClass('hover');
+                $('#designer, #developer, #entrepreneur, .container .header h1, .container .header h2').removeClass('hover');
+                locked = false;
+            }
+            else {
+                locked = false;
+            }
         }
         else {
-            var scrollHeight = $(this).scrollTop();
-            var y1 = $('#static-col-1').height();
-            var y2 = $('#col-2').height();
-            var windowH = $(window).height();
-            var b2 = $('#col-2').offset().top + y2;
-            var deltaD = b2 - windowH + 32;
-            var newTop = scrollHeight * ((y2 - y1) / deltaD);
-            console.log(b2);
             var offset = $('#projects').offset();
             if (scrollHeight <= 0) {
                 $('#static-col-1').attr('style', '');

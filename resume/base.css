@@ -128,9 +128,16 @@ h2 {
 /* HEADER */
 
 .container .header {
-    position: relative;
+    position: fixed;
     width: 100%;
-    height: 5em;
+    height: 6em;
+    top: 120px;
+    left: 0;
+    background-color: rgba(236, 240, 241, 0.9);
+    z-index: 10;
+    box-sizing: border-box;
+    padding-top: 1em;
+    box-shadow: 0 2em 2em rgba(236, 240, 241, 0.9);
 }
 .container .header h1 {
     text-align: center;
@@ -182,6 +189,15 @@ h2 {
 /* SCROLLED HEADER */
 
 .container .header.scrolled {
+    position: fixed;
+    width: 100%;
+    height: 6em;
+    top: 0;
+    left: 0;
+
+}
+
+/*.container .header.scrolled {
     position: fixed;
     width: 100%;
     height: 4em;
@@ -252,7 +268,7 @@ h2 {
     color: #44BF87;
 }
 
-
+*/
 
 
 
