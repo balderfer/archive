@@ -17,16 +17,19 @@ $(document).ready(function() {
         if (locked) {
             if (scrollHeight < 20) {
                 // locked = false;
-                $('.header').animate({top: 0}, 250);
-                $('.container').animate({top: '2em'}, 250);
-                        // $('.header').addClass('scrolled');
-                    // $('.container').css('padding-top', '2em');
-                $('.container').addClass('open');
-                $('.content .down-circle').fadeOut(250, function() {
-                    $('.col-1, .col-2, .col-3, .footer').fadeIn(250, function() {
-                        loadSections();
+                $('.header').animate({top: 0}, 250, function() {
+                    $('.container').animate({top: '2em'}, 250, function() {
+                        $('.container').addClass('open');
+                        $('#content1').fadeOut(250, function() {
+                            $('#content2').slideDown(250, function() {
+                                loadSections();
+                            });
+                        });
                     });
                 });
+                    // $('.header').addClass('scrolled');
+                    // $('.container').css('padding-top', '2em');
+                
                 $('#designer, #developer, #entrepreneur, .container .header h1, .container .header h2').removeClass('hover');
                 locked = false;
             }
