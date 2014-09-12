@@ -192,22 +192,22 @@ h2 {
     box-sizing: border-box;
     padding-top: 1em;
     box-shadow: 0 2em 2em rgba(236, 240, 241, 0.9);
-    -webkit-transition: all .25s ease;
-       -moz-transition: all .25s ease;
-        -ms-transition: all .25s ease;
-         -o-transition: all .25s ease;
-            transition: all .25s ease;
+    -webkit-transition: all .75s ease;
+       -moz-transition: all .75s ease;
+        -ms-transition: all .75s ease;
+         -o-transition: all .75s ease;
+            transition: all .75s ease;
 
 }
 .container .header.scrolled h1 {
     text-align: center;
     font-size: 1.25em;
     color: black;
-    -webkit-transition: all .25s ease;
-       -moz-transition: all .25s ease;
-        -ms-transition: all .25s ease;
-         -o-transition: all .25s ease;
-            transition: all .25s ease;
+    -webkit-transition: all .75s ease;
+       -moz-transition: all .75s ease;
+        -ms-transition: all .75s ease;
+         -o-transition: all .75s ease;
+            transition: all .75s ease;
 }
 .container .header.scrolled .benalderfer:hover {
     cursor: pointer;
@@ -219,19 +219,19 @@ h2 {
 }
 .container .header.scrolled span {
     color: black;
-    -webkit-transition: all .25s ease;
-       -moz-transition: all .25s ease;
-        -ms-transition: all .25s ease;
-         -o-transition: all .25s ease;
-            transition: all .25s ease;
+    -webkit-transition: all .75s ease;
+       -moz-transition: all .75s ease;
+        -ms-transition: all .75s ease;
+         -o-transition: all .75s ease;
+            transition: all .75s ease;
 }
 .container .header.scrolled span:hover {
     cursor: pointer;
-    -webkit-transition: all .25s ease;
-       -moz-transition: all .25s ease;
-        -ms-transition: all .25s ease;
-         -o-transition: all .25s ease;
-            transition: all .25s ease;
+    -webkit-transition: all .75s ease;
+       -moz-transition: all .75s ease;
+        -ms-transition: all .75s ease;
+         -o-transition: all .75s ease;
+            transition: all .75s ease;
 }
 .container .header.scrolled #designer:hover {
     color: #F29A3F;
@@ -319,6 +319,102 @@ h2 {
 
 
 
+
+
+
+
+
+
+.container .content .section .design .bubble {
+    position: relative;
+    width: 0.8em;
+    height: 0.8em;
+    display: inline-block;
+    float: left;
+    top: .25em;
+    border-radius: 100%;
+    background-color: none;
+    border: 1px solid #F29A3F;
+    margin-right: 0.25em;
+    -webkit-transition: all .25s ease;
+       -moz-transition: all .25s ease;
+        -ms-transition: all .25s ease;
+         -o-transition: all .25s ease;
+            transition: all .25s ease;
+}
+.container .content .section .design:hover .bubble {
+    background-color: #F29A3F;
+    -webkit-transition: all .25s ease;
+       -moz-transition: all .25s ease;
+        -ms-transition: all .25s ease;
+         -o-transition: all .25s ease;
+            transition: all .25s ease;
+}
+.container .content .section .develop .bubble {
+    position: relative;
+    width: 0.8em;
+    height: 0.8em;
+    display: inline-block;
+    float: left;
+    top: .25em;
+    border-radius: 100%;
+    background-color: none;
+    border: 1px solid #DB634F;
+    margin-right: 0.25em;
+    -webkit-transition: all .25s ease;
+       -moz-transition: all .25s ease;
+        -ms-transition: all .25s ease;
+         -o-transition: all .25s ease;
+            transition: all .25s ease;
+}
+.container .content .section .develop:hover .bubble {
+    background-color: #DB634F;
+    -webkit-transition: all .25s ease;
+       -moz-transition: all .25s ease;
+        -ms-transition: all .25s ease;
+         -o-transition: all .25s ease;
+            transition: all .25s ease;
+}
+.container .content .section .entr .bubble {
+    position: relative;
+    width: 0.8em;
+    height: 0.8em;
+    display: inline-block;
+    float: left;
+    top: .25em;
+    border-radius: 100%;
+    background-color: none;
+    border: 1px solid #44BF87;
+    margin-right: 0.25em;
+    -webkit-transition: all .25s ease;
+       -moz-transition: all .25s ease;
+        -ms-transition: all .25s ease;
+         -o-transition: all .25s ease;
+            transition: all .25s ease;
+}
+.container .content .section .entr:hover .bubble {
+    background-color: #44BF87;
+    -webkit-transition: all .25s ease;
+       -moz-transition: all .25s ease;
+        -ms-transition: all .25s ease;
+         -o-transition: all .25s ease;
+            transition: all .25s ease;
+}
+.container .content .section div:hover .fill-circle {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+/*
+Blue: #1D8281;
+Green: #44BF87;
+Yellow: #FBD258;
+Orange: #F29A3F;
+Red: #DB634F;
+*/
 
 
 
@@ -652,6 +748,15 @@ h2 {
          -o-transition: all .25s ease;
             transition: all .25s ease;
 }
+.section .skills .designer.hover {
+    background-color: #F29A3F;
+    color: white;
+    -webkit-transition: all .25s ease;
+       -moz-transition: all .25s ease;
+        -ms-transition: all .25s ease;
+         -o-transition: all .25s ease;
+            transition: all .25s ease;
+}
 .section .skills .developer {
     border: 1px solid #DB634F;
     color: #DB634F;
@@ -670,6 +775,15 @@ h2 {
          -o-transition: all .25s ease;
             transition: all .25s ease;
 }
+.section .skills .developer.hover {
+    background-color: #DB634F;
+    color: white;
+    -webkit-transition: all .25s ease;
+       -moz-transition: all .25s ease;
+        -ms-transition: all .25s ease;
+         -o-transition: all .25s ease;
+            transition: all .25s ease;
+}
 .section .skills .entrepreneur {
     border: 1px solid #44BF87;
     color: #44BF87;
@@ -680,6 +794,15 @@ h2 {
             transition: all .25s ease;
 }
 .section .skills .entrepreneur:hover {
+    background-color: #44BF87;
+    color: white;
+    -webkit-transition: all .25s ease;
+       -moz-transition: all .25s ease;
+        -ms-transition: all .25s ease;
+         -o-transition: all .25s ease;
+            transition: all .25s ease;
+}
+.section .skills .entrepreneur.hover {
     background-color: #44BF87;
     color: white;
     -webkit-transition: all .25s ease;
