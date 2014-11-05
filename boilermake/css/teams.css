@@ -109,6 +109,58 @@ input:focus:-ms-input-placeholder { /* Internet Explorer 10+ */
 
 
 
+
+
+
+
+/*-----------------------------------------------*/
+
+.team h1 {
+    text-align: center;
+}
+.alert-h1 {
+    font-size: 1.5em;
+    text-align: center;
+    line-height: 0.5em;
+}
+.status {
+    color: #f5a623;
+}
+.confirm {
+    display: block;
+    position: relative;
+    width: 170px;
+    text-align: center;
+    box-sizing: border-box;
+    margin: 0 auto;
+    margin-bottom: 0.25em;
+}
+.confirm.disabled {
+    opacity: 0.4;
+}
+.confirm.disabled:hover {
+    cursor: default;
+}
+p.note {
+    color: black;
+    width: 240px;
+    margin: 0 auto;
+}
+.clickhere {
+    color: #f5a623;
+}
+
+
+
+/*----------------------------------------------*/
+
+
+
+
+
+
+
+
 @media (max-width: 768px) {
     .application .form .send {
         display: inline-block;

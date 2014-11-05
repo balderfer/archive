@@ -56,7 +56,7 @@
                         <div class="label">
                             School
                         </div>
-                        <input type="text"/>
+                        <input type="text" disabled style="opacity:0.5;"/>
                     </div>
                     <div class="input" id="address-line-1">
                         <div class="label">
@@ -70,40 +70,51 @@
                             <option value="other">Other</option>
                         </select>
                     </div>
-                    <div class="input" id="address-line-1">
-                        <div class="label">
-                            Address Line 1
-                        </div>
-                        <input type="text"/>
-                    </div>
-                    <div class="input" id="address-line-2">
-                        <div class="label">
-                            Address Line 2
-                        </div>
-                        <input type="text"/>
-                    </div>
-                    <div class="input" id="address-city-state-zip">
-                        <div class="label">
-                            City, State, Zip
-                        </div>
-                        <input class="span-6" type="text"/>
-                        <input class="span-2" type="text" maxlength="2"/>
-                        <input class="span-4" type="text"/>
-                    </div>
                     <div class="input link" id="github">
                         <div class="label">
                             GitHub
                         </div>
                         <input type="text"/>
                     </div>
-                    <div class="input field" id="description">
+                    <div class="input link" id="resume">
                         <div class="label">
-                            Experience
+                            Link to Resume
+                        </div>
+                        <input type="link"/>
+                    </div>
+                    <div class="input" id="tshirt">
+                        <div class="label">
+                            T-shirt Size
+                        </div>
+                        <select class="size">
+                            <option value="">Please select one...</option>
+                            <option value="Small">Small</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Large">Large</option>
+                            <option value="X-Large">X-Large</option>
+                            <option value="XX-Large">XX-Large</option>
+                        </select>
+                    </div>
+                    <div class="input link" id="phone">
+                        <div class="label">
+                            Cell Phone
+                        </div>
+                        <input type="tel"/>
+                    </div>
+                    <div class="input link" id="graduation">
+                        <div class="label">
+                            Year of Graduation
+                        </div>
+                        <input type="number"/>
+                    </div>
+                    <div class="input field" id="dietary">
+                        <div class="label">
+                            Dietary Resitrictions
                             <div class="sub-label">
-                                Tell us a little bit more about who you are and what you’ve done.
+                                Please enter any dietary restrictions, leave blank if none.
                             </div>
                         </div>
-                        <textarea rows="8"></textarea>
+                        <textarea rows="4"></textarea>
                     </div>
                     <div class="submit">
                         <input class="button outline" id="save" type="submit" value="Save" style="cursor:pointer;"/>
