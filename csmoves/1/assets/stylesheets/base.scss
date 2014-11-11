@@ -34,17 +34,37 @@ $silver: #BDC3C7;
 $concrete: #95A5A6;
 $asbestos: #7F8C8D;
 
+html {
+    position: relative;
+}
 body {
+    position: relative;
+    height: 100%;
     background-image: url('../images/bg-crossword.png');
 }
 
+body > .container:first-of-type {
+    position: relative;
+    margin-top: 12em;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
 // NAVBAR -----------------------------------------------------
 .navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
     border-radius: 0;
     border: none;
     border-bottom: 1px solid $clouds;
     background-color: white;
     height: 5em;
+    z-index: 300;
 
     .container {
         height: 100%;
@@ -73,6 +93,16 @@ body {
             height: 0.8em;
             display: inline-block;
             top: -3px;
+            transform: rotate(315deg) scale3d(1, 1, 1);
+            animation: pulseLogo 2s linear infinite;
+        }
+        &.animated-entrance {
+            img {
+                animation: enterSwirl linear 0.5s, pulseLogo 2s linear 0.5s infinite;
+            }
+            span {
+                animation: enterTitle 1s linear 0.25s;
+            }
         }
     }
 
@@ -126,13 +156,45 @@ body {
     }
 }
 
+@keyframes enterSwirl {
+    0% {
+        opacity: 0;
+        transform: rotate(315deg) scale3d(8, 8, 8);
+    }
+    60% {
+        transform: rotate(342deg) scale3d(0.8, 0.8, 0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(360deg) scale3d(1, 1, 1);
+    }
+}
+@keyframes enterTitle {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes pulseLogo {
+    0% {
+        transform: rotate(0deg) scale3d(1, 1, 1);
+    }
+
+    100% {
+        transform: rotate(360deg) scale3d(1, 1, 1);
+    }
+}
+
 // ------------------------------------------------------------
 
 
 // ROW --------------------------------------------------------
 
 .row {
-    margin-top: 2em;
+    margin-bottom: 2em;
 }
 
 // ------------------------------------------------------------
@@ -217,9 +279,18 @@ body {
 // ARTICLE ----------------------------------------------------
 
 .article {
-    height: 18em;
+    height: 20em;
     background-color: white;
     border: 1px solid $clouds;
+    @include box-sizing(border-box);
+
+    &:hover {
+        box-shadow: 0 0 1em $clouds;
+
+        .content a h1 {
+            text-decoration: underline;
+        }
+    }
 
     &::before {
         content: "";
@@ -228,4 +299,312 @@ body {
         height: 4px;
         animation: gradientLoop 60s infinite;
     }
+
+    .thumb {
+        width: 100%;
+        margin-top: 1em;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .content {
+        @include box-sizing(border-box);
+        padding: 1em;
+        padding-top: 0.8em;
+
+        height: 8.2em;
+
+        a h1 {
+            margin: 0;
+            font-size: 1.4em;
+            text-decoration: none;
+            color: black;
+        }
+        h6 {
+            color: $silver;
+            font-weight: 400;
+            margin-top: 0.25em;
+            margin-bottom: 0.25em;
+            font-style: italic;
+        }
+    }
 }
+
+// ------------------------------------------------------------
+
+
+
+// WORDS ------------------------------------------------------
+
+.words {
+    position: relative;
+    width: 100%;
+    height: 24em;
+    background-color: white;
+    margin-bottom: 2em;
+    border-top: 1px solid $clouds;
+    border-bottom: 1px solid $clouds;
+    text-align: center;
+
+    &::before {
+        content: "";
+        position: absolute;
+        margin: 0 auto;
+        margin-top: 4em;
+        margin-left: -8em;
+        width: 16em;
+        height: 16em;
+        opacity: 0.1;
+        background-image: url('../images/swirl.svg');
+        background-repeat: no-repeat;
+        animation: pulseLogo 10s linear infinite;
+    }
+
+    .container {
+        position: relative;
+        padding-top: 12em;
+
+        p {
+            display: block;
+            position: relative;
+            width: 100%;
+            font-size: 1.4em;
+            text-align: center;
+            color: $concrete;
+            transform: translate3d(0,-50%,0);
+        }
+    }
+}
+
+// ------------------------------------------------------------
+
+
+
+// GRAPHS -----------------------------------------------------
+
+.full-graph {
+    width: 100%;
+    height: 20em;
+    margin-bottom: 4em;
+
+    h1 {
+        text-align: center;
+        color: $concrete;
+        font-size: 2em;
+    }
+
+    canvas {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+// ------------------------------------------------------------
+
+
+// TIMELINE ---------------------------------------------------
+
+.timeline {
+
+    h1 {
+        text-align: center;
+        font-weight: 400;
+        font-size: 2em;
+        color: $concrete;
+    }
+
+    ul {
+        position: relative;
+        list-style: none;
+        text-align: left;
+        padding-left: 2em;
+        @include box-sizing(border-box);
+        margin: 0;
+        margin-left: 30%;
+
+        &::before {
+            position: absolute;
+            content: "";
+            width: 4px;
+            height: 100%;
+            left: 0;
+            animation: gradientLoop 60s infinite;
+        }
+
+        li.date {
+            position: absolute;
+            right: 110%;
+
+            &:first-child {
+                margin-top: 1em;
+            }
+        }
+
+        .entry {
+            padding-bottom: 1em;
+            margin-left: 0;
+            transition: all 0.25s ease;
+
+            &:nth-child(2) {
+                padding-top: 1em;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            &::before {
+                position: absolute;
+                content: "";
+                width: 1em;
+                height: 1em;
+                border-radius: 1000px;
+                border: 2px solid white;
+                left: -0.35em;
+                margin-top: 0.2em;
+                animation: gradientLoop 60s infinite;
+                transform: scale3d(1,1,1);
+                transition: all 0.25s ease;
+            }
+
+            &:hover {
+                margin-left: -0.5em;
+                transition: all 0.25s ease;
+                cursor: pointer;
+
+                &::before {
+                    transform: scale3d(1.4, 1.4, 1.4);
+                    transition: all 0.25s ease;
+                }
+            }
+        }
+    }
+}
+
+// ------------------------------------------------------------
+
+
+
+// HERO -------------------------------------------------------
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 24em;
+    margin: 0;
+    margin-bottom: 2em;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 24em;
+        animation: gradientLoop 60s infinite;
+        opacity: 0.5;
+        z-index: 10;
+    }
+
+    img {
+        position: relative;
+        width: 100%;
+        top: 50%;
+        transform: translate3d(0,-50%,0);
+    }
+}
+
+// ------------------------------------------------------------
+
+
+
+// FOOTER -----------------------------------------------------
+
+.footer {
+    background-color: white;
+    height: 7em;
+    width: 100%;
+    border-top: 1px solid $clouds;
+    text-align: center;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    @include box-sizing(border-box);
+
+    .light {
+        font-weight: 100;
+        font-size: 2em;
+    }
+    img {
+        position: relative;
+        top: -6px;
+        width: 1.5em;
+        margin-right: 0.25em;
+        animation: pulseLogo 2s linear infinite;
+    }
+    p {
+        font-size: 0.8em;
+        margin-bottom: 0;
+    }
+}
+
+// ------------------------------------------------------------
+
+
+
+// ARTICLE PAGE -----------------------------------------------
+
+.article-header {
+    position: relative;
+    height: 20em;
+    margin-top: 5em;
+    width: 100%;
+    overflow: hidden;
+
+    &::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 20em;
+        background-color: rgba(0,0,0,0.6);
+        z-index: -50;
+    }
+
+    img {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        top: 50%;
+        transform: translate3d(0,-50%,0);
+        z-index: -100;
+
+    }
+    h1 {
+        position: absolute;
+        bottom: 0;
+        color: $clouds;
+    }
+}
+
+body > .container.article-content {
+    margin-top: 2em;
+    margin-bottom: 4em;
+    p {
+
+        &.italic {
+            margin-left: 1em;
+            margin-right: 1em;
+            background-color: white;
+            border: 1px solid $clouds;
+            padding: 1em;
+            font-size: 1.2em;
+            font-style: italic;
+        }
+    }
+}
+
+// ------------------------------------------------------------
