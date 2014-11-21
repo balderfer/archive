@@ -4,11 +4,12 @@ html {
 body {
   position: relative;
   height: 100%;
-  background-image: url('../images/bg-crossword.png'); }
+  background-image: url('../images/bg-crossword.png');
+  background-attachment: fixed; }
 
 body > .container:first-of-type {
   position: relative;
-  margin-top: 12em; }
+  margin-top: 8em; }
 
 a {
   text-decoration: none;
@@ -322,10 +323,10 @@ a {
     content: "";
     position: absolute;
     margin: 0 auto;
-    margin-top: 4em;
-    margin-left: -8em;
-    width: 16em;
-    height: 16em;
+    margin-top: 2em;
+    margin-left: -10em;
+    width: 20em;
+    height: 20em;
     opacity: 0.1;
     background-image: url('../images/swirl.svg');
     background-repeat: no-repeat;
@@ -417,32 +418,12 @@ a {
         -webkit-transition: all 0.25s ease;
                 transition: all 0.25s ease; }
 
-.hero {
-  position: relative;
-  width: 100%;
-  height: 24em;
-  margin: 0;
-  margin-bottom: 2em;
-  overflow: hidden; }
-  .hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 24em;
-    -webkit-animation: gradientLoop 60s infinite;
-            animation: gradientLoop 60s infinite;
-    opacity: 0.5;
-    z-index: 10; }
-  .hero img {
-    position: relative;
-    width: 100%;
-    top: 50%;
-    -webkit-transform: translate3d(0, -50%, 0);
-            transform: translate3d(0, -50%, 0); }
+.hero1 {
+  background-image: url('../images/homehero1.jpg');
+  background-position: cover;
+  background-attachment: fixed; }
+  .hero1:first-of-type {
+    padding-top: 8em; }
 
 .footer {
   background-color: white;
