@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=0.0, user-scalable=no">
+        <title>
+            BoilerMake
+        </title>
+        <link rel="icon" href="./img/favicon.png">
+        <meta name="description" content="The life and work of Ben Alderfer">
+        <meta name="author" content="Ben Alderfer">
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+        <link rel="stylesheet" href="css/dashboard.css" type="text/css">
+        <link rel="stylesheet" href="css/teams.css" type="text/css">
+    </head>
+    <body>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript"></script>
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'>
+        <script src="js/team.js" type="text/javascript"></script>
+
+        <div class="header">
+            <div class="container">
+                <div class="logo"></div>
+                <a class="button outline" id="logout" style="cursor:pointer;">Log Out</a>
+            </div>
+        </div>
+        <div class="head">
+            <h1>WELCOME</h1>
+        </div>
+        <div class="nav">
+            <a href="./application.html">
+                <div class="nav-notactive">
+                    Application
+                </div>
+            </a>
+            <div class="nav-active">
+                Team
+            </div>
+        </div>
+        <div class="container">
+            <div class="application team">
+                <h1 class='alert-h1'>Decision: <span class='status'>Accepted</span></h1>
+                <a class="button outline confirm disabled">Confirm</a>
+                <p class='note'>You must finish your <a class='clickhere' href="application.html">application</a> before confirming.</p>
+            </div>
+            <div class="application team">
+                <h1>Teammates</h1>
+                <div class="form">
+                    <div class="input" id="hacker1">
+                        <div class="label">
+                        </div>
+                        <input disabled type="text" value="jive@apple.edu"/>
+                    </div>
+                    <div class="input empty" id="hacker2">
+                        <div class="label">
+                        </div>
+                        <input disabled type="text" value="jive@apple.edu"/>
+                    </div>
+                    <div class="input empty" id="hacker3">
+                        <div class="label">
+                        </div>
+                        <input disabled type="text" value="jive@apple.edu"/>
+                    </div>
+                    <div class="input empty" id="hacker4">
+                        <div class="label">
+                        </div>
+                        <input disabled type="text" value="jive@apple.edu"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

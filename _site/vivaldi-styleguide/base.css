@@ -1,0 +1,105 @@
+/*
+Syntax error: Invalid CSS after "      webkit-image": expected ")", was ": -webkit- + $p..."
+        on line 21 of bourbon/helpers/_linear-angle-parser.scss
+        from line 10 of bourbon/_bourbon.scss
+        from line 2 of base.scss
+
+16: 
+17:   @if $offset {
+18:     $num: _str-to-num($first-val);
+19: 
+20:     @return (
+21:       webkit-image: -webkit- + $prefix + ($offset - $num) + $suffix,
+22:       spec-image: $image
+23:     );
+24:   }
+25: }
+
+Backtrace:
+bourbon/helpers/_linear-angle-parser.scss:21
+bourbon/_bourbon.scss:10
+base.scss:2
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/scss/parser.rb:1147:in `expected'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/script/lexer.rb:206:in `expected!'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/script/parser.rb:483:in `assert_tok'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/script/parser.rb:433:in `paren'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/script/parser.rb:418:in `special_fun'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/script/parser.rb:413:in `raw'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/script/parser.rb:337:in `funcall'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/script/parser.rb:319:in `ident'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/script/parser.rb:228:in `unary_not'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/script/parser.rb:228:in `unary_div'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/script/parser.rb:228:in `unary_minus'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/script/parser.rb:228:in `unary_plus'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/script/parser.rb:209:in `times_div_or_mod'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/script/parser.rb:209:in `plus_or_minus'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/script/parser.rb:209:in `relational'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/script/parser.rb:209:in `eq_or_neq'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/script/parser.rb:209:in `and_expr'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/script/parser.rb:209:in `or_expr'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/script/parser.rb:298:in `space'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/script/parser.rb:283:in `interpolation'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/script/parser.rb:246:in `expr'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/script/parser.rb:477:in `assert_expr'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/script/parser.rb:49:in `parse'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/scss/parser.rb:1022:in `sass_script'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/scss/parser.rb:215:in `return_directive'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/scss/parser.rb:174:in `special_directive'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/scss/parser.rb:146:in `directive'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/scss/parser.rb:554:in `block_child'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/scss/parser.rb:546:in `block_contents'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/scss/parser.rb:535:in `block'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/scss/parser.rb:264:in `if_directive'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/scss/parser.rb:174:in `special_directive'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/scss/parser.rb:146:in `directive'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/scss/parser.rb:552:in `block_child'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/scss/parser.rb:546:in `block_contents'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/scss/parser.rb:535:in `block'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/scss/parser.rb:211:in `function_directive'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/scss/parser.rb:174:in `special_directive'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/scss/parser.rb:146:in `directive'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/scss/parser.rb:553:in `block_child'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/scss/parser.rb:543:in `block_contents'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/scss/parser.rb:82:in `stylesheet'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/scss/parser.rb:27:in `parse'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/engine.rb:342:in `_to_tree'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/engine.rb:274:in `to_tree'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:225:in `visit_import'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:37:in `visit'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:100:in `visit'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:227:in `block in visit_import'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:227:in `map'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:227:in `visit_import'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:37:in `visit'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:100:in `visit'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:53:in `map'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:53:in `visit_children'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:109:in `block in visit_children'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:108:in `visit_children'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:37:in `block in visit'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:128:in `visit_root'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:37:in `visit'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:100:in `visit'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:7:in `visit'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/tree/root_node.rb:20:in `render'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/engine.rb:315:in `_render'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/engine.rb:262:in `render'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/plugin/compiler.rb:362:in `update_stylesheet'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/plugin/compiler.rb:203:in `block in update_stylesheets'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/plugin/compiler.rb:201:in `each'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/plugin/compiler.rb:201:in `update_stylesheets'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/lib/sass/plugin/compiler.rb:283:in `block in watch'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/vendor/listen/lib/listen/multi_listener.rb:108:in `call'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/vendor/listen/lib/listen/multi_listener.rb:108:in `on_change'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/vendor/listen/lib/listen/multi_listener.rb:117:in `block in initialize_adapter'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/vendor/listen/lib/listen/adapter.rb:198:in `call'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/vendor/listen/lib/listen/adapter.rb:198:in `report_changes'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/vendor/listen/lib/listen/adapter.rb:210:in `poll_changed_dirs'
+/Users/benjaminalderfer/.rvm/gems/ruby-2.0.0-p353/gems/sass-3.2.19/vendor/listen/lib/listen/adapters/darwin.rb:38:in `block in start'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: Invalid CSS after \"      webkit-image\": expected \")\", was \": -webkit- + $p...\"\A         on line 21 of bourbon/helpers/_linear-angle-parser.scss\A         from line 10 of bourbon/_bourbon.scss\A         from line 2 of base.scss\A \A 16: \A 17:   @if $offset {\A 18:     $num: _str-to-num($first-val);\A 19: \A 20:     @return (\A 21:       webkit-image: -webkit- + $prefix + ($offset - $num) + $suffix,\A 22:       spec-image: $image\A 23:     );\A 24:   }\A 25: }"; }

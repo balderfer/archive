@@ -1,0 +1,316 @@
+body {
+    background: white;
+}
+
+.application {
+    display: block;
+    margin: 0 auto;
+}
+.head {
+    display: inline-block;
+    margin-top: 100px;
+    width: 100%;
+    height: 160px;
+    margin-bottom: 0;
+    background-image: url("../img/hacker.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.head h1 {
+    font-size: 4em;
+    font-weight: 100;
+    text-align: center;
+    margin: 40px 0;
+}
+.nav {
+    display: inline-block;
+    width: 100%;
+    height: 60px;
+    margin: 0 0 30px 0;
+    font-weight: 100;
+    font-size: 1.5em;
+    text-align: center;
+}
+.nav-active {
+    display: inline-block;
+    position: relative;
+    float: left;
+    width: 50%;
+    height: 50px;
+    margin: 0;
+    padding-top: 10px;
+    background-color: #9B9B9B;
+    cursor: pointer;
+}
+.nav-active::after {
+    content: "";
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 14px;
+    background-image: url("../img/pointer.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.nav-notactive {
+    display: inline-block;
+    position: relative;
+    float: left;
+    width: 50%;
+    height: 40px;
+    margin: 0;
+    padding-top: 10px;
+    background-color: #f5a623;
+    color: white;
+    cursor: pointer;
+    -webkit-transition: background-color 100ms linear, height 100ms linear;
+    -moz-transition: background-color 100ms linear, height 100ms linear;
+    -o-transition: background-color 100ms linear, height 100ms linear;
+    -ms-transition: background-color 100ms linear, height 100ms linear;
+    transition: background-color 100ms linear, height  100ms linear;
+}
+.nav-notactive:hover {
+    background-color: #e6940a;
+    height: 50px;
+    -webkit-transition: background-color 100ms linear, height 100ms linear;
+    -moz-transition: background-color 100ms linear, height 100ms linear;
+    -o-transition: background-color 100ms linear, height 100ms linear;
+    -ms-transition: background-color 100ms linear, height 100ms linear;
+    transition: background-color 100ms linear, height  100ms linear;
+}
+.nav-notactive:active {
+    background-color: #f5a623;
+}
+.application .form .input select {
+    width: 398px;
+    height: 34px;
+    background-color: white;
+}
+.application .form .input input:focus, .application .form .input textarea:focus, .application .form .input select:focus {   
+    border-color: #989898;
+    background-color: #989898;
+    -webkit-transition: background-color 250ms linear;
+    -moz-transition: background-color 250ms linear;
+    -o-transition: background-color 250ms linear;
+    -ms-transition: background-color 250ms linear;
+    transition: background-color 250ms linear;
+    color: black;
+    text-align: left;
+    font-size: 1em;
+    line-height: 1.4;
+    box-shadow: 0 1px 1px #989898 inset, 0 0 8px #989898;
+    outline: 0 none;
+}
+
+
+
+
+
+@media (min-width: 768px) {
+    /* Desktop */
+.header .container .logo {
+    width: 222px;
+    height: 74px;
+    background-image: url("../img/logodark.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.application {
+    width: 600px;
+}
+.nav-active::after {
+    margin-top: 17px;
+}
+.application .form .input {
+    display: inline-block;
+    width: 100%;
+    margin: 5px 0 5px -60px;
+}
+.application .form .input .label {
+    display: inline-block;
+    position: relative;
+    float: left;
+    width: 150px;
+    text-align: right;
+    font-size: 1em;
+    font-weight: 300;
+    line-height: 1.4;
+    padding: 8px 4px 6px 8px;
+    color: black;
+}
+.application .form .input .label .sub-label{
+    display: inline-block;
+    position: relative;
+    float: right;
+    width: 150px;
+    text-align: right;
+    font-family: "Helvetica-Neue", "Roboto";
+    font-size: 0.75em;
+    font-weight: 300;
+    line-height: 1.4;
+    padding: 8px 4px 6px 8px;
+    color: black;
+}
+.application .form .input input, .application .form .input textarea, .application .form .input select {
+    display: inline-block;
+    position: relative;
+    float: left;
+    width: 360px;
+    margin: 0 0 0 20px;
+    text-align: left;
+    font-size: 1em;
+    color: black;
+    line-height: 1.4;
+    padding: 4px 6px 6px 8px;
+    border: 2px solid #989898;
+    border-radius: 4px;
+    resize: none;
+    background-color: white;
+}
+.application .form .input select {
+    width: 378px;
+    height: 34px;
+    background-color: white;
+}
+.application .form .input input.span-6 {
+    width: 222px;
+    margin: 0 0 0 20px;
+}
+.application .form .input input.span-2 {
+    width: 18px;
+    margin: 0 0 0 10px;
+}
+.application .form .input input.span-4 {
+    width: 64px;
+    margin: 0 0 0 10px;
+}
+.application .form .submit .button {
+    display: inline-block;
+    border-radius: 50px;
+    padding: 4px 35px 6px 35px;
+    border: 2px solid #f5a623;
+    color: #f5a623;
+    -webkit-transition: color 100ms linear;
+    -moz-transition: color 100ms linear;
+    -o-transition: color 100ms linear;
+    -ms-transition: color 100ms linear;
+    transition: color 100ms linear;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    line-height: 1.4;
+    font-size: 1em;
+    margin: 20px 0 30px 122px;
+    background: none;
+    -webkit-transition: background-color 100ms linear;
+    -moz-transition: background-color 100ms linear;
+    -o-transition: background-color 100ms linear;
+    -ms-transition: background-color 100ms linear;
+    transition: background-color 100ms linear;
+}
+
+}
+
+
+
+@media (max-width: 768px) {
+    /* Mobile */
+body {
+    font-size: 100%;
+}
+.header .container .logo {
+    width: 74px;
+    height: 74px;
+    background-image: url("../img/logoonlydark.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.application {
+    width: 100%;
+}
+.nav-active::after {
+    margin-top: 17px;
+}.application .form .input {
+    display: inline-block;
+    width: 100%;
+    margin: 5px 0 5px 10px;
+}
+.application .form .input .label {
+    display: inline-block;
+    position: relative;
+    float: left;
+    width: 100%;
+    text-align: left;
+    font-size: 1em;
+    font-weight: 300;
+    line-height: 2.0;
+    padding: 0;
+    color: black;
+}
+.application .form .input .label .sub-label{
+    display: none;
+}
+.application .form .input select {
+    width: 378px;
+    height: 34px;
+    background-color: white;
+}
+.application .form .input input, .application .form .input textarea, .application .form .input select {
+    display: inline-block;
+    position: relative;
+    float: left;
+    width: 85%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    text-align: left;
+    font-size: 1em;
+    color: black;
+    line-height: 1.4;
+    padding: 4px 6px 6px 8px;
+    border: 2px solid #989898;
+    border-radius: 4px;
+    resize: none;
+}
+.application .form .input select {
+    width: 88%;
+    height: 38px;
+    background-color: white;
+}
+.application .form .input input.span-6 {
+    width: 40%;
+    margin: 0;
+}
+.application .form .input input.span-2 {
+    width: 7.5%;
+    margin: 0 0 0 2.5%;
+}
+.application .form .input input.span-4 {
+    width: 20%;
+    margin: 0 0 0 2.5%;
+}
+.application .form .submit .button {
+    display: inline-block;
+    border-radius: 50px;
+    padding: 4px 35px 6px 35px;
+    border: 2px solid #f5a623;
+    color: #f5a623;
+    -webkit-transition: color 100ms linear;
+    -moz-transition: color 100ms linear;
+    -o-transition: color 100ms linear;
+    -ms-transition: color 100ms linear;
+    transition: color 100ms linear;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    line-height: 1.4;
+    font-size: 1em;
+    margin: 30px 10px;
+    background: none;
+    -webkit-transition: background-color 100ms linear;
+    -moz-transition: background-color 100ms linear;
+    -o-transition: background-color 100ms linear;
+    -ms-transition: background-color 100ms linear;
+    transition: background-color 100ms linear;
+}
+
+}

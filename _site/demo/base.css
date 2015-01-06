@@ -1,0 +1,271 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+video#bgvid {
+position: fixed; right: 0; bottom: 0;
+min-width: 100%; min-height: 100%;
+width: auto; height: auto; z-index: -100;
+background-size: cover;
+opacity: .2;
+}
+
+/*
++=============================+
+|                             |
+|   1. Navigation             |
+|                             |
++=============================+
+*/
+
+.nav {
+    position: relative;
+    height: 100px;
+}
+.nav-item {
+    position: relative;
+    display: inline-block;
+    margin-top: 40px;
+    height: 60px;
+}
+.nav-logo {
+    width: 190px;
+    background-image: url('./images/logo-dark.png');
+    background-size: 190px 60px;
+}
+
+/*
++=============================+
+|                             |
+|   2. Structure              |
+|                             |
++=============================+
+*/
+
+.container {
+    position: relative;
+    width: 960px;
+    margin: 0 auto;
+}
+.hero {
+    width: 600px;
+    margin: 100px auto 0 auto;
+    text-align: center;
+}
+.hero h1, .hero h3, .hero p {
+    margin: 20px auto;
+}
+.hero p {
+    width: 460px;
+}
+
+/*
++=============================+
+|                             |
+|   3. Layout                 |
+|                             |
++=============================+
+*/
+
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}
+
+/*
++=============================+
+|                             |
+|   4. Typography             |
+|                             |
++=============================+
+*/
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    font-family: 'Abril Fatface', 'Helvetica', 'Arial';
+    font-size: 3.75em; /*60px*/
+    color: #333333;
+}
+h3 {
+    font-family: 'Vollkorn', serif;
+    font-size: 2em;
+    font-weight: 400;
+}
+p {
+    font-family: 'Vollkorn', serif;
+    font-size: 1.5em;
+    color: #000000;
+}
+a {
+    text-decoration: underline;
+    font-family: 'Vollkorn', serif;
+    font-style: italic;
+    font-size: 1.5em;
+    color: #000000;
+}
+
+/*
++=============================+
+|                             |
+|   5. Symbols                |
+|                             |
++=============================+
+*/
+
+.symbol.light {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+}
+.symbol.light.eighth-note {
+    background-image: url('./images/symbols-light/8note-32.png');
+}
+.symbol.light.sixteenth-notes {
+    background-image: url('./images/symbols-light/16notes-32.png');
+}
+
+
+/*
++=============================+
+|                             |
+|   6. Buttons and Inputs     |
+|                             |
++=============================+
+*/
+
+/* --- Colors --- */
+
+.button-dark {
+    background-color: #333333;
+    -webkit-transition: background-color .25s ease-in-out;
+       -moz-transition: background-color .25s ease-in-out;
+        -ms-transition: background-color .25s ease-in-out;
+         -o-transition: background-color .25s ease-in-out;
+            transition: background-color .25s ease-in-out;
+    color: #ffffff;
+}
+.button-dark:hover {
+    background-color: #000000;
+    -webkit-transition: background-color .25s ease-in-out;
+       -moz-transition: background-color .25s ease-in-out;
+        -ms-transition: background-color .25s ease-in-out;
+         -o-transition: background-color .25s ease-in-out;
+            transition: background-color .25s ease-in-out;
+            cursor: pointer;
+}
+
+/* --- End Colors --- */
+
+/* --- Nav Button --- */
+
+.nav-button {
+    display: block;
+    border-radius: 4px;
+    height: 36px;
+    top: 14px;
+    padding: 0 12px 0 0;
+}
+.nav-button p {
+    display: inline-block;
+    position: relative;
+    top: 0;
+    font-size: 1em;
+    color: inherit;
+}
+.nav-button .symbol.light {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    background-size: 24px 24px;
+    top: 6px;
+    left: 3px;
+}
+
+/* ---End Nav Button--- */
+
+/* ---Nav Sign In--- */
+
+.nav-signin {
+    display: none;
+    position: relative;
+    top: 50px;
+}
+
+.nav input {
+    border-radius: 4px;
+    height: 36px;
+    width: 240px;
+    padding: 0 12px;
+    display: block;
+    position: relative;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    border: 1px solid #333333;
+    font-family: 'Vollkorn', serif;
+    font-size: 1em;
+    color: #000000;
+}
+
+.signin-button {
+    border-radius: 4px;
+    height: 36px;
+    width: 266px;
+    text-align: center;
+
+}
+.signin-button p {
+    display: inline-block;
+    position: relative;
+    top: 8px;
+    font-size: 1em;
+    color: inherit;
+}
+
+/* --- End Nav Sign In --- */
+
+/* ---Hero Input--- */
+
+.hero .input {
+    position: relative;
+    width: 460px;
+    height: 54px;
+    margin: 0 auto;
+    top: -16px;
+}
+.hero input {
+    display: inline-block;
+    position: absolute;
+    width: 344px;
+    height: 52px;
+    left: 0; top: 0;
+    padding: 0 30px;
+    border: 1px solid #333333;
+    border-radius: 4px 0 0 4px;
+    background-image: url('./images/hero-input.png');
+    background-repeat: no-repeat;
+    font-family: 'Vollkorn', serif;
+    font-size: 1.5em;
+    line-height: 0;
+    color: #000000;
+}
+.hero .input-button {
+    display: inline-block;
+    position: absolute;
+    vertical-align: top;
+    height: 54px;
+    width: 54px;
+    left: 406px; top: 0;
+    border-radius: 0 4px 4px 0;
+}
+.hero .input-button .symbol.light {
+    position: relative;
+    top: 9px;
+}
+
+/* ---End Hero Input--- */

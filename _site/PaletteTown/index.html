@@ -1,0 +1,163 @@
+<!doctype html>
+
+<!--
+
+                                 .::.                          
+                              .;:**'            AMC           
+                              `                  0            
+  .:XHHHHk.              db.   .;;.     dH  MX   0            
+oMMMMMMMMMMM       ~MM  dMMP :MMMMMR   MMM  MR      ~MRMN     
+QMMMMMb  "MMX       MMMMMMP !MX' :M~   MMM MMM  .oo. XMMM 'MMM
+  `MMMM.  )M> :X!Hk. MMMM   XMM.o"  .  MMMMMMM X?XMMM MMM>!MMP
+   'MMMb.dM! XM M'?M MMMMMX.`MMMMMMMM~ MM MMM XM `" MX MMXXMM 
+    ~MMMMM~ XMM. .XM XM`"MMMb.~*?**~ .MMX M t MMbooMM XMMMMMP 
+     ?MMM>  YMMMMMM! MM   `?MMRb.    `"""   !L"MMMMM XM IMMM  
+      MMMX   "MMMM"  MM       ~%:           !Mh.""" dMI IMMP  
+      'MMM.                                             IMX   
+       ~M!M                                             IMP   
+
+
+
+   -->
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<title>Palette Town</title>
+	<meta name="description" content="Color palette generator from uploaded image.">
+	<meta name="author" content="Roy Fu, Ben Alderfer">
+
+<!--GIVE ME DAT FONT BUM BA BEE BUM-->
+	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+<!--PIKACHU I CHOOSE YOU-->
+ 	<link rel="stylesheet" href="css/pikachu.css">
+
+
+<!-- ALL DIS ADOBE SHIT AINT GOT NUTTIN ON WARTURTLE-->
+ 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=IE8"/>
+	<title>Untitled</title>
+<!--Adobe Edge Runtime-->
+    <script type="text/javascript" charset="utf-8" src="Untitled-1_edgePreload.js"></script>
+    <style>
+        .edgeLoad-EDGE-35784130 { visibility:hidden; }
+    </style>
+<!--Adobe Edge Runtime End-->
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+	<title>Untitled</title>
+<!--Adobe Edge Runtime-->
+    <script type="text/javascript" charset="utf-8" src="createdby_edgePreload.js"></script>
+    <style>
+        .edgeLoad-EDGE-51150622 { visibility:hidden; }
+    </style>
+<!--Adobe Edge Runtime End-->
+<!--ADOBE OUTCHYA-->
+
+ 	<script src="js/libs/modernizr.custom.js"></script>
+ 	<script src= 'js/ZeroClipboard.js'></script>
+</head>
+
+<body class="canvas">
+	<div id='background'>
+
+	<!--GIVE ME DAT SICK A$$ TITLE-->
+		<div id="title" id="Stage" class="EDGE-35784130">
+		</div>
+
+	<!--AND WHO DOESN"T LIKE A CIRCLE CONSTANTLY GROWING IN THE BACKGROUND???-->
+		<video width="900px" autoplay loop id="bgvid">
+			<source src="resources/comp2.mp4" type="video/mp4">
+		</video>
+
+		<div class = 'wrapper'>
+			<section id = 'drag-drop' class = 'drag-drop'>
+				<div id = 'drop-zone' class = 'drop-zone'>
+					<div class = 'drop-zone-label default-label'>
+						Drag an image here
+					</div>
+					<div class = 'drop-zone-label dragging-label'>
+						Drop it here!
+					</div>
+				</div>
+				<div id = 'dragged-images' class = 'dragged-images'>
+				</div>
+			</section>
+		</div>
+		<script src= 'js/libs/jquery-2.0.2.min.js'></script>
+		<script src= 'js/libs/mustache.js'></script>
+		<script src= 'js/color-thief.js'></script>
+
+		<script src= 'js/ZeroClipboard.js'></script>
+
+		<script id='image-section-template' type='text/x-mustache'>
+
+			<div class="dropdown">
+				<div class="dropdown-title">Choose a type</div>
+				<div class="dropdown-option1">HEX - #1234EF</div>
+				<div class="dropdown-option2">RGB - (255,255,255)</div>
+			</div>
+
+			{{#images}}
+				<div class = 'image-section {{class}}'>
+					<div class = 'image-wrap'>
+						<button class = 'run-functions-button'>
+							<span class = 'no-touch-label'>Click</span>
+							<span class = 'touch-label'>Tap</span>
+						</button>
+						<img class = 'target-image' src = '{{file}}' width="300px";/>
+					</div>
+					<div class = 'color-thief-output'></div>
+				</div>
+			{{/images}}
+		</script>
+
+		<script id="color-thief-output-template" type="text/x-mustache">
+		  	<div class="function get-palette">
+		    	<h3 class="function-title">Palette (Click to pull color)</h3>
+		    	<div class="function-output">
+		      		<div class="swatches">
+		          		<div id='swatch0' class="swatch" style="background-color: rgb{{rgb0}}" data-clipboard-text = '{{hex0}}'>
+		          			<p>{{hex0}}</p>
+		          		</div>
+			          	<div id='swatch1' class="swatch" style="background-color: rgb{{rgb1}}" data-clipboard-text = '{{hex1}}'>
+		          			<p>{{hex1}}</p>
+		          		</div>
+			          	<div id='swatch2' class="swatch" style="background-color: rgb{{rgb2}}" data-clipboard-text = '{{hex2}}'>
+		          			<p>{{hex2}}</p>
+		          		</div>
+			          	<div id='swatch3' class="swatch" style="background-color: rgb{{rgb3}}" data-clipboard-text = '{{hex3}}'>
+		          			<p>{{hex3}}</p>
+		          		</div>
+			          	<div id='swatch4' class="swatch" style="background-color: rgb{{rgb4}}" data-clipboard-text = '{{hex4}}'>
+		          			<p>{{hex4}}</p>
+		          		</div>
+			          	<div id='swatch5' class="swatch" style="background-color: rgb{{rgb5}}" data-clipboard-text = '{{hex5}}'>
+		          			<p>{{hex5}}</p>
+		          		</div>
+			          	<div id='swatch6' class="swatch" style="background-color: rgb{{rgb6}}" data-clipboard-text = '{{hex6}}'>
+		          			<p>{{hex6}}</p>
+		          		</div>
+			          	<div id='swatch7' class="swatch" style="background-color: rgb{{rgb7}}" data-clipboard-text = '{{hex7}}'>
+		          			<p>{{hex7}}</p>
+		          		</div>
+			          	<div id='swatch8' class="swatch" style="background-color: rgb{{rgb8}}" data-clipboard-text = '{{hex8}}'>
+		          			<p>{{hex8}}</p>
+		          		</div>
+		      		</div>
+		    	</div>
+		  	</div>
+		</script>
+
+		<script src = 'charizard.js'></script>
+
+	</div>
+
+<div id="createdby">
+	<div id="Stage" class="EDGE-51150622"></div>
+</div>
+
+</body>
+</html>
