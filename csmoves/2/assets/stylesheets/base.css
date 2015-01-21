@@ -78,18 +78,17 @@ a {
     .navbar .navbar-collapse {
       border: none; } }
   .navbar .navbar-nav {
-    height: 5em;
-    padding-top: 0.8em; }
+    padding-top: 0.8em;
+    min-height: 5em; }
+    @media screen and (max-height: 767px) {
+      .navbar .navbar-nav {
+        margin: 0 -15px;
+        padding: 0; } }
     .navbar .navbar-nav > .open > a {
       background-color: #dee1e3 !important; }
       @media screen and (max-height: 767px) {
         .navbar .navbar-nav > .open > a {
           background: none !important; } }
-    @media screen and (max-height: 767px) {
-      .navbar .navbar-nav {
-        margin: 0 -15px;
-        height: auto;
-        padding: 0; } }
     .navbar .navbar-nav > li {
       height: 3em;
       font-size: 1em;
@@ -98,36 +97,33 @@ a {
       box-sizing: border-box;
       background: #A7A9AC; }
       @media screen and (min-width: 768px) {
-        .navbar .navbar-nav > li:nth-child(1) {
-          opacity: 0;
-          -webkit-animation: enterTitle 0.25s linear 0.25s forwards;
-                  animation: enterTitle 0.25s linear 0.25s forwards; }
-
-        .navbar .navbar-nav > li:nth-child(2) {
-          opacity: 0;
-          -webkit-animation: enterTitle 0.5s linear 0.25s forwards;
-                  animation: enterTitle 0.5s linear 0.25s forwards; }
-
-        .navbar .navbar-nav > li:nth-child(3) {
-          opacity: 0;
-          -webkit-animation: enterTitle 0.75s linear 0.25s forwards;
-                  animation: enterTitle 0.75s linear 0.25s forwards; }
-
-        .navbar .navbar-nav > li:nth-child(4) {
-          opacity: 0;
-          -webkit-animation: enterTitle 1s linear 0.25s forwards;
-                  animation: enterTitle 1s linear 0.25s forwards; }
-
-        .navbar .navbar-nav > li:nth-child(5) {
-          opacity: 0;
-          -webkit-animation: enterTitle 1.25s linear 0.25s forwards;
-                  animation: enterTitle 1.25s linear 0.25s forwards; }
-
-        .navbar .navbar-nav > li:nth-child(6) {
-          opacity: 0;
-          -webkit-animation: enterTitle 1.5s linear 0.25s forwards;
-                  animation: enterTitle 1.5s linear 0.25s forwards; }
- }
+        .navbar .navbar-nav > li {
+          height: 5em;
+          padding: 1em 0; }
+          .navbar .navbar-nav > li:nth-child(1) {
+            opacity: 0;
+            -webkit-animation: enterTitle 0.25s linear 0.25s forwards;
+                    animation: enterTitle 0.25s linear 0.25s forwards; }
+          .navbar .navbar-nav > li:nth-child(2) {
+            opacity: 0;
+            -webkit-animation: enterTitle 0.5s linear 0.25s forwards;
+                    animation: enterTitle 0.5s linear 0.25s forwards; }
+          .navbar .navbar-nav > li:nth-child(3) {
+            opacity: 0;
+            -webkit-animation: enterTitle 0.75s linear 0.25s forwards;
+                    animation: enterTitle 0.75s linear 0.25s forwards; }
+          .navbar .navbar-nav > li:nth-child(4) {
+            opacity: 0;
+            -webkit-animation: enterTitle 1s linear 0.25s forwards;
+                    animation: enterTitle 1s linear 0.25s forwards; }
+          .navbar .navbar-nav > li:nth-child(5) {
+            opacity: 0;
+            -webkit-animation: enterTitle 1.25s linear 0.25s forwards;
+                    animation: enterTitle 1.25s linear 0.25s forwards; }
+          .navbar .navbar-nav > li:nth-child(6) {
+            opacity: 0;
+            -webkit-animation: enterTitle 1.5s linear 0.25s forwards;
+                    animation: enterTitle 1.5s linear 0.25s forwards; } }
       .navbar .navbar-nav > li a {
         color: white;
         background: none; }
