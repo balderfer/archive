@@ -11,32 +11,32 @@ $(document).ready(function() {
         datasets: [
             {
                 label: "My First dataset",
-                fillColor: "rgba(26, 188, 156, 0.1)",
-                strokeColor: "rgba(26, 188, 156, 1.0)",
-                pointColor: "rgba(26, 188, 156, 1.0)",
+                fillColor: "rgba(163, 121, 44, 0.25)",
+                strokeColor: "rgba(163, 121, 44, 1.0)",
+                pointColor: "rgba(163, 121, 44, 1.0)",
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "#fff",
-                pointHighlightStroke: "rgba(26, 188, 156, 1.0)",
+                pointHighlightStroke: "rgba(163, 121, 44, 1.0)",
                 data: [15, 20, 32, 54]
             },
             {
                 label: "My Second dataset",
-                fillColor: "rgba(52, 152, 219, 0.1)",
-                strokeColor: "rgba(52, 152, 219, 1.0)",
-                pointColor: "rgba(52, 152, 219, 1.0)",
+                fillColor: "rgba(227, 174, 36, 0.25)",
+                strokeColor: "rgba(227, 174, 36, 1.0)",
+                pointColor: "rgba(227, 174, 36, 1.0)",
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "#fff",
-                pointHighlightStroke: "rgba(52, 152, 219, 1.0)",
+                pointHighlightStroke: "rgba(227, 174, 36, 1.0)",
                 data: [2, 8, 5, 3]
             },
             {
                 label: "My Third dataset",
-                fillColor: "rgba(155, 89, 182, 0.1)",
-                strokeColor: "rgba(155, 89, 182, 1.0)",
-                pointColor: "rgba(155, 89, 182, 1.0)",
+                fillColor: "rgba(209, 211, 212, 0.25)",
+                strokeColor: "rgba(209, 211, 212, 1.0)",
+                pointColor: "rgba(209, 211, 212, 1.0)",
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "#fff",
-                pointHighlightStroke: "rgba(155, 89, 182, 1.0)",
+                pointHighlightStroke: "rgba(209, 211, 212, 1.0)",
                 data: [5, 24, 60, 78]
             }
         ]
@@ -47,18 +47,18 @@ $(document).ready(function() {
         datasets: [
             {
                 label: "My First dataset",
-                fillColor: "rgba(155, 89, 182, 0.5)",
-                strokeColor: "rgba(155, 89, 182, 0)",
-                highlightFill: "rgba(155, 89, 182, 0.75)",
-                highlightStroke: "rgba(155, 89, 182, 1)",
+                fillColor: "rgba(163, 121, 44, 1.0)",
+                strokeColor: "rgba(163, 121, 44, 0)",
+                highlightFill: "rgba(163, 121, 44, 1.0)",
+                highlightStroke: "rgba(163, 121, 44, 1.0)",
                 data: [25, 30, 35, 40]
             },
             {
                 label: "My Second dataset",
-                fillColor: "rgba(241, 196, 15, 0.5)",
-                strokeColor: "rgba(241, 196, 15, 0)",
-                highlightFill: "rgba(241, 196, 15, 0.75)",
-                highlightStroke: "rgba(241, 196, 15, 1)",
+                fillColor: "rgba(209, 211, 212, 1.0)",
+                strokeColor: "rgba(209, 211, 212, 0)",
+                highlightFill: "rgba(209, 211, 212, 1.0)",
+                highlightStroke: "rgba(209, 211, 212, 1.0)",
                 data: [10, 15, 40, 90]
             }
         ]

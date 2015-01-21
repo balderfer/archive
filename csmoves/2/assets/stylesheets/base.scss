@@ -49,12 +49,18 @@ html {
 body {
     position: relative;
     height: 100%;
+    margin-top: 7em;
     background-image: url('../images/bg-crossword.png');
 }
 
+
 body > .container:first-of-type {
-    position: relative;
-    margin-top: 7em;
+
+    .vertical-center {
+        position: relative;
+        top: 50%;
+        @include transform(translate3d(0, -50%, 0));
+    }
 }
 
 a {
@@ -74,7 +80,8 @@ a {
     height: 5em;
     z-index: 300;
 
-    .container {
+    .nav-container {
+        position: relative;
         height: 100%;
     }
     
@@ -92,49 +99,96 @@ a {
         font-size: 2.5em;
         color: $midnight-blue;
         line-height: 0;
-        top: 12px;
+        width: 5em;
+        height: 2em;
+        padding: 0;
+        background-color: $old-gold;
+        animation: purdueLoop 15s infinite;
         .light {
             font-weight: 100;
         }
         img {
             position: relative;
-            height: 0.8em;
-            display: inline-block;
-            top: -3px;
+            margin: 0.5em;
+            width: 4em;
             transform: scale3d(1, 1, 1);
             // animation: pulseLogo 2s linear infinite;
         }
         &.animated-entrance {
             img {
-                animation: enterSwirl linear 0.5s;
-            }
-            span {
-                animation: enterTitle 1s linear 0.25s;
+                animation: enterTitle linear 0.5s;
             }
         }
     }
 
     .navbar-nav {
         height: 100%;
-        li {
+        > li {
             height: 100%;
-            font-size: 1.2em;
+            font-size: 1em;
             font-weight: 400;
-            border-right: 1px solid $silver;
-            &:first-child {
-                border-left: 1px solid $silver;
+            padding-top: 0.8em;
+            box-sizing: border-box;
+            background: $gray;
+            
+            &:nth-child(1) {
+                opacity: 0;
+                animation: enterTitle 0.25s linear 0.25s forwards;
             }
-            &.active {
-                animation: purdueLoop 15s infinite;
-                a {
+            &:nth-child(2) {
+                opacity: 0;
+                animation: enterTitle 0.5s linear 0.25s forwards;
+            }
+            &:nth-child(3) {
+                opacity: 0;
+                animation: enterTitle 0.75s linear 0.25s forwards;
+            }
+            &:nth-child(4) {
+                opacity: 0;
+                animation: enterTitle 1s linear 0.25s forwards;
+            }
+            &:nth-child(5) {
+                opacity: 0;
+                animation: enterTitle 1.25s linear 0.25s forwards;
+            }
+            &:nth-child(6) {
+                opacity: 0;
+                animation: enterTitle 1.5s linear 0.25s forwards;
+            }
+            
+            a {
+                color: white;
+                background: none;
+                &:focus {
                     color: white;
                 }
             }
 
-            a {
-                background: none !important;
-                color: $silver;
-                padding-top: 1.5em;
+            .dropdown-menu {
+                border: none;
+                background-color: $silver;
+                padding: 0;
+
+                li {
+                    padding: 0.5em 0;
+                    border-bottom: 1px solid $gray;
+
+
+                    &:hover {
+                        background-color: tint($silver, 50%);
+                        a { color: black; }
+                    }
+                    &:last-child {
+                        border-bottom: none;
+                    }
+                    a {
+                        color: white;
+                        background: none;
+                        &:hover {
+                            background: none;
+                        }
+                    }
+                }
             }
         }
     }
@@ -179,14 +233,36 @@ a {
         background: $old-gold;
     }
 }
+@keyframes purdueFillLoop {
+    0% {
+        fill: $old-gold;
+    }
+    50% {
+        fill: $new-gold;
+    }
+    100% {
+        fill: $old-gold;
+    }
+}
+@keyframes purdueColorLoop {
+    0% {
+        color: $old-gold;
+    }
+    50% {
+        color: $new-gold;
+    }
+    100% {
+        color: $old-gold;
+    }
+}
 
-@keyframes enterSwirl {
+@keyframes zoomEntrance {
     0% {
         opacity: 0;
-        transform: scale3d(8, 8, 8);
+        transform: scale3d(0, 0, 0);
     }
-    60% {
-        transform: scale3d(0.8, 0.8, 0.8);
+    80% {
+        transform: scale3d(1.2, 1.2, 1.2);
     }
     100% {
         opacity: 1;
@@ -365,7 +441,7 @@ a {
 .words {
     position: relative;
     width: 100%;
-    height: 24em;
+    height: 90vh;
     background-color: white;
     border-top: 1px solid $clouds;
     border-bottom: 1px solid $clouds;
@@ -379,11 +455,11 @@ a {
         right: 0;
         bottom: 0;
         opacity: 1;
-        background-color: rgba(255,255,255,0.75);
+        background-color: rgba(20,20,20,0.75);
         background-image: url('../images/programmingsuccess.svg');
         background-size: auto 2.5em;
         background-repeat: no-repeat;
-        background-position: 2em 19.5em;
+        background-position: 2em 2em;
     }
 
     &.hero {
@@ -400,16 +476,21 @@ a {
 
         .container {
             position: relative;
-            padding-top: 12em;
+            top: 50%;
+            transform: translate3d(0, -50%, 0);
 
             p {
                 display: block;
                 position: relative;
                 width: 100%;
-                font-size: 1.4em;
+                font-size: 2em;
                 text-align: center;
-                color: $black;
-                transform: translate3d(0,-50%,0);
+                color: white;
+
+                span {
+                    color: $old-gold;
+                    animation: purdueColorLoop 15s infinite;
+                }
                 
                 svg {
                     path {
@@ -546,12 +627,12 @@ a {
 
 .footer {
     background-color: white;
-    height: 7em;
+    height: 9em;
     width: 100%;
     border-top: 1px solid $clouds;
     text-align: center;
     padding-top: 2em;
-    margin-bottom: 2em;
+    padding-bottom: 2em;
     @include box-sizing(border-box);
 
     .light {

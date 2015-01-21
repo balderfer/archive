@@ -9,7 +9,7 @@
         <meta name="author" content="Ben Alderfer">
 
         <!-- fonts -->
-        <link href='http://fonts.googleapis.com/css?family=Lato:100,400,700,900' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Lato:100,400,700,900' rel='stylesheet' type='text/css'>
 
         <!-- stylesheets -->
         <link rel="stylesheet" href="assets/stylesheets/bootstrap.css" type="text/css">
@@ -26,21 +26,43 @@
     </head>
     <body>
         <nav class="navbar navbar-default" role="navigation">
-            <div class="topbar"></div>
-            <div class="container">
-                <a href="#" class="navbar-brand animated-entrance">
+             
+            <div class="nav-container container">
+                <a href="/" class="navbar-brand animated-entrance">
                     <img src="assets/images/programmingsuccess.svg" alt="">
                 </a>
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="active">
-                        <a href="index.html">Home</a>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Home <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="/dashboard.html">Dashboard</a></li>
+                            <li><a href="/contact_us.html">Contact Us</a></li>
+                        </ul>
                     </li>
-                    <li>
-                        <a href="article.html">Article</a>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Students <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="/enrollment_data.html">Enrollment Data</a></li>
+                            <li><a href="/placement_data.html">Placement Data</a></li>
+                            <li><a href="/recruiting_efforts.html">Recruiting Efforts</a></li>
+                            <li><a href="/retention_efforts.html">Retention Efforts</a></li>
+                            <li><a href="/student_activities.html">Student Activities</a></li>
+                        </ul>
                     </li>
-                    <li>
-                        <a href="#">Else</a>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Research & Engagement <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="/hiring.html">Hiring</a></li>
+                            <li><a href="/corporate_partnerships.html">Corporate Partnerships</a></li>
+                            <li><a href="/entrepreneurships.html">Entrepreneurships</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Curriculum <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="/new_degree_programs.html">New Degree Programs</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -140,7 +162,7 @@
         <div class="words hero hero2">
             <div class="container">
                 <p>
-                    Lorem ipsum dolor sit amet, pri fastidii eloquentiam te, sea ad simul diceret voluptatum, eum et corpora adolescens scriptorem. <a href="#">Ei laudem</a> molestiae instructior ius, vix ignota tamquam utroque id. Molestie invidunt est te, ei praesent repudiandae pro. Sumo platonem ei praesent cum te.
+                    Lorem ipsum dolor sit amet, pri fastidii eloquentiam te, sea ad simul diceret voluptatum, eum et corpora adolescens scriptorem. <span>Ei laudem molestiae instructior ius</span>, vix ignota tamquam utroque id. Molestie invidunt est te, ei praesent repudiandae pro. Sumo platonem ei praesent cum te.
                 </p>
             </div>
         </div>

@@ -4,11 +4,15 @@ html {
 body {
   position: relative;
   height: 100%;
+  margin-top: 7em;
   background-image: url('../images/bg-crossword.png'); }
 
-body > .container:first-of-type {
+body > .container:first-of-type .vertical-center {
   position: relative;
-  margin-top: 7em; }
+  top: 50%;
+  -webkit-transform: translate3d(0, -50%, 0);
+  -ms-transform: translate3d(0, -50%, 0);
+  transform: translate3d(0, -50%, 0); }
 
 a {
   text-decoration: none;
@@ -23,7 +27,8 @@ a {
   background-color: #A7A9AC;
   height: 5em;
   z-index: 300; }
-  .navbar .container {
+  .navbar .nav-container {
+    position: relative;
     height: 100%; }
   .navbar .topbar {
     position: absolute;
@@ -38,40 +43,79 @@ a {
     font-size: 2.5em;
     color: #2C3E50;
     line-height: 0;
-    top: 12px; }
+    width: 5em;
+    height: 2em;
+    padding: 0;
+    background-color: #A3792C;
+    -webkit-animation: purdueLoop 15s infinite;
+            animation: purdueLoop 15s infinite; }
     .navbar .navbar-brand .light {
       font-weight: 100; }
     .navbar .navbar-brand img {
       position: relative;
-      height: 0.8em;
-      display: inline-block;
-      top: -3px;
+      margin: 0.5em;
+      width: 4em;
       -webkit-transform: scale3d(1, 1, 1);
               transform: scale3d(1, 1, 1); }
     .navbar .navbar-brand.animated-entrance img {
-      -webkit-animation: enterSwirl linear 0.5s;
-              animation: enterSwirl linear 0.5s; }
-    .navbar .navbar-brand.animated-entrance span {
-      -webkit-animation: enterTitle 1s linear 0.25s;
-              animation: enterTitle 1s linear 0.25s; }
+      -webkit-animation: enterTitle linear 0.5s;
+              animation: enterTitle linear 0.5s; }
   .navbar .navbar-nav {
     height: 100%; }
-    .navbar .navbar-nav li {
+    .navbar .navbar-nav > li {
       height: 100%;
-      font-size: 1.2em;
+      font-size: 1em;
       font-weight: 400;
-      border-right: 1px solid #BDC3C7; }
-      .navbar .navbar-nav li:first-child {
-        border-left: 1px solid #BDC3C7; }
-      .navbar .navbar-nav li.active {
-        -webkit-animation: purdueLoop 15s infinite;
-                animation: purdueLoop 15s infinite; }
-        .navbar .navbar-nav li.active a {
+      padding-top: 0.8em;
+      box-sizing: border-box;
+      background: #A7A9AC; }
+      .navbar .navbar-nav > li:nth-child(1) {
+        opacity: 0;
+        -webkit-animation: enterTitle 0.25s linear 0.25s forwards;
+                animation: enterTitle 0.25s linear 0.25s forwards; }
+      .navbar .navbar-nav > li:nth-child(2) {
+        opacity: 0;
+        -webkit-animation: enterTitle 0.5s linear 0.25s forwards;
+                animation: enterTitle 0.5s linear 0.25s forwards; }
+      .navbar .navbar-nav > li:nth-child(3) {
+        opacity: 0;
+        -webkit-animation: enterTitle 0.75s linear 0.25s forwards;
+                animation: enterTitle 0.75s linear 0.25s forwards; }
+      .navbar .navbar-nav > li:nth-child(4) {
+        opacity: 0;
+        -webkit-animation: enterTitle 1s linear 0.25s forwards;
+                animation: enterTitle 1s linear 0.25s forwards; }
+      .navbar .navbar-nav > li:nth-child(5) {
+        opacity: 0;
+        -webkit-animation: enterTitle 1.25s linear 0.25s forwards;
+                animation: enterTitle 1.25s linear 0.25s forwards; }
+      .navbar .navbar-nav > li:nth-child(6) {
+        opacity: 0;
+        -webkit-animation: enterTitle 1.5s linear 0.25s forwards;
+                animation: enterTitle 1.5s linear 0.25s forwards; }
+      .navbar .navbar-nav > li a {
+        color: white;
+        background: none; }
+        .navbar .navbar-nav > li a:focus {
           color: white; }
-      .navbar .navbar-nav li a {
-        background: none !important;
-        color: #BDC3C7;
-        padding-top: 1.5em; }
+      .navbar .navbar-nav > li .dropdown-menu {
+        border: none;
+        background-color: #BDC3C7;
+        padding: 0; }
+        .navbar .navbar-nav > li .dropdown-menu li {
+          padding: 0.5em 0;
+          border-bottom: 1px solid #A7A9AC; }
+          .navbar .navbar-nav > li .dropdown-menu li:hover {
+            background-color: #dee1e3; }
+            .navbar .navbar-nav > li .dropdown-menu li:hover a {
+              color: black; }
+          .navbar .navbar-nav > li .dropdown-menu li:last-child {
+            border-bottom: none; }
+          .navbar .navbar-nav > li .dropdown-menu li a {
+            color: white;
+            background: none; }
+            .navbar .navbar-nav > li .dropdown-menu li a:hover {
+              background: none; }
   .navbar + div {
     margin-top: 5em; }
 
@@ -139,30 +183,70 @@ a {
   100% {
     background: #A3792C; } }
 
-@-webkit-keyframes enterSwirl {
+@-webkit-keyframes purdueFillLoop {
+  0% {
+    fill: #A3792C; }
+
+  50% {
+    fill: #E3AE24; }
+
+  100% {
+    fill: #A3792C; } }
+
+@keyframes purdueFillLoop {
+  0% {
+    fill: #A3792C; }
+
+  50% {
+    fill: #E3AE24; }
+
+  100% {
+    fill: #A3792C; } }
+
+@-webkit-keyframes purdueColorLoop {
+  0% {
+    color: #A3792C; }
+
+  50% {
+    color: #E3AE24; }
+
+  100% {
+    color: #A3792C; } }
+
+@keyframes purdueColorLoop {
+  0% {
+    color: #A3792C; }
+
+  50% {
+    color: #E3AE24; }
+
+  100% {
+    color: #A3792C; } }
+
+@-webkit-keyframes zoomEntrance {
   0% {
     opacity: 0;
-    -webkit-transform: scale3d(8, 8, 8);
-            transform: scale3d(8, 8, 8); }
+    -webkit-transform: scale3d(0, 0, 0);
+            transform: scale3d(0, 0, 0); }
 
-  60% {
-    -webkit-transform: scale3d(0.8, 0.8, 0.8);
-            transform: scale3d(0.8, 0.8, 0.8); }
+  80% {
+    -webkit-transform: scale3d(1.2, 1.2, 1.2);
+            transform: scale3d(1.2, 1.2, 1.2); }
 
   100% {
     opacity: 1;
     -webkit-transform: scale3d(1, 1, 1);
             transform: scale3d(1, 1, 1); } }
 
-@keyframes enterSwirl {
+@keyframes zoomEntrance {
   0% {
     opacity: 0;
-    -webkit-transform: scale3d(8, 8, 8);
-            transform: scale3d(8, 8, 8); }
+    -webkit-transform: scale3d(0, 0, 0);
+            transform: scale3d(0, 0, 0); }
 
-  60% {
-    -webkit-transform: scale3d(0.8, 0.8, 0.8);
-            transform: scale3d(0.8, 0.8, 0.8); }
+  80% {
+    -webkit-transform: scale3d(1.2, 1.2, 1.2);
+            transform: scale3d(1.2, 1.2, 1.2); }
 
   100% {
     opacity: 1;
@@ -331,7 +415,7 @@ a {
 .words {
   position: relative;
   width: 100%;
-  height: 24em;
+  height: 90vh;
   background-color: white;
   border-top: 1px solid #ECF0F1;
   border-bottom: 1px solid #ECF0F1;
@@ -344,11 +428,11 @@ a {
     right: 0;
     bottom: 0;
     opacity: 1;
-    background-color: rgba(255, 255, 255, 0.75);
+    background-color: rgba(20, 20, 20, 0.75);
     background-image: url('../images/programmingsuccess.svg');
     background-size: auto 2.5em;
     background-repeat: no-repeat;
-    background-position: 2em 19.5em; }
+    background-position: 2em 2em; }
   .words.hero {
     border: none;
     background-size: cover;
@@ -359,16 +443,20 @@ a {
       background-image: url('../images/lines.png'); }
     .words.hero .container {
       position: relative;
-      padding-top: 12em; }
+      top: 50%;
+      -webkit-transform: translate3d(0, -50%, 0);
+              transform: translate3d(0, -50%, 0); }
       .words.hero .container p {
         display: block;
         position: relative;
         width: 100%;
-        font-size: 1.4em;
+        font-size: 2em;
         text-align: center;
-        color: #000000;
-        -webkit-transform: translate3d(0, -50%, 0);
-                transform: translate3d(0, -50%, 0); }
+        color: white; }
+        .words.hero .container p span {
+          color: #A3792C;
+          -webkit-animation: purdueColorLoop 15s infinite;
+                  animation: purdueColorLoop 15s infinite; }
         .words.hero .container p svg {
           margin-top: 1em;
           height: 1.5em; }
@@ -471,12 +559,12 @@ a {
 
 .footer {
   background-color: white;
-  height: 7em;
+  height: 9em;
   width: 100%;
   border-top: 1px solid #ECF0F1;
   text-align: center;
   padding-top: 2em;
-  margin-bottom: 2em;
+  padding-bottom: 2em;
   box-sizing: border-box; }
   .footer .light {
     font-weight: 100;
