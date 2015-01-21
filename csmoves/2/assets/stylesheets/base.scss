@@ -741,6 +741,7 @@ a {
     h1 {
         position: absolute;
         bottom: 0;
+        z-index: 0;
         color: $clouds;
     }
 }
