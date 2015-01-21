@@ -100,7 +100,7 @@ a {
         .navbar .navbar-nav > li {
           padding: 0 0 0;
           opacity: 1; }
-          .navbar .navbar-nav > li a {
+          .navbar .navbar-nav > li > a {
             padding-top: 1.5em; } }
       .navbar .navbar-nav > li a {
         color: white;
