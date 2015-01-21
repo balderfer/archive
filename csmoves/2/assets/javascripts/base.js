@@ -29,11 +29,4 @@ $(document).ready(function() {
             navOpen = true;
         }
     });
-
-    if($('.article-header img').height() < $('.article-header').height()) {
-        $('.article-header img').css({
-            width: 'auto',
-            height: '100%'
-        });
-    }
 });
