@@ -49,18 +49,13 @@ html {
 body {
     position: relative;
     height: 100%;
-    margin-top: 7em;
+    padding-top: 5em;
     background-image: url('../images/bg-crossword.png');
 }
 
 
-body > .container:first-of-type {
-
-    .vertical-center {
-        position: relative;
-        top: 50%;
-        @include transform(translate3d(0, -50%, 0));
-    }
+body .container.offset-top {
+    margin-top: 2em;
 }
 
 a {
