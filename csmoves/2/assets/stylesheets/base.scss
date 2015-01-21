@@ -88,6 +88,33 @@ a {
         animation: purdueLoop 15s infinite;
     }
 
+    .navbar-toggle {
+        border-radius: 0;
+        height: 5em;
+        width: 5em;
+        margin: 0;
+        border: none;
+        padding: 1.5em;
+        background-color: tint($silver, 50%) !important;
+
+        &:hover {
+            background-color: $silver !important;
+        }
+
+        .icon-bar {
+            width: 2em;
+            height: 0.25em;
+            &:nth-child(n + 3) {
+                margin-top: 0.25em;
+            }
+        }
+
+        .fa-bars {
+            animation: enterTitle linear 0.25s;
+        }
+
+    }
+
     .navbar-brand {
         position: relative;
         font-weight: 900;
@@ -116,39 +143,62 @@ a {
         }
     }
 
+    .navbar-collapse {
+        @media screen and (max-height: 767px) {
+            border: none;
+        }
+
+    }
+
     .navbar-nav {
-        height: 100%;
+        height: 5em;
+        padding-top: 0.8em;
+
+        > .open > a {
+            background-color: tint($silver, 50%) !important;
+            @media screen and (max-height: 767px) {
+                background: none !important;
+            }
+        }
+    
+        @media screen and (max-height: 767px) {
+            margin: 0 -15px;
+            height: auto;
+            padding: 0;
+        }
         > li {
-            height: 100%;
+            height: 3em;
             font-size: 1em;
             font-weight: 400;
-            padding-top: 0.8em;
+            height: 100%;
             box-sizing: border-box;
             background: $gray;
-            
-            &:nth-child(1) {
-                opacity: 0;
-                animation: enterTitle 0.25s linear 0.25s forwards;
-            }
-            &:nth-child(2) {
-                opacity: 0;
-                animation: enterTitle 0.5s linear 0.25s forwards;
-            }
-            &:nth-child(3) {
-                opacity: 0;
-                animation: enterTitle 0.75s linear 0.25s forwards;
-            }
-            &:nth-child(4) {
-                opacity: 0;
-                animation: enterTitle 1s linear 0.25s forwards;
-            }
-            &:nth-child(5) {
-                opacity: 0;
-                animation: enterTitle 1.25s linear 0.25s forwards;
-            }
-            &:nth-child(6) {
-                opacity: 0;
-                animation: enterTitle 1.5s linear 0.25s forwards;
+
+            @media screen and (min-width: 768px) {
+                &:nth-child(1) {
+                    opacity: 0;
+                    animation: enterTitle 0.25s linear 0.25s forwards;
+                }
+                &:nth-child(2) {
+                    opacity: 0;
+                    animation: enterTitle 0.5s linear 0.25s forwards;
+                }
+                &:nth-child(3) {
+                    opacity: 0;
+                    animation: enterTitle 0.75s linear 0.25s forwards;
+                }
+                &:nth-child(4) {
+                    opacity: 0;
+                    animation: enterTitle 1s linear 0.25s forwards;
+                }
+                &:nth-child(5) {
+                    opacity: 0;
+                    animation: enterTitle 1.25s linear 0.25s forwards;
+                }
+                &:nth-child(6) {
+                    opacity: 0;
+                    animation: enterTitle 1.5s linear 0.25s forwards;
+                }
             }
             
             a {
@@ -161,8 +211,9 @@ a {
 
             .dropdown-menu {
                 border: none;
-                background-color: $silver;
+                background-color: tint($silver, 50%);
                 padding: 0;
+                border-radius: 0;
 
                 li {
                     padding: 0.5em 0;
@@ -170,26 +221,34 @@ a {
 
 
                     &:hover {
-                        background-color: tint($silver, 50%);
-                        a { color: black; }
+                        background-color: $silver;
+                        a {
+                            color: $black;
+                        }
                     }
                     &:last-child {
                         border-bottom: none;
                     }
                     a {
-                        color: white;
+                        color: $black;
                         background: none;
                         &:hover {
                             background: none;
+                            color: $black;
                         }
                     }
                 }
             }
         }
     }
+}
 
-    & + div {
-        margin-top: 5em;
+@keyframes scaleUpIcon {
+    0% {
+        transform: scale(0, 0);
+    }
+    100% {
+        transform: scale(1, 1);
     }
 }
 
@@ -655,7 +714,6 @@ a {
 .article-header {
     position: relative;
     height: 20em;
-    margin-top: 5em;
     width: 100%;
     overflow: hidden;
 

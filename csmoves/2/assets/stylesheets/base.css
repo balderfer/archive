@@ -33,6 +33,24 @@ a {
     height: 4px;
     -webkit-animation: purdueLoop 15s infinite;
             animation: purdueLoop 15s infinite; }
+  .navbar .navbar-toggle {
+    border-radius: 0;
+    height: 5em;
+    width: 5em;
+    margin: 0;
+    border: none;
+    padding: 1.5em;
+    background-color: #dee1e3 !important; }
+    .navbar .navbar-toggle:hover {
+      background-color: #BDC3C7 !important; }
+    .navbar .navbar-toggle .icon-bar {
+      width: 2em;
+      height: 0.25em; }
+      .navbar .navbar-toggle .icon-bar:nth-child(n+3) {
+        margin-top: 0.25em; }
+    .navbar .navbar-toggle .fa-bars {
+      -webkit-animation: enterTitle linear 0.25s;
+              animation: enterTitle linear 0.25s; }
   .navbar .navbar-brand {
     position: relative;
     font-weight: 900;
@@ -56,39 +74,60 @@ a {
     .navbar .navbar-brand.animated-entrance img {
       -webkit-animation: enterTitle linear 0.5s;
               animation: enterTitle linear 0.5s; }
+  @media screen and (max-height: 767px) {
+    .navbar .navbar-collapse {
+      border: none; } }
   .navbar .navbar-nav {
-    height: 100%; }
+    height: 5em;
+    padding-top: 0.8em; }
+    .navbar .navbar-nav > .open > a {
+      background-color: #dee1e3 !important; }
+      @media screen and (max-height: 767px) {
+        .navbar .navbar-nav > .open > a {
+          background: none !important; } }
+    @media screen and (max-height: 767px) {
+      .navbar .navbar-nav {
+        margin: 0 -15px;
+        height: auto;
+        padding: 0; } }
     .navbar .navbar-nav > li {
-      height: 100%;
+      height: 3em;
       font-size: 1em;
       font-weight: 400;
-      padding-top: 0.8em;
+      height: 100%;
       box-sizing: border-box;
       background: #A7A9AC; }
-      .navbar .navbar-nav > li:nth-child(1) {
-        opacity: 0;
-        -webkit-animation: enterTitle 0.25s linear 0.25s forwards;
-                animation: enterTitle 0.25s linear 0.25s forwards; }
-      .navbar .navbar-nav > li:nth-child(2) {
-        opacity: 0;
-        -webkit-animation: enterTitle 0.5s linear 0.25s forwards;
-                animation: enterTitle 0.5s linear 0.25s forwards; }
-      .navbar .navbar-nav > li:nth-child(3) {
-        opacity: 0;
-        -webkit-animation: enterTitle 0.75s linear 0.25s forwards;
-                animation: enterTitle 0.75s linear 0.25s forwards; }
-      .navbar .navbar-nav > li:nth-child(4) {
-        opacity: 0;
-        -webkit-animation: enterTitle 1s linear 0.25s forwards;
-                animation: enterTitle 1s linear 0.25s forwards; }
-      .navbar .navbar-nav > li:nth-child(5) {
-        opacity: 0;
-        -webkit-animation: enterTitle 1.25s linear 0.25s forwards;
-                animation: enterTitle 1.25s linear 0.25s forwards; }
-      .navbar .navbar-nav > li:nth-child(6) {
-        opacity: 0;
-        -webkit-animation: enterTitle 1.5s linear 0.25s forwards;
-                animation: enterTitle 1.5s linear 0.25s forwards; }
+      @media screen and (min-width: 768px) {
+        .navbar .navbar-nav > li:nth-child(1) {
+          opacity: 0;
+          -webkit-animation: enterTitle 0.25s linear 0.25s forwards;
+                  animation: enterTitle 0.25s linear 0.25s forwards; }
+
+        .navbar .navbar-nav > li:nth-child(2) {
+          opacity: 0;
+          -webkit-animation: enterTitle 0.5s linear 0.25s forwards;
+                  animation: enterTitle 0.5s linear 0.25s forwards; }
+
+        .navbar .navbar-nav > li:nth-child(3) {
+          opacity: 0;
+          -webkit-animation: enterTitle 0.75s linear 0.25s forwards;
+                  animation: enterTitle 0.75s linear 0.25s forwards; }
+
+        .navbar .navbar-nav > li:nth-child(4) {
+          opacity: 0;
+          -webkit-animation: enterTitle 1s linear 0.25s forwards;
+                  animation: enterTitle 1s linear 0.25s forwards; }
+
+        .navbar .navbar-nav > li:nth-child(5) {
+          opacity: 0;
+          -webkit-animation: enterTitle 1.25s linear 0.25s forwards;
+                  animation: enterTitle 1.25s linear 0.25s forwards; }
+
+        .navbar .navbar-nav > li:nth-child(6) {
+          opacity: 0;
+          -webkit-animation: enterTitle 1.5s linear 0.25s forwards;
+                  animation: enterTitle 1.5s linear 0.25s forwards; }
+ }
       .navbar .navbar-nav > li a {
         color: white;
         background: none; }
@@ -96,24 +135,42 @@ a {
           color: white; }
       .navbar .navbar-nav > li .dropdown-menu {
         border: none;
-        background-color: #BDC3C7;
-        padding: 0; }
+        background-color: #dee1e3;
+        padding: 0;
+        border-radius: 0; }
         .navbar .navbar-nav > li .dropdown-menu li {
           padding: 0.5em 0;
           border-bottom: 1px solid #A7A9AC; }
           .navbar .navbar-nav > li .dropdown-menu li:hover {
-            background-color: #dee1e3; }
+            background-color: #BDC3C7; }
             .navbar .navbar-nav > li .dropdown-menu li:hover a {
-              color: black; }
+              color: #000000; }
           .navbar .navbar-nav > li .dropdown-menu li:last-child {
             border-bottom: none; }
           .navbar .navbar-nav > li .dropdown-menu li a {
-            color: white;
+            color: #000000;
             background: none; }
             .navbar .navbar-nav > li .dropdown-menu li a:hover {
-              background: none; }
-  .navbar + div {
-    margin-top: 5em; }
+              background: none;
+              color: #000000; }
+
+@-webkit-keyframes scaleUpIcon {
+  0% {
+    -webkit-transform: scale(0, 0);
+            transform: scale(0, 0); }
+
+  100% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); } }
+
+@keyframes scaleUpIcon {
+  0% {
+    -webkit-transform: scale(0, 0);
+            transform: scale(0, 0); }
+
+  100% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); } }
 
 @-webkit-keyframes gradientLoop {
   0% {
@@ -577,7 +634,6 @@ a {
 .article-header {
   position: relative;
   height: 20em;
-  margin-top: 5em;
   width: 100%;
   overflow: hidden; }
   .article-header::before {
