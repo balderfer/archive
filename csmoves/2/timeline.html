@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>CS Moves</title>
+        <title>Dashboard</title>
         <meta name="description" content="Moving Big Data Forward">
         <meta name="author" content="Ben Alderfer">
 
@@ -23,6 +23,7 @@
         <script src="assets/bootstrap/javascripts/bootstrap.js"></script>
         <script src="assets/javascripts/Chart.js"></script>
         <script src="assets/javascripts/base.js"></script>
+        <script src="assets/javascripts/index.js"></script>
         <script src="assets/javascripts/jquery.dotdotdot.js"></script>
     </head>
     <body>
@@ -34,12 +35,12 @@
                         <span class="sr-only">Toggle Navigation</span>
                         <i class="fa fa-bars fa-2x"></i>
                     </button>
-                    <a href="/" class="navbar-brand secondary animated-entrance">
+                    <a href="http://science.purdue.edu/" class="navbar-brand secondary animated-entrance">
                         <img src="assets/images/College_of_Science_RR.svg" alt="">
                     </a>
-                    <div class="navbar-brand primary animated-entrance">
+                    <a href="index.html" class="navbar-brand primary animated-entrance">
                         <img src="assets/images/programmingsuccess.svg" alt="">
-                    </div>
+                    </a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="collapsed-navbar">
@@ -47,7 +48,8 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Home <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                 <li><a href="dashboard.html">Dashboard</a></li>
+                                 <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+                                 <li><a href="timeline.html">Timeline</a></li>
                                  <li><a href="contact_us.html">Contact Us</a></li>
                             </ul>
                         </li>
@@ -82,28 +84,46 @@
             </div>
         </nav>
 
+
         <div class="article-header">
             <img src="assets/images/articlehero1.jpg" alt="BoilerMake">
             <div class="container">
-                <h1>Article Title</h1>
+                <h1>Timeline</h1>
             </div>
         </div>
         <div class="container article-content">
-            <p>
-                Lorem ipsum dolor sit amet, pri fastidii eloquentiam te, sea ad simul diceret voluptatum, eum et corpora adolescens scriptorem. <a href="#">Ei laudem</a> molestiae instructior ius, vix ignota tamquam utroque id. Molestie invidunt est te, ei praesent repudiandae pro. Sumo platonem cum te.
-            </p>
-            <p class="italic">
-                "Facilisi eleifend accusamus sit et, mel euismod consequat gloriatur cu. At tractatos adolescens pro. Mutat modus dicat ut sea, quodsi senserit sea cu, ea sit cetero habemus interesset. Mel euismod consequat gloriatur cu."
-            </p>
-            <p>
-                Per harum semper epicurei no, virtute repudiare cu mel. Facilisi eleifend accusamus sit et, mel euismod consequat gloriatur cu. At tractatos adolescens pro. Tamquam quaeque <a href="#">tincidunt at mel</a>, id inani inciderint vel. <a href="#">Usu laudem</a> platonem ut. Ea adhuc iisque scribentur sea, sit noster vidisse aliquip ne. Idque numquam reformidans has te, vis vocibus epicuri id.
-            </p>
-            <p>
-                Ne utamur officiis assentior mea. Aeterno definiebas suscipiantur ex ius, dictas vocent virtute ea pro. Eu vidisse denique iudicabit vix, oblique gloriatur pertinacia ex mea. Mutat modus dicat ut sea, quodsi senserit sea cu, ea sit cetero habemus interesset. In sea vivendum partiendo, vim at alia propriae luptatum. Id quo assum regione tacimates, at diceret disputationi cum.
-            </p>
-            <p>
-                Vivendo explicari voluptatum ut ius, quaeque molestiae ex vis. Mei prompta adipiscing ne. Ut mutat suscipiantur vis, ex magna ornatus meliore mea. Saepe integre no sea, ut vim omnesque voluptua. Qui in vidisse noluisse, eos ei tantas accumsan vivendum.
-            </p>
+
+            <div class="row">
+                <div class="timeline">
+                    <ul>
+                        <li class="date">1962</li>
+                        <li class="entry">Department of Computer Science founded</li>
+                        <li class="date">1968</li>
+                        <li class="entry">100 M.S. Degrees awarded</li>
+                        <li class="entry">Undergraduated program started</li>
+                        <li class="date">1972</li>
+                        <li class="entry">Regular faculty size reaches 20</li>
+                        <li class="date">1977</li>
+                        <li class="entry">500 M.S. Degrees awarded</li>
+                        <li class="date">1978</li>
+                        <li class="entry">Department acquires first computer facility (VAX 11/780)</li>
+                        <li class="entry">Something happened here</li>
+                        <li class="date">1979</li>
+                        <li class="entry">Conte retires as head; Denning appointed head</li>
+                        <li class="date">1981</li>
+                        <li class="entry">Crisis: Enrollment explosion arrives</li>
+                        <li class="date">1984</li>
+                        <li class="entry">Crisis: Major growth in facilities and laboratories</li>
+                        <li class="entry">Crisis: No space for faculty, students, or staff</li>
+                        <li class="date">1985</li>
+                        <li class="entry">Move to new building</li>
+                        <li class="entry">Research funding reaches $1,000,000</li>
+                        <li class="date">1996</li>
+                        <li class="entry">Rice retires as head</li>
+                    </ul>
+                </div>
+                    
+            </div>
         </div>
         <div class="footer">
             <img src="assets/images/computerscience.svg" alt="CS MOVES">
