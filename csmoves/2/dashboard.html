@@ -23,6 +23,7 @@
         <script src="assets/bootstrap/javascripts/bootstrap.js"></script>
         <script src="assets/javascripts/Chart.js"></script>
         <script src="assets/javascripts/base.js"></script>
+        <script src="assets/javascripts/index.js"></script>
         <script src="assets/javascripts/jquery.dotdotdot.js"></script>
     </head>
     <body>
@@ -34,9 +35,12 @@
                         <span class="sr-only">Toggle Navigation</span>
                         <i class="fa fa-bars fa-2x"></i>
                     </button>
-                    <a href="/" class="navbar-brand animated-entrance">
-                        <img src="assets/images/programmingsuccess.svg" alt="">
+                    <a href="/" class="navbar-brand secondary animated-entrance">
+                        <img src="assets/images/College_of_Science_RR.svg" alt="">
                     </a>
+                    <div class="navbar-brand primary animated-entrance">
+                        <img src="assets/images/programmingsuccess.svg" alt="">
+                    </div>
                 </div>
 
                 <div class="collapse navbar-collapse" id="collapsed-navbar">
@@ -59,11 +63,12 @@
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Research & Engagement <span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Research &<br> Engagement <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                 <li><a href="hiring.html">Hiring</a></li>
-                                 <li><a href="corporate_partnerships.html">Corporate Partnerships</a></li>
-                                 <li><a href="entrepreneurships.html">Entrepreneurships</a></li>
+                                <li><a href="outreach_programs.html">Outreach Programs</a></li>
+                                <li><a href="hiring.html">Hiring</a></li>
+                                <li><a href="corporate_partnerships.html">Corporate Partnerships</a></li>
+                                <li><a href="entrepreneurships.html">Entrepreneurships</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
@@ -72,6 +77,7 @@
                                  <li><a href="new_degree_programs.html">New Degree Programs</a></li>
                             </ul>
                         </li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
                     </ul>
                 </div>
             </div>
@@ -85,7 +91,50 @@
             </div>
         </div>
         <div class="container article-content">
- 
+
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="full-graph">
+                        <h1>Some Graphs</h1>
+                        <canvas id="lineGraph1"></canvas>
+                    </div>
+                    <div class="full-graph">
+                        <canvas id="barGraph1"></canvas>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="timeline">
+                        <h1>Milestones</h1>
+                        <ul>
+                            <li class="date">1962</li>
+                            <li class="entry">Department of Computer Science founded</li>
+                            <li class="date">1968</li>
+                            <li class="entry">100 M.S. Degrees awarded</li>
+                            <li class="entry">Undergraduated program started</li>
+                            <li class="date">1972</li>
+                            <li class="entry">Regular faculty size reaches 20</li>
+                            <li class="date">1977</li>
+                            <li class="entry">500 M.S. Degrees awarded</li>
+                            <li class="date">1978</li>
+                            <li class="entry">Department acquires first computer facility (VAX 11/780)</li>
+                            <li class="entry">Something happened here</li>
+                            <li class="date">1979</li>
+                            <li class="entry">Conte retires as head; Denning appointed head</li>
+                            <li class="date">1981</li>
+                            <li class="entry">Crisis: Enrollment explosion arrives</li>
+                            <li class="date">1984</li>
+                            <li class="entry">Crisis: Major growth in facilities and laboratories</li>
+                            <li class="entry">Crisis: No space for faculty, students, or staff</li>
+                            <li class="date">1985</li>
+                            <li class="entry">Move to new building</li>
+                            <li class="entry">Research funding reaches $1,000,000</li>
+                            <li class="date">1996</li>
+                            <li class="entry">Rice retires as head</li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
         </div>
         <div class="footer">
             <img src="assets/images/computerscience.svg" alt="CS MOVES">

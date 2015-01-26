@@ -1,4 +1,5 @@
 @import "bourbon/bourbon";
+@import "../bootstrap/stylesheets/bootstrap";
 
 // Greens
 $turquoise: #1ABC9C;
@@ -51,6 +52,9 @@ body {
     height: 100%;
     padding-top: 5em;
     background-image: url('../images/bg-crossword.png');
+    @media screen and (max-width: $screen-lg) {
+        font-size: 12px;
+    }
 }
 
 
@@ -71,9 +75,10 @@ a {
     top: 0;
     border-radius: 0;
     border: none;
-    background-color: $gray;
+    background-color: $dark-gray;
     height: 5em;
     z-index: 300;
+    font-size: 1.25em;
 
     .nav-container {
         position: relative;
@@ -119,20 +124,24 @@ a {
         position: relative;
         font-weight: 900;
         font-size: 2.5em;
-        color: $midnight-blue;
         line-height: 0;
-        width: 5em;
         height: 2em;
         padding: 0;
-        background-color: $old-gold;
-        animation: purdueLoop 15s infinite;
+        &.primary {
+            background-color: $old-gold;
+            animation: purdueLoop 15s infinite;
+            margin-left: 0;
+        }
+        &.secondary {
+        }
         .light {
             font-weight: 100;
         }
         img {
             position: relative;
+            display: inline-block;
             margin: 0.5em;
-            width: 4em;
+            height: 1em;
             transform: scale3d(1, 1, 1);
             // animation: pulseLogo 2s linear infinite;
         }
@@ -151,7 +160,8 @@ a {
     }
 
     .navbar-nav {
-        padding-top: 0.8em;
+        display: block;
+        padding-top: 0;
         min-height: 5em;
         @media screen and (max-height: 767px) {
             margin: 0 -15px;
@@ -167,19 +177,23 @@ a {
     
 
         > li {
-            height: 3em;
-            font-size: 1.15em;
+            height: 2em;
+            font-size: 0.95em;
             font-weight: 400;
             height: 100%;
             box-sizing: border-box;
-            background: $gray;
 
             @media screen and (min-width: 768px) {
                 // height: 5em;
                 padding: 0 0 0;
                 opacity: 1;
                 > a {
-                    padding-top: 1.5em;
+                    bottom: 0;
+                    padding-top: 2em;
+                    @media screen and (max-width: $screen-lg) {
+                        padding-left: 10px;
+                        padding-right: 10px;
+                    }
                 }
                 // &:nth-child(1) {
                 //     opacity: 0;
@@ -212,6 +226,9 @@ a {
                 background: none;
                 &:focus {
                     color: white;
+                }
+                &:hover {
+                    color: $new-gold;
                 }
             }
 
@@ -354,7 +371,7 @@ a {
 // ROW --------------------------------------------------------
 
 .row {
-    margin-bottom: 2em;
+    // margin-bottom: 2em;
 }
 
 // ------------------------------------------------------------
@@ -439,10 +456,10 @@ a {
 // ARTICLE ----------------------------------------------------
 
 .article {
-    height: 20em;
     background-color: white;
     border: 1px solid $clouds;
     @include box-sizing(border-box);
+    margin-bottom: 2em;
 
     &:hover {
         box-shadow: 0 0 1em $clouds;
@@ -474,7 +491,6 @@ a {
         padding: 1em;
         padding-top: 0.8em;
 
-        height: 8.2em;
 
         a h1 {
             margin: 0;
@@ -501,25 +517,26 @@ a {
 .words {
     position: relative;
     width: 100%;
-    height: 90vh;
     background-color: white;
     border-top: 1px solid $clouds;
     border-bottom: 1px solid $clouds;
     text-align: center;
+    overflow: hidden;
 
     &::before {
         content: "";
         position: absolute;
         top: 0;
-        left: 0;
-        right: 0;
+        left: -10em;
+        right: -10em;
         bottom: 0;
         opacity: 1;
         background-color: rgba(20,20,20,0.75);
-        background-image: url('../images/programmingsuccess.svg');
+        // background-image: url('../images/programmingsuccess.svg');
         background-size: auto 2.5em;
         background-repeat: no-repeat;
         background-position: 2em 2em;
+        box-shadow: inset 0 0 3em black;
     }
 
     &.hero {
@@ -536,16 +553,19 @@ a {
 
         .container {
             position: relative;
-            top: 50%;
-            transform: translate3d(0, -50%, 0);
-
+            padding-top: 2em;
+            padding-bottom: 2em;
             p {
                 display: block;
                 position: relative;
                 width: 100%;
-                font-size: 2em;
+                font-size: 1.6em;
+                font-weight: 400;
                 text-align: center;
-                color: white;
+                color: $dark-gray;
+                background-color: rgba(white, 0.8);
+                border: 1px solid $gray;
+                padding: 2em 1em;
 
                 span {
                     color: $old-gold;
@@ -640,8 +660,9 @@ a {
         }
 
         .entry {
+            position: relative;
             padding-bottom: 1em;
-            margin-left: 0;
+            left: 0;
             transition: all 0.25s ease;
 
             &:nth-child(2) {
@@ -659,7 +680,7 @@ a {
                 height: 1em;
                 border-radius: 1000px;
                 border: 2px solid white;
-                left: -0.35em;
+                left: -2.35em;
                 margin-top: 0.2em;
                 animation: purdueLoop 15s infinite;
                 transform: scale3d(1,1,1);
@@ -667,12 +688,13 @@ a {
             }
 
             &:hover {
-                margin-left: -0.5em;
+                left: -0.5em;
                 transition: all 0.25s ease;
                 cursor: pointer;
 
                 &::before {
                     transform: scale3d(1.4, 1.4, 1.4);
+                    left: -1.85em;
                     transition: all 0.25s ease;
                 }
             }
