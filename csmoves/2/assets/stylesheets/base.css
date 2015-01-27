@@ -4865,6 +4865,38 @@ a {
   text-decoration: none;
   color: inherit; }
 
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 7em;
+  background-color: #A3792C;
+  z-index: 300; }
+  .header .brand {
+    height: 7em;
+    padding: 1.5em;
+    box-sizing: border-box;
+    display: inline-block; }
+    .header .brand:first-child {
+      margin-left: -1.5em; }
+    .header .brand img {
+      height: 4em; }
+    .header .brand .center {
+      width: 100%;
+      text-align: center; }
+    .header .brand.first {
+      float: left;
+      margin-left: -1.5em; }
+    .header .brand.second {
+      position: absolute;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+          -ms-transform: translateX(-50%);
+              transform: translateX(-50%); }
+    .header .brand.third {
+      float: right;
+      margin-right: -1.5em; }
+
 .navbar {
   position: fixed;
   width: 100%;
@@ -4874,7 +4906,23 @@ a {
   background-color: #746C66;
   height: 5em;
   z-index: 300;
-  font-size: 1.25em; }
+  font-size: 1em; }
+  .navbar.navbar-sub {
+    top: 7em;
+    height: 3em;
+    min-height: 3em; }
+    .navbar.navbar-sub .nav-container {
+      position: relative;
+      height: 3em; }
+      .navbar.navbar-sub .nav-container .nav {
+        position: relative;
+        height: 3em; }
+        .navbar.navbar-sub .nav-container .nav > li {
+          position: relative;
+          height: 3em; }
+          .navbar.navbar-sub .nav-container .nav > li a {
+            padding: 0.4em 1em;
+            font-size: 1.5em; }
   .navbar .nav-container {
     position: relative;
     height: 100%; }
@@ -5389,8 +5437,7 @@ a {
     height: 100%; }
 
 .timeline {
-  width: 100%;
-  max-width: 32em; }
+  width: 100%; }
   .timeline h1 {
     text-align: center;
     font-weight: 400;
@@ -5403,7 +5450,7 @@ a {
     padding-left: 2em;
     box-sizing: border-box;
     margin: 0;
-    margin-left: 30%; }
+    margin-left: 20%; }
     .timeline ul::before {
       position: absolute;
       content: "";
