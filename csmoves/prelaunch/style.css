@@ -1,0 +1,41 @@
+body {
+	height: 100%;
+	width: 100%;
+	background-image: url('curtain.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.hero {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate3D(-50%, -50%, 0);
+	   -moz-transform: translate3D(-50%, -50%, 0);
+	    -ms-transform: translate3D(-50%, -50%, 0);
+	     -o-transform: translate3D(-50%, -50%, 0);
+	        transform: translate3D(-50%, -50%, 0);
+	font-family: 'Lato';
+	color: white;
+	text-align: center;
+}
+.hero img {
+	height: 3em;
+	padding: 1em;
+	border: 1px solid white;
+}
+.hero h1 {
+	font-weight: 300;
+	font-size: 3em;
+	margin: 0;
+}
+.hero h2 {
+	font-weight: 300;
+	font-size: 1.5em;
+	margin-top: 2em;
+	/*color: #999999;*/
+}
+.hero h2 strong {
+	font-weight: 400;
+	color: white;
+}

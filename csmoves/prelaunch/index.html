@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Programming Success</title>
+        <meta name="description" content="Moving Big Data Forward">
+        <meta name="author" content="Ben Alderfer">
+
+        <!-- fonts -->
+        <link href='https://fonts.googleapis.com/css?family=Lato:100,400,700,900' rel='stylesheet' type='text/css'>
+
+        <!-- stylesheets -->
+        <link rel="stylesheet" href="style.css" type="text/css">
+        
+        <!-- javascripts -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="parallax.js"></script>
+        
+    </head>
+    <body>
+        <ul id="scene">
+          <li class="layer" data-depth="0.20">
+            <img src="curtain.jpg" style="position: absolute; width: 110vw; height: 130vh; left: -5vw; top: -15vh;">
+          </li>
+        </ul>
+        <div class="hero">
+            <img src="programmingsuccess.svg">
+            <h1>Launching soon</h1>
+            <h2 id="countdown"><strong>2</strong> days <strong>8</strong> hrs <strong>1</strong> mins and <strong>3</strong> secs</h2>
+        </div>
+        <script>
+            var scene = document.getElementById('scene');
+            var parallax = new Parallax(scene);
+
+            var releaseTime = new Date();
+            releaseTime.setFullYear(2015);
+            releaseTime.setMonth(1);
+            releaseTime.setDate(2);
+            releaseTime.setHours(5);
+            releaseTime.setMinutes(0);
+            releaseTime.setSeconds(0);
+            releaseTime.setMilliseconds(0);
+
+            var countdown = document.getElementById('countdown');
+            var diff;
+
+            var updateCountdown = function() {
+                diff = new Date(releaseTime - new Date());
+                var t = '';
+                t += '<strong>' + diff.getDate() + '</strong>';
+                if (diff.getDate() === 1) {
+                    t += ' day ';
+                }
+                else {
+                    t += ' days ';
+                }
+                t += '<strong>' + diff.getHours() + '</strong>';
+                if (diff.getHours() === 1) {
+                    t += ' hr ';
+                }
+                else {
+                    t += ' hrs ';
+                }
+                t += '<strong>' + diff.getMinutes() + '</strong>';
+                if (diff.getMinutes() === 1) {
+                    t += ' min ';
+                }
+                else {
+                    t += ' mins ';
+                }
+                t += '<strong>' + diff.getSeconds() + '</strong>';
+                if (diff.getSeconds() === 1) {
+                    t += ' sec ';
+                }
+                else {
+                    t += ' secs ';
+                }
+                countdown.innerHTML = t;
+            }
+
+            updateCountdown();
+
+            var count = window.setInterval(function() {
+                updateCountdown();
+            }, 1000);
+
+        </script>
+    </body>
+</html>
