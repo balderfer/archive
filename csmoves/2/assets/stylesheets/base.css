@@ -4921,8 +4921,11 @@ a {
           position: relative;
           height: 3em; }
           .navbar.navbar-sub .nav-container .nav > li a {
-            padding: 0.4em 1em;
-            font-size: 1.5em; }
+            height: 100%;
+            padding: 0.6em 1em;
+            font-size: 1.2em; }
+          .navbar.navbar-sub .nav-container .nav > li ul li a {
+            font-size: 1em; }
   .navbar .nav-container {
     position: relative;
     height: 100%; }
@@ -4988,33 +4991,16 @@ a {
         padding: 0; } }
     .navbar .navbar-nav > .open > a {
       background-color: #dee1e3 !important; }
-      @media screen and (max-height: 767px) {
-        .navbar .navbar-nav > .open > a {
-          background: none !important; } }
     .navbar .navbar-nav > li {
-      height: 2em;
-      font-size: 0.95em;
       font-weight: 400;
       height: 100%;
       box-sizing: border-box; }
-      @media screen and (min-width: 768px) {
-        .navbar .navbar-nav > li {
-          padding: 0 0 0;
-          opacity: 1; }
-          .navbar .navbar-nav > li > a {
-            bottom: 0;
-            padding-top: 2em; }
-            @media screen and (max-width: 1200px) {
-              .navbar .navbar-nav > li > a {
-                padding-left: 10px;
-                padding-right: 10px; } } }
       .navbar .navbar-nav > li a {
-        color: white;
-        background: none; }
+        color: white; }
         .navbar .navbar-nav > li a:focus {
           color: white; }
         .navbar .navbar-nav > li a:hover {
-          color: #E3AE24; }
+          color: #cccccc; }
       .navbar .navbar-nav > li .dropdown-menu {
         border: none;
         background-color: #dee1e3;
@@ -5332,17 +5318,22 @@ a {
     box-sizing: border-box;
     padding: 1em;
     padding-top: 0.8em; }
-    .article .content a h1 {
+    .article .content a h1, .article .content h1 {
       margin: 0;
       font-size: 1.4em;
       text-decoration: none;
       color: black; }
+    .article .content a.link {
+      color: #3498DB; }
     .article .content h6 {
       color: #BDC3C7;
       font-weight: 400;
       margin-top: 0.25em;
       margin-bottom: 0.25em;
       font-style: italic; }
+    .article .content p {
+      margin-top: 1em;
+      margin-bottom: 0; }
 
 .words {
   position: relative;
@@ -5532,7 +5523,7 @@ a {
     content: "";
     width: 100%;
     height: 20em;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.4);
     z-index: 50;
     -webkit-backface-visibility: hidden; }
   .article-header img {
@@ -5553,6 +5544,8 @@ body > .container.article-content {
   margin-top: 2em;
   margin-bottom: 4em;
   background-image: url('../images/bg-crossword.png'); }
+  body > .container.article-content h4 {
+    margin-top: 1em; }
   body > .container.article-content p.italic {
     margin-left: 1em;
     margin-right: 1em;
@@ -5561,3 +5554,5 @@ body > .container.article-content {
     padding: 1em;
     font-size: 1.2em;
     font-style: italic; }
+  body > .container.article-content p.margin-top {
+    margin-top: 1em; }

@@ -6,6 +6,10 @@ $(window).load(function() {
 });
 
 $(document).ready(function() {
+    var videoWidth = $('.aspect16-9').parent('.thumb').width();    
+    $('.aspect16-9').width(videoWidth);
+    $('.aspect16-9').height((videoWidth / 16) * 9);
+
     var navOpen = false;
     $('.navbar-toggle').click(function(event) {
         if (navOpen) {
