@@ -18,6 +18,8 @@ $(function() {
     }
     uniqueId = $('#unique-id').val();
     config['unique-id'] = uniqueId;
+    pokemon = $('#pokemon').val();
+    config['pokemon'] = pokemon;
 
     var jsconfig = JSON.stringify(config);
     window.localStorage.setItem('config', jsconfig);
