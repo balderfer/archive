@@ -1,0 +1,82 @@
+.navbar-container {
+	background-image: url('../images/footer_lodyas.png');
+	background-size: 50%;
+}
+.navbar {
+	background: none;
+}
+.navbar-title {
+	margin: 0;
+	height: 80px;
+}
+.navbar-header-center {
+	position: relative;
+	text-align: center;
+	width: 100%;
+	float: none;
+	height: 60px;
+}
+.navbar-header-center img {
+	position: absolute;
+	left: 15px;
+	top: 30px;
+	height: 40px;
+}
+.navbar-header-center h1 {
+	margin-bottom: 0;
+	color: #FFF;
+}
+.navbar-header-center h5 {
+	margin-top: 0;
+	color: #FFF;
+}
+@media (max-width: 767px) {
+	.navbar-links {
+		/*height: 0;*/
+		min-height: 0;
+	}
+	.navbar-title {
+		height: 100px;
+	}
+	.navbar-toggle {
+		position: absolute;
+		right: 15px;
+		top: 20px;
+		margin-right: 0;
+	}
+}
+.navbar-collapse {
+	text-align: center;
+}
+.nav {
+	padding: 10px 0;
+	box-sizing: border-box;
+	display: inline-block;
+	float: none;
+	vertical-align: top;
+}
+.nav > li > a {
+	padding: 10px 15px;
+	border-radius: 4px;
+}
+
+.page-header {
+	margin-top: 20px;
+}
+
+.thumb {
+	width: 100%;
+	border-radius: 4px;
+}
+
+.news {
+	border: none;
+}
+.list-group-item {
+	border: none;
+	background-color: #eee;
+	margin-bottom: 1px;
+}
+.list-group-item-text {
+	color: #777;
+}
