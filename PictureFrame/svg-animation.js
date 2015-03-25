@@ -108,7 +108,7 @@ $(document).ready(function() {
 	$('#loop').click(function(event) {
 		if (!loop) {
 			loop = true;
-			$('#loop').html('Stop');
+			$('#loop').css('background-color', 'red').html('Stop');
 			if (!running) {
 				whiteDelay = 3000;
 				animate();
@@ -116,7 +116,8 @@ $(document).ready(function() {
 		}
 		else {
 			loop = false;
-			$('#loop').html('Loop');
+
+			$('#loop').css('background-color', 'green').html('Loop');
 		}
 	});
 
