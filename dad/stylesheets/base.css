@@ -1,0 +1,175 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.helper {
+  position: fixed;
+  bottom: 1em;
+  left: 1em;
+  background: #FFF;
+  padding: 0.5em;
+  border-radius: 3px; }
+  .helper p {
+    color: #000;
+    font-style: italic; }
+
+.mark-mountains {
+  background-image: url("../images/mark-mountains.jpg"); }
+
+.fs-isleroyale {
+  background-image: url("../images/fs-isleroyale.jpg"); }
+
+.fs-williamsburg {
+  background-image: url("../images/fs-williamsburg.jpg"); }
+
+.fs-capitol {
+  background-image: url("../images/fs-capitol.jpg"); }
+
+.fs-eaglescout {
+  background-image: url("../images/fs-eaglescout.jpg"); }
+
+.fs-boat {
+  background-image: url("../images/fs-boat.jpg"); }
+
+.mark-goofball {
+  background-image: url("../images/mark-goofball.jpg"); }
+
+.mark-granhelen {
+  background-image: url("../images/mark-granhelen.jpg"); }
+
+.fs-boilermake {
+  background-image: url("../images/fs-boilermake.jpg"); }
+
+.fs-roadtrip {
+  background-image: url("../images/fs-roadtrip.jpg"); }
+
+.fs-steelydan {
+  background-image: url("../images/fs-steelydan.jpg"); }
+
+.fs-throwback {
+  background-image: url("../images/fs-throwback.jpg"); }
+
+.fs-yellowstone {
+  background-image: url("../images/fs-yellowstone.jpg"); }
+
+.black {
+  background-color: black; }
+
+.container {
+  font-family: 'Vollkorn', serif; }
+
+.panel {
+  position: relative;
+  width: 100vw;
+  height: 100vh; }
+  .panel.dark {
+    color: #FFF; }
+  .panel .center {
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+            transform: translate3d(-50%, -50%, 0);
+    text-align: center; }
+  .panel .left {
+    position: absolute;
+    top: 50vh;
+    left: 33vw;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+            transform: translate3d(-50%, -50%, 0); }
+  .panel .right {
+    position: absolute;
+    top: 50vh;
+    left: 67vw;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+            transform: translate3d(-50%, -50%, 0);
+    text-align: right; }
+  .panel .bottom {
+    top: 67vh; }
+  .panel .top {
+    top: 33vh; }
+  .panel .cover {
+    font-style: italic; }
+    .panel .cover .plain h1 {
+      font-size: 2em; }
+    .panel .cover .box {
+      color: #FFF;
+      padding: 0.5em;
+      border-radius: 3px;
+      max-width: 25vw;
+      font-size: 1.8em; }
+    .panel .cover .circle {
+      width: 25vw;
+      height: 25vw;
+      border-radius: 25vw;
+      background-color: #FFF;
+      box-shadow: 0 0 100px rgba(0, 0, 0, 0.5); }
+      .panel .cover .circle h1 {
+        position: relative;
+        color: #000;
+        font-size: 4em;
+        text-align: center;
+        padding-top: 50%;
+        top: -0.5em; }
+
+.panel .cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh; }
+
+.panel.dark .cover {
+  background: rgba(0, 0, 0, 0.5); }
+
+.panel.dark .background:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh; }
+
+.panel .background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: -10; }

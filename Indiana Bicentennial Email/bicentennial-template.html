@@ -3,11 +3,9 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width"/>
-	<style>
-/**********************************************
-* Ink v1.0.5 - Copyright 2013 ZURB Inc        *
-**********************************************/
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="editor.js" type="text/javascript"></script>
+	<style id="css-style">
 /* Client-specific Styles & Reset */
 
 #outlook a { 
@@ -696,9 +694,6 @@ body.outlook p {
   }
 }
 
-  </style>
-  <style>
-
     table.facebook td {
       background: #3b5998;
       border-color: #2d4473;
@@ -792,7 +787,7 @@ body.outlook p {
       letter-spacing: 1px;
       padding-top: 6px;
     }
-    .info-header-volume {
+    .info-header p, .info-header-volume {
       display: inline-block;
       float: left;
       margin: 0;
@@ -909,12 +904,35 @@ body.outlook p {
       background-color: #FECF07;
       box-shadow: inset 0px -2px 4px #E0B706, 0px 2px 4px #CCCCCC;
     }
-    .section-title h1 {
+    .section-title.section-title-blue {
+      height: 45px;
+      background-color: #1A417A;
+      box-shadow: inset 0px -2px 4px #10316A;
+    }
+    .section-title.section-title-red {
+      background-color: #F6875C;
+      box-shadow: inset 0px -2px 4px #D6673C;
+    }
+    .section-title.section-title-cyan {
+      background-color: #61CAE7;
+      box-shadow: inset 0px -2px 4px #41AAC7;
+    }
+    .section-title.section-title-blue h1, .section-title.section-title-blue a {
+      padding-top: 12px;
+      letter-spacing: 3.5px;
+    }
+    .section-title h1, .section-title a {
       font-size: 16px;
       font-weight: 700;
       color: #FFFFFF;
       padding-top: 8px;
       letter-spacing: 4px;
+    }
+    .list-p p {
+      margin-left: 10px;
+    }
+    .list-p p.link, .list-p p.link a {
+      color: #F6875C !important;
     }
 
 
@@ -948,47 +966,41 @@ body.outlook p {
       letter-spacing: 0px;
     }
 
+    table.footer-section {
+      background-color: #1A427D;
+      width: 100%;
+    }
+    table.footer-section p {
+      color: #FFFFFF;
+    }
 
   </style>
+
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+
 </head>
 <body>
+
+
+<div id="link-editor" title="Edit Link" style="display: none; position: absolute; background-color: white; z-index: 100; box-shadow: 0 0 10px #333; border-radius: 5px; padding: 10px;">
+  <label for="text">Text</label>
+  <input type="text" name="text" id="link-editor-text" value="Link >" class="">
+  <br>
+  <label for="link">URL</label>
+  <input type="text" name="link" id="link-editor-link" value="http://indiana2016.org" class="">
+  <br>
+  <input id="link-editor-done" type="submit" value="Done">
+</div>
+
+
+  <button id="dl-button">Download</button>
 	<table class="body">
 		<tr>
 			<td class="center" align="center" valign="top">
         <center>
-<!-- 
-          <table class="row header">
-            <tr>
-              <td class="center" align="center">
-                <center>
 
-                  <table class="container">
-                    <tr>
-                      <td class="wrapper last">
-
-                        <table class="twelve columns">
-                          <tr>
-                            <td class="six sub-columns">
-                              <img src="http://placehold.it/200x50">
-                            </td>
-                            <td class="six sub-columns last" style="text-align:right; vertical-align:middle;">
-                              <span class="template-label">SIDEBAR HERO</span>
-                            </td>
-                            <td class="expander"></td>
-                          </tr>
-                        </table>
-
-                      </td>
-                    </tr>
-                  </table>
-
-                </center>
-              </td>
-            </tr>
-          </table>
-
-          <br>
- -->
           <table class="container">
             <tr>
               <td>
@@ -1010,8 +1022,8 @@ body.outlook p {
                     <table class="twelve columns">
                       <tr>
                         <td class="info-header">
-                          <p class="info-header-date">SPRING 2015</p>
-                          <p class="info-header-volume">Volume XXX</p>
+                          <p class="info-header-date" contenteditable>SPRING 2015</p>
+                          <p class="info-header-volume" contenteditable>Volume XXX</p>
                           <p class="info-header-link"><a href="http://www.indiana2016.org">www.indiana2016.org</a></p>
                         </td>
                         <td class="expander"></td>
@@ -1053,9 +1065,9 @@ body.outlook p {
                                   <tr>
                                     <td>
                                       
-                                      <h1>TITLE</h1>
+                                      <h1 contenteditable>TITLE</h1>
                                       <div class="underline"></div>
-                                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                                      <p contenteditable>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
                                       <p class="link"><a href="#">Link ></a></p>
 
                                     </td>
@@ -1096,9 +1108,9 @@ body.outlook p {
                                   <tr>
                                     <td>
                                       
-                                      <h1>TITLE</h1>
+                                      <h1 contenteditable>TITLE</h1>
                                       <div class="underline"></div>
-                                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                                      <p contenteditable>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
                                       <p class="link"><a href="#">Link ></a></p>
 
                                     </td>
@@ -1387,20 +1399,16 @@ body.outlook p {
                 </tr>
               </table>
 
-
-              <br>
-              <br>
-              <!-- Legal + Unsubscribe -->
-<!--               <table class="row">
+              <table class="row" style="margin-bottom: 6px;">
                 <tr>
                   <td class="wrapper last">
 
                     <table class="twelve columns">
                       <tr>
-                        <td align="center">
-                          <center>
-                            <p style="text-align:center;"><a href="#">Terms</a> | <a href="#">Privacy</a> | <a href="#">Unsubscribe</a></p>
-                          </center>
+                        <td class="section-title section-title-blue">
+                          <a href="#">
+                            <h1 class="center">CLICK TO READ ABOUT OUR LEGACY PROJECTS</h1>
+                          </a>
                         </td>
                         <td class="expander"></td>
                       </tr>
@@ -1408,7 +1416,175 @@ body.outlook p {
 
                   </td>
                 </tr>
-              </table> -->
+              </table>
+
+              <table class="row">
+                <tr>
+                  <td class="wrapper last">
+
+                    <table class="twelve columns">
+                      <tr>
+                        <td class="section-title section-title-red">
+                          <h1 class="center">COUNTY UPDATES</h1>
+                        </td>
+                        <td class="expander"></td>
+                      </tr>
+                    </table>
+
+                  </td>
+                </tr>
+              </table>
+
+              <br/>
+
+              <table class="row card-1 list-p">
+                <tr>
+                  <td class="wrapper">
+
+                    <table class="four columns">
+                      <tr>
+                        <td>
+                          <img width="180" height="138" src="http://placehold.it/180x138/F6F6F6/CFCFCF">
+                        </td>
+                        <td class="expander"></td>
+                      </tr>
+                    </table>
+
+                  </td>
+                  <td class="wrapper last">
+
+                    <table class="eight columns">
+                      <tr>
+                        <td>
+                          
+                          <h1>TITLE</h1>
+                          <div class="underline"></div>
+                          <p>• Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                          <p>• Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                          <p>• Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                          <p class="link"><a href="#">Link ></a></p>
+
+                        </td>
+                        <td class="expander"></td>
+                      </tr>
+                    </table>
+
+                  </td>
+                </tr>
+              </table>
+
+              <br/>
+
+              <table class="row card-1 list-p">
+                <tr>
+                  <td class="wrapper">
+
+                    <table class="four columns">
+                      <tr>
+                        <td>
+                          <img width="180" height="138" src="http://placehold.it/180x138/F6F6F6/CFCFCF">
+                        </td>
+                        <td class="expander"></td>
+                      </tr>
+                    </table>
+
+                  </td>
+                  <td class="wrapper last">
+
+                    <table class="eight columns">
+                      <tr>
+                        <td>
+                          
+                          <h1>TITLE</h1>
+                          <div class="underline"></div>
+                          <p>• Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                          <p>• Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                          <p>• Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                          <p class="link"><a href="#">Link ></a></p>
+
+                        </td>
+                        <td class="expander"></td>
+                      </tr>
+                    </table>
+
+                  </td>
+                </tr>
+              </table>
+
+              <br/>
+
+              <table class="row">
+                <tr>
+                  <td class="wrapper last">
+
+                    <table class="twelve columns">
+                      <tr>
+                        <td class="section-title section-title-cyan">
+                          <h1 class="center">COUNTY UPDATES</h1>
+                        </td>
+                        <td class="expander"></td>
+                      </tr>
+                    </table>
+
+                  </td>
+                </tr>
+              </table>
+
+              <table class="center middle-section">
+                <tr>
+                  <td class="left" align="left">
+
+                      <table class="columns" style="width: 560px;">
+                        <tr>
+                          <br/>
+                          <td class="seven" style="padding-left: 20px;">
+                            <img width="327" height="230" src="http://placehold.it/327x230/F6F6F6/CFCFCF" alt="" />
+                          </td>
+
+                          <td class="five" style="padding-left: 20px;">
+                            <p>TITLE wat</p>
+                          </td>
+
+                        </tr>
+                      </table>
+
+                      <br/>
+
+                  </td>
+                </tr>
+              </table>
+
+              <table class="center footer-section">
+                <tr>
+                  <td>
+                    <table class="columns" style="width: 560px;">
+                      <tr>
+                        <td class="five">
+                          <p>wat</p>
+                        </td>
+                        <td class="seven">
+                          <p>watwatwatwatwatwatwatwatwatwatwatwatwatwatwatwatwatwatwatwatwatwatwatwatwatwatwatwatwatwatwatwat</p>
+                        </td>
+                      </tr>
+                    </table>
+                    <table class="columns" style="width: 560px;">
+                      <tr>
+                        <td class="five">
+                          <p>wat</p>
+                        </td>
+                        <td class="seven">
+                          <p>watwat</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+  
+
+              <br>
+              <br>
+              <!-- Legal + Unsubscribe -->
 
               <!-- container end below -->
               </td>

@@ -1,0 +1,131 @@
+@import "reset";
+@import "misc";
+
+@each $img in mark-mountains, fs-isleroyale, fs-williamsburg, fs-capitol, fs-eaglescout, fs-boat, mark-goofball, mark-granhelen, fs-boilermake, fs-roadtrip, fs-steelydan, fs-throwback, fs-yellowstone {
+  .#{$img} {
+    background-image: url('../images/#{$img}.jpg');
+  }
+}
+
+@each $color in black {
+  .#{$color} {
+    background-color: #{$color};
+  }
+
+}
+
+.container {
+  font-family: 'Vollkorn', serif;
+}
+
+// Typography
+.panel {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+
+  &.dark {
+    color: #FFF;
+  }
+  
+  .center {
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    transform: translate3d(-50%, -50%, 0);
+    text-align: center;
+  }
+  .left {
+    position: absolute;
+    top: 50vh;
+    left: 33vw;
+    transform: translate3d(-50%, -50%, 0);
+  }
+  .right {
+    position: absolute;
+    top: 50vh;
+    left: 67vw;
+    transform: translate3d(-50%, -50%, 0);
+    text-align: right;
+  }
+
+  .bottom {
+    top: 67vh;
+  }
+  .top {
+    top: 33vh;
+  }
+
+  .cover {
+    font-style: italic;
+
+    .plain h1 {
+      font-size: 2em;
+    }
+
+    .box {
+      // background-color: #FFF;
+      color: #FFF;
+      padding: 0.5em;
+      border-radius: 3px;
+      max-width: 25vw;
+      font-size: 1.8em;
+      // box-shadow: 0 0 100px rgba(0,0,0,0.5);
+    }
+
+    .circle {
+      width: 25vw;
+      height: 25vw;
+      border-radius: 25vw;
+      background-color: #FFF;
+      box-shadow: 0 0 100px rgba(0,0,0,0.5);
+
+      h1 {
+        position: relative;
+        color: #000;
+        font-size: 4em;
+        text-align: center;
+        padding-top: 50%;
+        top: -0.5em;
+      }
+    }
+  }
+}
+
+// Structue
+.panel {
+  .cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+  &.dark .cover {
+    background: rgba(0,0,0,0.5);
+  }
+}
+
+// Images
+.panel {
+  &.dark .background:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    // background: rgba(0,0,0,0.5);
+  }
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: -10;
+  }
+}

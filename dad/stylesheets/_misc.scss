@@ -1,0 +1,14 @@
+.helper {
+	position: fixed;
+	bottom: 1em;
+	left: 1em;
+
+	background: #FFF;
+	padding: 0.5em;
+	border-radius: 3px;
+
+	p {
+		color: #000;
+		font-style: italic;
+	}
+}
