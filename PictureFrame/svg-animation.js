@@ -101,31 +101,31 @@ var draw = function(selector, delay, speed) {
 }
 
 
-$(document).ready(function() {
-	currentSVG = '#art0';
-	animate();
+// $(document).ready(function() {
+// 	currentSVG = '#art0';
+// 	// animate();
 
-	$('#loop').click(function(event) {
-		if (!loop) {
-			loop = true;
-			$('#loop').css('background-color', 'red').html('Stop');
-			if (!running) {
-				whiteDelay = 3000;
-				animate();
-			}
-		}
-		else {
-			loop = false;
+// 	$('#loop').click(function(event) {
+// 		if (!loop) {
+// 			loop = true;
+// 			$('#loop').css('background-color', 'red').html('Stop');
+// 			if (!running) {
+// 				whiteDelay = 3000;
+// 				// animate();
+// 			}
+// 		}
+// 		else {
+// 			loop = false;
 
-			$('#loop').css('background-color', 'green').html('Loop');
-		}
-	});
+// 			$('#loop').css('background-color', 'green').html('Loop');
+// 		}
+// 	});
 
 
-});
+// });
 
 // Will animate the inner part of the svg
-var animate = function() {
+var animate = function(cb) {
 
 	// for (var i in elements) {
 	// 	elements[i].parentNode.removeChild(elements[i]);
@@ -138,278 +138,617 @@ var animate = function() {
 	// Inner frame triangles
 	// Top left
 	parentSelector = '#innerFrameTopLeftTriangle';
-	drawLine('.border', currentTime, 1000);
-	drawLine('.zigzag', currentTime+750, 1000);
-	drawLines('.zigzagLines', currentTime+1750, 125, 500);
+	introDrawLine('.border', currentTime, 1000);
+	introDrawLine('.zigzag', currentTime+750, 1000);
+	introDrawLines('.zigzagLines', currentTime+1750, 125, 500);
 	parentSelector = '#innerFrameTopLeftTriangleBottomLeftBox';
-	drawLine('.border', currentTime+1000, 500);
-	drawLines('.slant', currentTime+1500, 125, 500);
+	introDrawLine('.border', currentTime+1000, 500);
+	introDrawLines('.slant', currentTime+1500, 125, 500);
 	parentSelector = '#innerFrameTopLeftTriangleLargeBox';
-	drawLine('.border', currentTime+1250, 500);
-	drawLines('.slant', currentTime+1750, 125, 500);
+	introDrawLine('.border', currentTime+1250, 500);
+	introDrawLines('.slant', currentTime+1750, 125, 500);
 	parentSelector = '#innerFrameTopLeftTriangleTopRightBox';
-	drawLine('.border', currentTime+1500, 500);
-	drawLines('.slant', currentTime+2000, 125, 500);
+	introDrawLine('.border', currentTime+1500, 500);
+	introDrawLines('.slant', currentTime+2000, 125, 500);
 	// Bottom right
 	parentSelector = '#innerFrameBottomRightTriangle';
-	drawLine('.border', currentTime, 1000);
-	drawLine('.zigzag', currentTime+750, 1000);
-	drawLines('.zigzagLines', currentTime+1750, 125, 500);
+	introDrawLine('.border', currentTime, 1000);
+	introDrawLine('.zigzag', currentTime+750, 1000);
+	introDrawLines('.zigzagLines', currentTime+1750, 125, 500);
 	parentSelector = '#innerFrameBottomRightTriangleTopRightBox';
-	drawLine('.border', currentTime+1000, 500);
-	drawLines('.slant', currentTime+1500, 125, 500);
+	introDrawLine('.border', currentTime+1000, 500);
+	introDrawLines('.slant', currentTime+1500, 125, 500);
 	parentSelector = '#innerFrameBottomRightTriangleLargeBox';
-	drawLine('.border', currentTime+1250, 500);
-	drawLines('.slant', currentTime+1750, 125, 500);
+	introDrawLine('.border', currentTime+1250, 500);
+	introDrawLines('.slant', currentTime+1750, 125, 500);
 	parentSelector = '#innerFrameBottomRightTriangleBottomLeftBox';
-	drawLine('.border', currentTime+1500, 500);
-	drawLines('.slant', currentTime+2000, 125, 500);
+	introDrawLine('.border', currentTime+1500, 500);
+	introDrawLines('.slant', currentTime+2000, 125, 500);
 
 	currentTime += 1000;
 
 	// Inner frame
 	parentSelector = '#innerFrame';
 	// bars
-	drawLines('.frameRightBar', currentTime, 250, 500);
-	drawLines('.frameTopBar', currentTime+125, 250, 500);
-	drawLines('.frameLeftBar', currentTime, 250, 500);
-	drawLines('.frameBottomBar', currentTime+125, 250, 500);
+	introDrawLines('.frameRightBar', currentTime, 250, 500);
+	introDrawLines('.frameTopBar', currentTime+125, 250, 500);
+	introDrawLines('.frameLeftBar', currentTime, 250, 500);
+	introDrawLines('.frameBottomBar', currentTime+125, 250, 500);
 	// notches
-	drawLines('#frameRightNotches0 line', currentTime+125, 15, 100);
-	drawLines('#frameRightNotches1 line', currentTime+375, 30, 100);
-	drawLines('#frameRightNotches2 line', currentTime+625, 60, 100);
-	drawLines('#frameRightNotches3 line', currentTime+875, 120, 100);
-	drawLines('#frameTopNotches0 line', currentTime+250, 15, 100);
-	drawLines('#frameTopNotches1 line', currentTime+500, 30, 100);
-	drawLines('#frameTopNotches2 line', currentTime+750, 60, 100);
-	drawLines('#frameTopNotches3 line', currentTime+1000, 120, 100);
-	drawLines('#frameLeftNotches0 line', currentTime+125, 15, 100);
-	drawLines('#frameLeftNotches1 line', currentTime+375, 30, 100);
-	drawLines('#frameLeftNotches2 line', currentTime+625, 60, 100);
-	drawLines('#frameLeftNotches3 line', currentTime+875, 120, 100);
-	drawLines('#frameBottomNotches0 line', currentTime+250, 15, 100);
-	drawLines('#frameBottomNotches1 line', currentTime+500, 30, 100);
-	drawLines('#frameBottomNotches2 line', currentTime+750, 60, 100);
-	drawLines('#frameBottomNotches3 line', currentTime+1000, 120, 100);
+	introDrawLines('#frameRightNotches0 line', currentTime+125, 15, 100);
+	introDrawLines('#frameRightNotches1 line', currentTime+375, 30, 100);
+	introDrawLines('#frameRightNotches2 line', currentTime+625, 60, 100);
+	introDrawLines('#frameRightNotches3 line', currentTime+875, 120, 100);
+	introDrawLines('#frameTopNotches0 line', currentTime+250, 15, 100);
+	introDrawLines('#frameTopNotches1 line', currentTime+500, 30, 100);
+	introDrawLines('#frameTopNotches2 line', currentTime+750, 60, 100);
+	introDrawLines('#frameTopNotches3 line', currentTime+1000, 120, 100);
+	introDrawLines('#frameLeftNotches0 line', currentTime+125, 15, 100);
+	introDrawLines('#frameLeftNotches1 line', currentTime+375, 30, 100);
+	introDrawLines('#frameLeftNotches2 line', currentTime+625, 60, 100);
+	introDrawLines('#frameLeftNotches3 line', currentTime+875, 120, 100);
+	introDrawLines('#frameBottomNotches0 line', currentTime+250, 15, 100);
+	introDrawLines('#frameBottomNotches1 line', currentTime+500, 30, 100);
+	introDrawLines('#frameBottomNotches2 line', currentTime+750, 60, 100);
+	introDrawLines('#frameBottomNotches3 line', currentTime+1000, 120, 100);
 	
 	currentTime += 1000;
 
 	// Inner frame shadows
 	parentSelector = '#innerFrameShadowTopRight';
-	drawLines('.short', currentTime+250, 25, 100);
-	drawLines('.long', currentTime+350, 20, 100);
+	introDrawLines('.short', currentTime+250, 25, 100);
+	introDrawLines('.long', currentTime+350, 20, 100);
 	parentSelector = '#innerFrameShadowBottomLeft';
-	drawLines('.short', currentTime+250, 25, 100);
-	drawLines('.long', currentTime+350, 20, 100);
+	introDrawLines('.short', currentTime+250, 25, 100);
+	introDrawLines('.long', currentTime+350, 20, 100);
 
 	currentTime += 1000;
 
 	// Inner frame container
 	parentSelector = '#innerFrameContainer';
-	drawLine('.left', currentTime, 1000);
-	drawLine('.right', currentTime, 1000);
+	introDrawLine('.left', currentTime, 1000);
+	introDrawLine('.right', currentTime, 1000);
 	parentSelector = '#innerFrameContainerLeftTriangle';
-	drawLine('.border', currentTime+750, 500);
-	drawLines('line', currentTime+1000, 0, 250);
+	introDrawLine('.border', currentTime+750, 500);
+	introDrawLines('line', currentTime+1000, 0, 250);
 	parentSelector = '#innerFrameContainerRightTriangle';
-	drawLine('.border', currentTime+750, 500);
-	drawLines('line', currentTime+1000, 0, 250);
+	introDrawLine('.border', currentTime+750, 500);
+	introDrawLines('line', currentTime+1000, 0, 250);
 
 	// Bottom outside triangles
 	parentSelector = '#bltriangle';
-	drawLine('.border', currentTime+250, 500);
-	drawLines('.slant', currentTime+750, 50, 100);
+	introDrawLine('.border', currentTime+250, 500);
+	introDrawLines('.slant', currentTime+750, 50, 100);
 	parentSelector = '#brtriangle';
-	drawLine('.border', currentTime+250, 500);
-	drawLines('.slant', currentTime+750, 50, 100);
+	introDrawLine('.border', currentTime+250, 500);
+	introDrawLines('.slant', currentTime+750, 50, 100);
 
 
 	currentTime += 1000;
 
 	// Top middle diamonds
 	parentSelector = '#tmldiamond';
-	drawLine('.circle', currentTime, 500);
-	drawLines('line', currentTime+500, 50, 100);
-	drawLines('.point path', currentTime+500, 0, 500);
+	introDrawLine('.circle', currentTime, 500);
+	introDrawLines('line', currentTime+500, 50, 100);
+	introDrawLines('.point path', currentTime+500, 0, 500);
 	parentSelector = '#tmrdiamond';
-	drawLine('.circle', currentTime, 500);
-	drawLines('line', currentTime+500, 50, 100);
-	drawLines('.point path', currentTime+500, 0, 500);
+	introDrawLine('.circle', currentTime, 500);
+	introDrawLines('line', currentTime+500, 50, 100);
+	introDrawLines('.point path', currentTime+500, 0, 500);
 
 	currentTime += 250;
 
 	// Top outside diamonds
 	parentSelector = '#tldiamond';
-	drawLine('.circle', currentTime, 500);
-	drawLines('line', currentTime+500, 50, 100);
-	drawLines('.point path', currentTime+500, 0, 500);
+	introDrawLine('.circle', currentTime, 500);
+	introDrawLines('line', currentTime+500, 50, 100);
+	introDrawLines('.point path', currentTime+500, 0, 500);
 	parentSelector = '#trdiamond';
-	drawLine('.circle', currentTime, 500);
-	drawLines('line', currentTime+500, 50, 100);
-	drawLines('.point path', currentTime+500, 0, 500);
+	introDrawLine('.circle', currentTime, 500);
+	introDrawLines('line', currentTime+500, 50, 100);
+	introDrawLines('.point path', currentTime+500, 0, 500);
 
 	// Bottom middle diamonds
 	parentSelector = '#bmldiamond';
-	drawLine('.circle', currentTime, 500);
-	drawLines('line', currentTime+500, 50, 100);
-	drawLines('.point path', currentTime+500, 0, 500);
+	introDrawLine('.circle', currentTime, 500);
+	introDrawLines('line', currentTime+500, 50, 100);
+	introDrawLines('.point path', currentTime+500, 0, 500);
 	parentSelector = '#bmrdiamond';
-	drawLine('.circle', currentTime, 500);
-	drawLines('line', currentTime+500, 50, 100);
-	drawLines('.point path', currentTime+500, 0, 500);
+	introDrawLine('.circle', currentTime, 500);
+	introDrawLines('line', currentTime+500, 50, 100);
+	introDrawLines('.point path', currentTime+500, 0, 500);
 
 	currentTime += 250;
 
 	// Bottom outside diamonds
 	parentSelector = '#bldiamond';
-	drawLine('.circle', currentTime, 500);
-	drawLines('line', currentTime+500, 50, 100);
-	drawLines('.point path', currentTime+500, 0, 500);
+	introDrawLine('.circle', currentTime, 500);
+	introDrawLines('line', currentTime+500, 50, 100);
+	introDrawLines('.point path', currentTime+500, 0, 500);
 	parentSelector = '#brdiamond';
-	drawLine('.circle', currentTime, 500);
-	drawLines('line', currentTime+500, 50, 100);
-	drawLines('.point path', currentTime+500, 0, 500);
+	introDrawLine('.circle', currentTime, 500);
+	introDrawLines('line', currentTime+500, 50, 100);
+	introDrawLines('.point path', currentTime+500, 0, 500);
 
 	currentTime += 500;
 
 	// Snakes
 	parentSelector = '#lsnake';
-	drawLine('.border', currentTime, 3000);
-	drawLine('.ol', currentTime+500, 1500);
-	drawLine('.ml', currentTime+500, 1500);
-	drawLine('.il', currentTime+500, 1500);
-	drawLines('.box rect', currentTime+250, 0, 250);
-	drawLines('.box line', currentTime+500, 0, 100);
+	introDrawLine('.border', currentTime, 3000);
+	introDrawLine('.ol', currentTime+500, 1500);
+	introDrawLine('.ml', currentTime+500, 1500);
+	introDrawLine('.il', currentTime+500, 1500);
+	introDrawLines('.box rect', currentTime+250, 0, 250);
+	introDrawLines('.box line', currentTime+500, 0, 100);
 	parentSelector = '#lsnake .outerslants';
-	drawLines('line', currentTime+750, 10, 100);
+	introDrawLines('line', currentTime+750, 10, 100);
 	parentSelector = '#lsnake .innerslants';
-	drawLines('line', currentTime+750, 10, 100);
+	introDrawLines('line', currentTime+750, 10, 100);
 	parentSelector = '#rsnake';
-	drawLine('.border', currentTime, 3000);
-	drawLine('.ol', currentTime+500, 1500);
-	drawLine('.ml', currentTime+500, 1500);
-	drawLine('.il', currentTime+500, 1500);
-	drawLines('.box rect', currentTime+250, 0, 250);
-	drawLines('.box line', currentTime+500, 0, 100);
+	introDrawLine('.border', currentTime, 3000);
+	introDrawLine('.ol', currentTime+500, 1500);
+	introDrawLine('.ml', currentTime+500, 1500);
+	introDrawLine('.il', currentTime+500, 1500);
+	introDrawLines('.box rect', currentTime+250, 0, 250);
+	introDrawLines('.box line', currentTime+500, 0, 100);
 	parentSelector = '#rsnake .outerslants';
-	drawLines('line', currentTime+750, 10, 100);
+	introDrawLines('line', currentTime+750, 10, 100);
 	parentSelector = '#rsnake .innerslants';
-	drawLines('line', currentTime+750, 10, 100);
+	introDrawLines('line', currentTime+750, 10, 100);
 
 	currentTime += 500;
 
 	// Left square
 	parentSelector = '#lsquare';
-	drawLines('.border', currentTime+500, 500, 2000);
-	drawLines('.circle', currentTime+2000, 250, 1000);
+	introDrawLines('.border', currentTime+500, 500, 2000);
+	introDrawLines('.circle', currentTime+2000, 250, 1000);
 
 	// Right square
 	parentSelector = '#rsquare';
-	drawLines('.border', currentTime+500, 500, 2000);
-	drawLines('.circle', currentTime+2000, 250, 1000);
+	introDrawLines('.border', currentTime+500, 500, 2000);
+	introDrawLines('.circle', currentTime+2000, 250, 1000);
 
 	// Top boxes
 	parentSelector = '#tlbox';
-	drawLine('.border', currentTime, 1000);
-	drawLines('.triangle', currentTime, 250, 500);
-	drawLines('.circle', currentTime+1000, 250, 500);
-	drawLines('line', currentTime+2000, 100, 500);
+	introDrawLine('.border', currentTime, 1000);
+	introDrawLines('.triangle', currentTime, 250, 500);
+	introDrawLines('.circle', currentTime+1000, 250, 500);
+	introDrawLines('line', currentTime+2000, 100, 500);
 	parentSelector = '#trbox';
-	drawLine('.border', currentTime, 1000);
-	drawLines('.triangle', currentTime, 250, 500);
-	drawLines('.circle', currentTime+1000, 250, 500);
-	drawLines('line', currentTime+2000, 100, 500);
+	introDrawLine('.border', currentTime, 1000);
+	introDrawLines('.triangle', currentTime, 250, 500);
+	introDrawLines('.circle', currentTime+1000, 250, 500);
+	introDrawLines('line', currentTime+2000, 100, 500);
 
 	currentTime += 900;
 
 	// Bottom boxes
 	parentSelector = '#blbox';
-	drawLine('.border', currentTime, 1000);
-	drawLines('.triangle', currentTime, 250, 500);
-	drawLines('.circle', currentTime+1000, 250, 500);
-	drawLines('line', currentTime+2000, 100, 500);
+	introDrawLine('.border', currentTime, 1000);
+	introDrawLines('.triangle', currentTime, 250, 500);
+	introDrawLines('.circle', currentTime+1000, 250, 500);
+	introDrawLines('line', currentTime+2000, 100, 500);
 	parentSelector = '#brbox';
-	drawLine('.border', currentTime, 1000);
-	drawLines('.triangle', currentTime, 250, 500);
-	drawLines('.circle', currentTime+1000, 250, 500);
-	drawLines('line', currentTime+2000, 100, 500);
+	introDrawLine('.border', currentTime, 1000);
+	introDrawLines('.triangle', currentTime, 250, 500);
+	introDrawLines('.circle', currentTime+1000, 250, 500);
+	introDrawLines('line', currentTime+2000, 100, 500);
 
 	currentTime += 100;
 
 	// Bottom triangle
 	parentSelector = '#bmtriangle';
-	drawLine('.border', currentTime, 500);
-	drawLines('.lslants', currentTime+500, 150, 500);
-	drawLines('.rslants', currentTime+500, 150, 500);
-	drawLines('.hslants', currentTime+500, 150, 500);
+	introDrawLine('.border', currentTime, 500);
+	introDrawLines('.lslants', currentTime+500, 150, 500);
+	introDrawLines('.rslants', currentTime+500, 150, 500);
+	introDrawLines('.hslants', currentTime+500, 150, 500);
 
 	currentTime += 1000;
 
 	// Bottom decoration
 	parentSelector = '#bdecoration';
-	drawLines('.hslant', currentTime, 0, 500);
+	introDrawLines('.hslant', currentTime, 0, 500);
 	parentSelector += ' .triangle';
-	drawLines('.left', currentTime+250, 0, 1000);
-	drawLines('.right', currentTime+250, 0, 1000);
-	drawLines('.luslants', currentTime+1000, 100, 250);
-	drawLines('.ruslants', currentTime+1000, 100, 250);
-	drawLines('.ldslants', currentTime+1500, 100, 250);
-	drawLines('.rdslants', currentTime+1500, 100, 250);
-	drawLines('#lunotches0 line', currentTime+1250, 100, 250);
-	drawLines('#runotches0 line', currentTime+1250, 100, 250);
-	drawLines('#lunotches1 line', currentTime+1500, 100, 250);
-	drawLines('#runotches1 line', currentTime+1500, 100, 250);
-	drawLines('#ldnotches0 line', currentTime+1750, 100, 250);
-	drawLines('#rdnotches0 line', currentTime+1750, 100, 250);
-	drawLines('#ldnotches1 line', currentTime+2000, 100, 250);
-	drawLines('#rdnotches1 line', currentTime+2000, 100, 250);
+	introDrawLines('.left', currentTime+250, 0, 1000);
+	introDrawLines('.right', currentTime+250, 0, 1000);
+	introDrawLines('.luslants', currentTime+1000, 100, 250);
+	introDrawLines('.ruslants', currentTime+1000, 100, 250);
+	introDrawLines('.ldslants', currentTime+1500, 100, 250);
+	introDrawLines('.rdslants', currentTime+1500, 100, 250);
+	introDrawLines('#lunotches0 line', currentTime+1250, 100, 250);
+	introDrawLines('#runotches0 line', currentTime+1250, 100, 250);
+	introDrawLines('#lunotches1 line', currentTime+1500, 100, 250);
+	introDrawLines('#runotches1 line', currentTime+1500, 100, 250);
+	introDrawLines('#ldnotches0 line', currentTime+1750, 100, 250);
+	introDrawLines('#rdnotches0 line', currentTime+1750, 100, 250);
+	introDrawLines('#ldnotches1 line', currentTime+2000, 100, 250);
+	introDrawLines('#rdnotches1 line', currentTime+2000, 100, 250);
 
 	// Top decoration
 	parentSelector = '#tdecoration';
-	drawLines('.btip0', currentTime, 0, 1000);
-	drawLines('#ttriangle .border', currentTime+500, 0, 500);
-	drawLines('#ttriangle .lslant', currentTime+750, 100, 250);
-	drawLines('#ttriangle .rslant', currentTime+750, 100, 250);
-	drawLines('#ttriangler .border', currentTime+750, 0, 500);
-	drawLines('#ttriangler .lslant', currentTime+1000, 0, 250);
-	drawLines('#ttriangler .rslant', currentTime+1000, 0, 250);
-	drawLines('.btip1', currentTime+250, 0, 1000);
-	drawLines('#mbox .border', currentTime+1250, 0, 250);
-	drawLines('#mbox .slant', currentTime+1375, 0, 250);
-	drawLine('#rtriangle .border', currentTime+1375, 500);
-	drawLines('#rtriangle .slant', currentTime+1500, 250, 500);
-	drawLine('#ltriangle .border', currentTime+1375, 500);
-	drawLines('#ltriangle .slant', currentTime+1500, 250, 500);
-	drawLines('.ouslant', currentTime+750, 0, 500);
-	drawLines('.iuslant', currentTime+1000, 0, 500);
-	drawLines('#bsquares .square0', currentTime+1500, 0, 500);
-	drawLines('#bsquares .square1', currentTime+1150, 0, 500);
-	drawLines('#bsquares .square2', currentTime+1800, 0, 500);
-	drawLine('.lzigzags', currentTime+2000, 1000);
-	drawLine('.rzigzags', currentTime+2000, 1000);
-	drawLines('.tbase', currentTime+1250, 0, 750);
-	drawLines('.ttip0', currentTime+1750, 0, 750);
-	drawLines('.oouslant', currentTime+2000, 0, 750);
+	introDrawLines('.btip0', currentTime, 0, 1000);
+	introDrawLines('#ttriangle .border', currentTime+500, 0, 500);
+	introDrawLines('#ttriangle .lslant', currentTime+750, 100, 250);
+	introDrawLines('#ttriangle .rslant', currentTime+750, 100, 250);
+	introDrawLines('#ttriangler .border', currentTime+750, 0, 500);
+	introDrawLines('#ttriangler .lslant', currentTime+1000, 0, 250);
+	introDrawLines('#ttriangler .rslant', currentTime+1000, 0, 250);
+	introDrawLines('.btip1', currentTime+250, 0, 1000);
+	introDrawLines('#mbox .border', currentTime+1250, 0, 250);
+	introDrawLines('#mbox .slant', currentTime+1375, 0, 250);
+	introDrawLine('#rtriangle .border', currentTime+1375, 500);
+	introDrawLines('#rtriangle .slant', currentTime+1500, 250, 500);
+	introDrawLine('#ltriangle .border', currentTime+1375, 500);
+	introDrawLines('#ltriangle .slant', currentTime+1500, 250, 500);
+	introDrawLines('.ouslant', currentTime+750, 0, 500);
+	introDrawLines('.iuslant', currentTime+1000, 0, 500);
+	introDrawLines('#bsquares .square0', currentTime+1500, 0, 500);
+	introDrawLines('#bsquares .square1', currentTime+1150, 0, 500);
+	introDrawLines('#bsquares .square2', currentTime+1800, 0, 500);
+	introDrawLine('.lzigzags', currentTime+2000, 1000);
+	introDrawLine('.rzigzags', currentTime+2000, 1000);
+	introDrawLines('.tbase', currentTime+1250, 0, 750);
+	introDrawLines('.ttip0', currentTime+1750, 0, 750);
+	introDrawLines('.oouslant', currentTime+2000, 0, 750);
 
 	// Bottom lines
 	parentSelector = '#blines';
-	drawLines('.line0', currentTime, 0, 1000);
-	drawLines('.line1', currentTime+500, 0, 1000);
-	drawLines('.line2', currentTime+1000, 0, 1000);
+	introDrawLines('.line0', currentTime, 0, 1000);
+	introDrawLines('.line1', currentTime+500, 0, 1000);
+	introDrawLines('.line2', currentTime+1000, 0, 1000);
 	// Top lines
 	parentSelector = '#tlines';
-	drawLines('.line0', currentTime, 0, 1000);
-	drawLines('.line1', currentTime+500, 0, 1000);
-	drawLines('.line2', currentTime+1000, 0, 1000);
-
-	currentTime += 3500+whiteDelay;
+	introDrawLines('.line0', currentTime, 0, 1000);
+	introDrawLines('.line1', currentTime+500, 0, 1000);
+	introDrawLines('.line2', currentTime+1000, 0, 1000);
 
 	window.setTimeout(function() {
-		console.log('fin');
-		running = false;
-		if (loop) {
-			whiteDelay = 3000;
-			animate();
-		}
-	}, currentTime);
+		$('#subwoofer').fadeIn('slow');
+	}, 2000);
+
+
+	window.setTimeout(function() {
+		var lsp = document.getElementById('lspeaker');
+		lsp.setAttribute('class', 'fadeIn');
+		var rsp = document.getElementById('rspeaker');
+		rsp.setAttribute('class', 'fadeIn');
+	}, 6500);
+
+	window.setTimeout(function() {
+		cb();
+	}, 8500);
+	// currentTime += 3500+whiteDelay;
 };
+
+
+
+var introDrawLine = function(s, delay, speed) {
+	var selector = getSelector(s)[0];
+	introDraw(selector, delay, speed);
+}
+
+
+var introDrawLines = function(s, delay, pause, speed) {
+	el = getSelector(s);
+	var iterator = 0;
+	[].forEach.call(el, function(selector) {
+		introDraw(selector, delay + (pause*iterator), speed);
+		iterator++;
+	})
+}
+
+var introDraw = function(selector, delay, speed) {
+	var iteration = parseInt(selector.getAttribute('data-iteration'));
+	if (!iteration) iteration = 0;
+
+	selector.setAttribute('stroke', 'white');
+
+
+	delay /= 1;
+	speed /= 1;
+	speed /= 1000;
+	var length = 0;
+	if (selector.tagName === 'rect') {
+		length = selector.getAttribute('width')*2 + selector.getAttribute('height')*2;
+	}
+	else if (selector.tagName === 'circle') {
+		length = Math.PI * 2 * selector.getAttribute('r');
+	}
+	else if (selector.tagName === 'line') {
+		var x1 = selector.getAttribute('x1');
+		var y1 = selector.getAttribute('y1');
+		var x2 = selector.getAttribute('x2');
+		var y2 = selector.getAttribute('y2');
+		length =  Math.sqrt((x2-x1)*(x2-x1) + (y2-y1)*(y2-y1));
+	}
+	else if (selector.tagName === 'path') {
+		length = selector.getTotalLength();
+	}
+
+	selector.style.strokeDasharray = length;
+	selector.style.strokeDashoffset = length;
+	// selector.style.display = "none";
+
+	window.setTimeout(function() {
+		selector.style.display = "block";
+		selector.style.transition = selector.style.WebkitTransition = 'none';
+		selector.style.strokeDasharray = length;
+		selector.style.strokeDashoffset = length;
+		selector.setAttribute('stroke', '#333');
+		selector.style.transition = selector.style.WebkitTransition = 'stroke-dashoffset ' + speed + 's ease-in-out';
+		selector.style.strokeDasharray = length;
+		selector.style.strokeDashoffset = '0';
+		selector.getBoundingClientRect();
+
+	}, delay);
+}
+
+
+
+var mDrawLine = function(s, delay, speed) {
+	var selector = getSelector(s)[0];
+	mDraw(selector, delay, speed);
+}
+
+
+var mDrawLines = function(s, delay, pause, speed) {
+	el = getSelector(s);
+	var iterator = 0;
+	[].forEach.call(el, function(selector) {
+		mDraw(selector, delay + (pause*iterator), speed);
+		iterator++;
+	})
+}
+
+var mDraw = function(selector, delay, speed) {
+	var iteration = parseInt(selector.getAttribute('data-iteration'));
+	if (!iteration) iteration = 0;
+
+	selector.setAttribute('stroke', '34495E');
+	// selector.style.display = "none";
+
+
+	delay /= 1;
+	speed /= 1;
+	speed /= 1000;
+	var length = 0;
+	if (selector.tagName === 'rect') {
+		length = selector.getAttribute('width')*2 + selector.getAttribute('height')*2;
+	}
+	else if (selector.tagName === 'circle') {
+		length = Math.PI * 2 * selector.getAttribute('r');
+	}
+	else if (selector.tagName === 'line') {
+		var x1 = selector.getAttribute('x1');
+		var y1 = selector.getAttribute('y1');
+		var x2 = selector.getAttribute('x2');
+		var y2 = selector.getAttribute('y2');
+		length =  Math.sqrt((x2-x1)*(x2-x1) + (y2-y1)*(y2-y1));
+	}
+	else if (selector.tagName === 'path') {
+		length = selector.getTotalLength();
+	}
+
+	// selector.style.strokeDasharray = length;
+	// selector.style.strokeDashoffset = length;
+
+
+	window.setTimeout(function() {
+		selector.style.display = "block";
+		selector.style.transition = selector.style.WebkitTransition = 'none';
+		selector.style.strokeDasharray = length;
+		selector.style.strokeDashoffset = '0';
+		selector.style.transition = selector.style.WebkitTransition = 'stroke-dashoffset ' + (speed / 4) + 's ease-in-out';
+		selector.style.strokeDasharray = length;
+		selector.style.strokeDashoffset = length;
+		selector.getBoundingClientRect();
+
+		window.setTimeout(function() {
+			selector.style.display = "block";
+			selector.getBoundingClientRect();
+			selector.style.transition = selector.style.WebkitTransition = 'stroke-dashoffset ' + speed + 's ease-in-out';
+			selector.style.strokeDashoffset = '0';
+		}, delay);
+
+	}, delay);
+}
+
+var snakeLock = false;
+var drawSnakes = function() {
+	snakeLock = true;
+	var currentTime = 0;
+	parentSelector = '#lsnake';
+	mDrawLine('.border', currentTime, 3000);
+	mDrawLine('.ol', currentTime, 1500);
+	mDrawLine('.ml', currentTime, 1500);
+	mDrawLine('.il', currentTime, 1500);
+	mDrawLines('.box rect', currentTime, 0, 250);
+	mDrawLines('.box line', currentTime, 0, 100);
+	parentSelector = '#lsnake .outerslants';
+	mDrawLines('line', currentTime, 10, 100);
+	parentSelector = '#lsnake .innerslants';
+	mDrawLines('line', currentTime, 10, 100);
+	parentSelector = '#rsnake';
+	mDrawLine('.border', currentTime, 3000);
+	mDrawLine('.ol', currentTime, 1500);
+	mDrawLine('.ml', currentTime, 1500);
+	mDrawLine('.il', currentTime, 1500);
+	mDrawLines('.box rect', currentTime, 0, 250);
+	mDrawLines('.box line', currentTime, 0, 100);
+	parentSelector = '#rsnake .outerslants';
+	mDrawLines('line', currentTime, 10, 100);
+	parentSelector = '#rsnake .innerslants';
+	mDrawLines('line', currentTime, 10, 100);
+
+	drawDecorations();
+
+	window.setTimeout(function() {
+		snakeLock = false;
+	}, 3000);
+}
+
+
+
+var drawDecorations = function() {
+	currentTime = 0;
+
+	// Top middle diamonds
+	parentSelector = '#tmldiamond';
+	mDrawLine('.circle', currentTime, 500);
+	mDrawLines('line', currentTime+500, 50, 100);
+	mDrawLines('.point path', currentTime+500, 0, 500);
+	parentSelector = '#tmrdiamond';
+	mDrawLine('.circle', currentTime, 500);
+	mDrawLines('line', currentTime+500, 50, 100);
+	mDrawLines('.point path', currentTime+500, 0, 500);
+
+	currentTime += 250;
+
+	// Top outside diamonds
+	parentSelector = '#tldiamond';
+	mDrawLine('.circle', currentTime, 500);
+	mDrawLines('line', currentTime+500, 50, 100);
+	mDrawLines('.point path', currentTime+500, 0, 500);
+	parentSelector = '#trdiamond';
+	mDrawLine('.circle', currentTime, 500);
+	mDrawLines('line', currentTime+500, 50, 100);
+	mDrawLines('.point path', currentTime+500, 0, 500);
+
+	// Bottom middle diamonds
+	parentSelector = '#bmldiamond';
+	mDrawLine('.circle', currentTime, 500);
+	mDrawLines('line', currentTime+500, 50, 100);
+	mDrawLines('.point path', currentTime+500, 0, 500);
+	parentSelector = '#bmrdiamond';
+	mDrawLine('.circle', currentTime, 500);
+	mDrawLines('line', currentTime+500, 50, 100);
+	mDrawLines('.point path', currentTime+500, 0, 500);
+
+	currentTime += 250;
+
+	// Bottom outside diamonds
+	parentSelector = '#bldiamond';
+	mDrawLine('.circle', currentTime, 500);
+	mDrawLines('line', currentTime+500, 50, 100);
+	mDrawLines('.point path', currentTime+500, 0, 500);
+	parentSelector = '#brdiamond';
+	mDrawLine('.circle', currentTime, 500);
+	mDrawLines('line', currentTime+500, 50, 100);
+	mDrawLines('.point path', currentTime+500, 0, 500);
+
+	currentTime += 500;
+
+	// Bottom triangle
+	parentSelector = '#bmtriangle';
+	mDrawLine('.border', currentTime, 500);
+	mDrawLines('.lslants', currentTime+500, 150, 500);
+	mDrawLines('.rslants', currentTime+500, 150, 500);
+	mDrawLines('.hslants', currentTime+500, 150, 500);
+
+	currentTime = 0;
+
+	// Bottom decoration
+	parentSelector = '#bdecoration';
+	mDrawLines('.hslant', currentTime, 0, 500);
+	parentSelector += ' .triangle';
+	mDrawLines('.left', currentTime+250, 0, 1000);
+	mDrawLines('.right', currentTime+250, 0, 1000);
+	mDrawLines('.luslants', currentTime+1000, 100, 250);
+	mDrawLines('.ruslants', currentTime+1000, 100, 250);
+	mDrawLines('.ldslants', currentTime+1500, 100, 250);
+	mDrawLines('.rdslants', currentTime+1500, 100, 250);
+	mDrawLines('#lunotches0 line', currentTime+1250, 100, 250);
+	mDrawLines('#runotches0 line', currentTime+1250, 100, 250);
+	mDrawLines('#lunotches1 line', currentTime+1500, 100, 250);
+	mDrawLines('#runotches1 line', currentTime+1500, 100, 250);
+	mDrawLines('#ldnotches0 line', currentTime+1750, 100, 250);
+	mDrawLines('#rdnotches0 line', currentTime+1750, 100, 250);
+	mDrawLines('#ldnotches1 line', currentTime+2000, 100, 250);
+	mDrawLines('#rdnotches1 line', currentTime+2000, 100, 250);
+
+	// Top decoration
+	parentSelector = '#tdecoration';
+	mDrawLines('.btip0', currentTime, 0, 1000);
+	mDrawLines('#ttriangle .border', currentTime+500, 0, 500);
+	mDrawLines('#ttriangle .lslant', currentTime+750, 100, 250);
+	mDrawLines('#ttriangle .rslant', currentTime+750, 100, 250);
+	mDrawLines('#ttriangler .border', currentTime+750, 0, 500);
+	mDrawLines('#ttriangler .lslant', currentTime+1000, 0, 250);
+	mDrawLines('#ttriangler .rslant', currentTime+1000, 0, 250);
+	mDrawLines('.btip1', currentTime+250, 0, 1000);
+	mDrawLines('#mbox .border', currentTime+1250, 0, 250);
+	mDrawLines('#mbox .slant', currentTime+1375, 0, 250);
+	mDrawLine('#rtriangle .border', currentTime+1375, 500);
+	mDrawLines('#rtriangle .slant', currentTime+1500, 250, 500);
+	mDrawLine('#ltriangle .border', currentTime+1375, 500);
+	mDrawLines('#ltriangle .slant', currentTime+1500, 250, 500);
+	mDrawLines('.ouslant', currentTime+750, 0, 500);
+	mDrawLines('.iuslant', currentTime+1000, 0, 500);
+	mDrawLines('#bsquares .square0', currentTime+1500, 0, 500);
+	mDrawLines('#bsquares .square1', currentTime+1150, 0, 500);
+	mDrawLines('#bsquares .square2', currentTime+1800, 0, 500);
+	mDrawLine('.lzigzags', currentTime+2000, 1000);
+	mDrawLine('.rzigzags', currentTime+2000, 1000);
+	mDrawLines('.tbase', currentTime+1250, 0, 750);
+	mDrawLines('.ttip0', currentTime+1750, 0, 750);
+	mDrawLines('.oouslant', currentTime+2000, 0, 750);
+
+	// Bottom lines
+	parentSelector = '#blines';
+	mDrawLines('.line0', currentTime, 0, 1000);
+	mDrawLines('.line1', currentTime+500, 0, 1000);
+	mDrawLines('.line2', currentTime+1000, 0, 1000);
+	// Top lines
+	parentSelector = '#tlines';
+	mDrawLines('.line0', currentTime, 0, 1000);
+	mDrawLines('.line1', currentTime+500, 0, 1000);
+	mDrawLines('.line2', currentTime+1000, 0, 1000);
+}
+
+
+var tlBox = document.querySelectorAll('#tlbox')[0];
+var trBox = document.querySelectorAll('#trbox')[0];
+var blBox = document.querySelectorAll('#blbox')[0];
+var brBox = document.querySelectorAll('#brbox')[0];
+var twingOuterSpeakers = function(diff) {
+  tlbox.setAttribute("transform", "translate(" + diff + ", " + diff + ")");
+  trbox.setAttribute("transform", "translate(" + -diff + ", " + diff + ")");
+  blbox.setAttribute("transform", "translate(" + diff + ", " + -diff + ")");
+  brbox.setAttribute("transform", "translate(" + -diff + ", " + -diff + ")");
+}
+
+var lsquare = document.querySelectorAll('#lsquare')[0];
+var rsquare = document.querySelectorAll('#rsquare')[0];
+var twingBigSpeakers = function(diff) {
+  lsquare.setAttribute("transform", "translate(" + diff + ", " + 0 + ")");
+  rsquare.setAttribute("transform", "translate(" + -diff + ", " + 0 + ")");
+}
+
+
+var innerCircles = document.querySelectorAll(".centerCircle");
+var rippleLock = false;
+var rippleInnerCircles = function() {
+	if (!rippleLock) {
+		rippleLock = true;
+		rippleHelper(0, 0);
+	}
+}
+
+var rippleHelper = function(i, delay) {
+	window.setTimeout(function() {
+		var circle = innerCircles[i];
+		circle.className = 'centerCircle ripple';
+		
+		window.setTimeout(function() {
+			circle.className = 'centerCircle';
+		}, 1000);
+
+		if (i+1 < innerCircles.length) {
+			rippleHelper(i+1, delay+2);
+		} else {
+			window.setTimeout(function() {
+				rippleLock = false;
+			}, 2000);
+		}
+	}, delay)
+}
