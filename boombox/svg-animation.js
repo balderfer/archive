@@ -414,9 +414,12 @@ var animate = function(cb) {
 		rsp.setAttribute('class', 'fadeIn');
 	}, 6500);
 
-	window.setTimeout(function() {
-		cb();
-	}, 8500);
+
+	if (cb) {
+		window.setTimeout(function() {
+			cb();
+		}, 8500);
+	}
 	// currentTime += 3500+whiteDelay;
 };
 
@@ -555,36 +558,36 @@ var mDraw = function(selector, delay, speed) {
 
 var snakeLock = false;
 var drawSnakes = function() {
-	snakeLock = true;
-	var currentTime = 0;
-	parentSelector = '#lsnake';
-	mDrawLine('.border', currentTime, 3000);
-	mDrawLine('.ol', currentTime, 1500);
-	mDrawLine('.ml', currentTime, 1500);
-	mDrawLine('.il', currentTime, 1500);
-	mDrawLines('.box rect', currentTime, 0, 250);
-	mDrawLines('.box line', currentTime, 0, 100);
-	parentSelector = '#lsnake .outerslants';
-	mDrawLines('line', currentTime, 10, 100);
-	parentSelector = '#lsnake .innerslants';
-	mDrawLines('line', currentTime, 10, 100);
-	parentSelector = '#rsnake';
-	mDrawLine('.border', currentTime, 3000);
-	mDrawLine('.ol', currentTime, 1500);
-	mDrawLine('.ml', currentTime, 1500);
-	mDrawLine('.il', currentTime, 1500);
-	mDrawLines('.box rect', currentTime, 0, 250);
-	mDrawLines('.box line', currentTime, 0, 100);
-	parentSelector = '#rsnake .outerslants';
-	mDrawLines('line', currentTime, 10, 100);
-	parentSelector = '#rsnake .innerslants';
-	mDrawLines('line', currentTime, 10, 100);
+	if (!snakeLock) {
+		snakeLock = true;
+		var currentTime = 0;
+		parentSelector = '#lsnake';
+		mDrawLine('.border', currentTime, 3000);
+		mDrawLine('.ol', currentTime, 1500);
+		mDrawLine('.ml', currentTime, 1500);
+		mDrawLine('.il', currentTime, 1500);
+		mDrawLines('.box rect', currentTime, 0, 250);
+		mDrawLines('.box line', currentTime, 0, 100);
+		parentSelector = '#lsnake .outerslants';
+		mDrawLines('line', currentTime, 10, 100);
+		parentSelector = '#lsnake .innerslants';
+		mDrawLines('line', currentTime, 10, 100);
+		parentSelector = '#rsnake';
+		mDrawLine('.border', currentTime, 3000);
+		mDrawLine('.ol', currentTime, 1500);
+		mDrawLine('.ml', currentTime, 1500);
+		mDrawLine('.il', currentTime, 1500);
+		mDrawLines('.box rect', currentTime, 0, 250);
+		mDrawLines('.box line', currentTime, 0, 100);
+		parentSelector = '#rsnake .outerslants';
+		mDrawLines('line', currentTime, 10, 100);
+		parentSelector = '#rsnake .innerslants';
+		mDrawLines('line', currentTime, 10, 100);
 
-	drawDecorations();
-
-	window.setTimeout(function() {
-		snakeLock = false;
-	}, 3000);
+		window.setTimeout(function() {
+			snakeLock = false;
+		}, 1000);
+	}
 }
 
 
@@ -602,7 +605,7 @@ var drawDecorations = function() {
 	mDrawLines('line', currentTime+500, 50, 100);
 	mDrawLines('.point path', currentTime+500, 0, 500);
 
-	currentTime += 250;
+	currentTime += 0;
 
 	// Top outside diamonds
 	parentSelector = '#tldiamond';
@@ -624,7 +627,7 @@ var drawDecorations = function() {
 	mDrawLines('line', currentTime+500, 50, 100);
 	mDrawLines('.point path', currentTime+500, 0, 500);
 
-	currentTime += 250;
+	currentTime += 0;
 
 	// Bottom outside diamonds
 	parentSelector = '#bldiamond';
@@ -636,7 +639,7 @@ var drawDecorations = function() {
 	mDrawLines('line', currentTime+500, 50, 100);
 	mDrawLines('.point path', currentTime+500, 0, 500);
 
-	currentTime += 500;
+	currentTime += 0;
 
 	// Bottom triangle
 	parentSelector = '#bmtriangle';
@@ -711,10 +714,10 @@ var trBox = document.querySelectorAll('#trbox')[0];
 var blBox = document.querySelectorAll('#blbox')[0];
 var brBox = document.querySelectorAll('#brbox')[0];
 var twingOuterSpeakers = function(diff) {
-  tlbox.setAttribute("transform", "translate(" + diff + ", " + diff + ")");
-  trbox.setAttribute("transform", "translate(" + -diff + ", " + diff + ")");
-  blbox.setAttribute("transform", "translate(" + diff + ", " + -diff + ")");
-  brbox.setAttribute("transform", "translate(" + -diff + ", " + -diff + ")");
+  tlbox.setAttribute("transform", "translate(" + diff + ", " + diff*3 + ")");
+  trbox.setAttribute("transform", "translate(" + -diff + ", " + diff*3 + ")");
+  blbox.setAttribute("transform", "translate(" + diff + ", " + -diff*3 + ")");
+  brbox.setAttribute("transform", "translate(" + -diff + ", " + -diff*3 + ")");
 }
 
 var lsquare = document.querySelectorAll('#lsquare')[0];
@@ -729,7 +732,7 @@ var innerCircles = document.querySelectorAll(".centerCircle");
 var rippleLock = false;
 var rippleInnerCircles = function() {
 	if (!rippleLock) {
-		rippleLock = true;
+		// rippleLock = true;
 		rippleHelper(0, 0);
 	}
 }
@@ -741,14 +744,115 @@ var rippleHelper = function(i, delay) {
 		
 		window.setTimeout(function() {
 			circle.className = 'centerCircle';
-		}, 1000);
+		}, 100);
 
 		if (i+1 < innerCircles.length) {
 			rippleHelper(i+1, delay+2);
 		} else {
 			window.setTimeout(function() {
 				rippleLock = false;
-			}, 2000);
+			}, 250);
 		}
 	}, delay)
+}
+
+var innerFrameLock = false;
+var rebuildInnerFrame = function() {
+	if (!innerFrameLock) {
+		innerFrameLock = true;
+		var currentTime = 0;
+		running = true;
+
+		// Inner frame triangles
+		// Top left
+		parentSelector = '#innerFrameTopLeftTriangle';
+		mDrawLine('.border', currentTime, 1000);
+		mDrawLine('.zigzag', currentTime+750, 1000);
+		mDrawLines('.zigzagLines', currentTime+1750, 125, 500);
+		parentSelector = '#innerFrameTopLeftTriangleBottomLeftBox';
+		mDrawLine('.border', currentTime+1000, 500);
+		mDrawLines('.slant', currentTime+1500, 125, 500);
+		parentSelector = '#innerFrameTopLeftTriangleLargeBox';
+		mDrawLine('.border', currentTime+1250, 500);
+		mDrawLines('.slant', currentTime+1750, 125, 500);
+		parentSelector = '#innerFrameTopLeftTriangleTopRightBox';
+		mDrawLine('.border', currentTime+1500, 500);
+		mDrawLines('.slant', currentTime+2000, 125, 500);
+		// Bottom right
+		parentSelector = '#innerFrameBottomRightTriangle';
+		mDrawLine('.border', currentTime, 1000);
+		mDrawLine('.zigzag', currentTime+750, 1000);
+		mDrawLines('.zigzagLines', currentTime+1750, 125, 500);
+		parentSelector = '#innerFrameBottomRightTriangleTopRightBox';
+		mDrawLine('.border', currentTime+1000, 500);
+		mDrawLines('.slant', currentTime+1500, 125, 500);
+		parentSelector = '#innerFrameBottomRightTriangleLargeBox';
+		mDrawLine('.border', currentTime+1250, 500);
+		mDrawLines('.slant', currentTime+1750, 125, 500);
+		parentSelector = '#innerFrameBottomRightTriangleBottomLeftBox';
+		mDrawLine('.border', currentTime+1500, 500);
+		mDrawLines('.slant', currentTime+2000, 125, 500);
+
+		currentTime += 1000;
+
+		// Inner frame
+		parentSelector = '#innerFrame';
+		// bars
+		mDrawLines('.frameRightBar', currentTime, 250, 500);
+		mDrawLines('.frameTopBar', currentTime+125, 250, 500);
+		mDrawLines('.frameLeftBar', currentTime, 250, 500);
+		mDrawLines('.frameBottomBar', currentTime+125, 250, 500);
+		// notches
+		mDrawLines('#frameRightNotches0 line', currentTime+125, 15, 100);
+		mDrawLines('#frameRightNotches1 line', currentTime+375, 30, 100);
+		mDrawLines('#frameRightNotches2 line', currentTime+625, 60, 100);
+		mDrawLines('#frameRightNotches3 line', currentTime+875, 120, 100);
+		mDrawLines('#frameTopNotches0 line', currentTime+250, 15, 100);
+		mDrawLines('#frameTopNotches1 line', currentTime+500, 30, 100);
+		mDrawLines('#frameTopNotches2 line', currentTime+750, 60, 100);
+		mDrawLines('#frameTopNotches3 line', currentTime+1000, 120, 100);
+		mDrawLines('#frameLeftNotches0 line', currentTime+125, 15, 100);
+		mDrawLines('#frameLeftNotches1 line', currentTime+375, 30, 100);
+		mDrawLines('#frameLeftNotches2 line', currentTime+625, 60, 100);
+		mDrawLines('#frameLeftNotches3 line', currentTime+875, 120, 100);
+		mDrawLines('#frameBottomNotches0 line', currentTime+250, 15, 100);
+		mDrawLines('#frameBottomNotches1 line', currentTime+500, 30, 100);
+		mDrawLines('#frameBottomNotches2 line', currentTime+750, 60, 100);
+		mDrawLines('#frameBottomNotches3 line', currentTime+1000, 120, 100);
+		
+		currentTime += 1000;
+
+		// Inner frame shadows
+		parentSelector = '#innerFrameShadowTopRight';
+		mDrawLines('.short', currentTime+250, 25, 100);
+		mDrawLines('.long', currentTime+350, 20, 100);
+		parentSelector = '#innerFrameShadowBottomLeft';
+		mDrawLines('.short', currentTime+250, 25, 100);
+		mDrawLines('.long', currentTime+350, 20, 100);
+
+		currentTime += 1000;
+
+		// Inner frame container
+		parentSelector = '#innerFrameContainer';
+		mDrawLine('.left', currentTime, 1000);
+		mDrawLine('.right', currentTime, 1000);
+		parentSelector = '#innerFrameContainerLeftTriangle';
+		mDrawLine('.border', currentTime+750, 500);
+		mDrawLines('line', currentTime+1000, 0, 250);
+		parentSelector = '#innerFrameContainerRightTriangle';
+		mDrawLine('.border', currentTime+750, 500);
+		mDrawLines('line', currentTime+1000, 0, 250);
+
+		// Bottom outside triangles
+		parentSelector = '#bltriangle';
+		mDrawLine('.border', currentTime+250, 500);
+		mDrawLines('.slant', currentTime+750, 50, 100);
+		parentSelector = '#brtriangle';
+		mDrawLine('.border', currentTime+250, 500);
+		mDrawLines('.slant', currentTime+750, 50, 100);
+
+		window.setTimeout(function() {
+			innerFrameLock = false;
+		}, 10000);
+	}
 }
