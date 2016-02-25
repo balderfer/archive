@@ -73,7 +73,7 @@ var Titus = {
     audio = new Audio();
     audio.src = pathToSong;
     audio.controls = true;
-    audio.loop = false;
+    audio.loop = true;
     audio.autoplay = true;
   },
 
