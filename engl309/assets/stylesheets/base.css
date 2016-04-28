@@ -2362,8 +2362,7 @@ body, html {
 .main {
   width: 100vw;
   height: 600px;
-  background-color: #333333;
-  box-sizing: border-box; }
+  background-color: #333333; }
 
 .dotted-line::after {
   content: "";
