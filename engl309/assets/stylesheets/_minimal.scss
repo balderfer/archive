@@ -41,6 +41,9 @@ $base-height: 600px;
 
 body, html {
   font-family: "garamond-premier-pro-display", "serif";
+  max-width: 100vw;
+  overflow-x: hidden;
+  height: 4000px !important;
 }
 
 .proxima {
@@ -96,6 +99,22 @@ body, html {
     font-size: 2em;
     line-height: 1.2em;
     color: $gray;
+
+    a {
+      font-family: "proxima-nova";
+      font-size: 0.6em;
+      letter-spacing: 0.2em;
+      font-weight: 700;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: $white;
+      transition: all 0.5s ease;
+
+      &:hover {
+        letter-spacing: 0.25em;
+        transition: all 0.5s ease;
+      }
+    }
   }
 }
 
@@ -234,6 +253,9 @@ body, html {
       background-color: #9B59B6;
     }
 
+    &.gold {
+      background-color: #d4a619;
+    }
     &.placeholder {
       background-image: url('../images/placeholder1.jpg');
       background-size: cover;

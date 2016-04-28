@@ -48,5 +48,20 @@
   .purple {
     background-color: #9B59B6;
   }
+
+  .gold {
+    background-color: #d4a619;
+  }
+
+}
+.dark {
+  background-color: $black;
+
+  h1 {
+    color: $white;
+  }
+  a, a>p {
+    color: $white;
+  }
 }
 

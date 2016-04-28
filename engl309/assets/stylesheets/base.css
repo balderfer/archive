@@ -2345,7 +2345,10 @@ html, body {
     clear: both; }
 
 body, html {
-  font-family: "garamond-premier-pro-display", "serif"; }
+  font-family: "garamond-premier-pro-display", "serif";
+  max-width: 100vw;
+  overflow-x: hidden;
+  height: 4000px !important; }
 
 .proxima {
   font-family: "proxima-nova"; }
@@ -2392,6 +2395,20 @@ body, html {
     font-size: 2em;
     line-height: 1.2em;
     color: #7F7F7F; }
+    .big-text .subhead a {
+      font-family: "proxima-nova";
+      font-size: 0.6em;
+      letter-spacing: 0.2em;
+      font-weight: 700;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #E5E5E5;
+      -webkit-transition: all 0.5s ease;
+              transition: all 0.5s ease; }
+      .big-text .subhead a:hover {
+        letter-spacing: 0.25em;
+        -webkit-transition: all 0.5s ease;
+                transition: all 0.5s ease; }
 
 .project {
   position: relative;
@@ -2541,6 +2558,8 @@ body, html {
       background-color: #2ECC71; }
     .project .project-cover-photo.purple {
       background-color: #9B59B6; }
+    .project .project-cover-photo.gold {
+      background-color: #d4a619; }
     .project .project-cover-photo.placeholder {
       background-image: url("../images/placeholder1.jpg");
       background-size: cover;
@@ -2602,3 +2621,12 @@ body, html {
     background-color: #2ECC71; }
   .project-page .purple {
     background-color: #9B59B6; }
+  .project-page .gold {
+    background-color: #d4a619; }
+
+.dark {
+  background-color: #333333; }
+  .dark h1 {
+    color: #E5E5E5; }
+  .dark a, .dark a > p {
+    color: #E5E5E5; }
