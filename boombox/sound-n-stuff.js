@@ -26,12 +26,16 @@ var startTitus = function(fileName) {
 
 $(document).ready(function() {
   document.addEventListener('beat', function(e) {
+    // $('#beast').css('opacity', 0.1);
+    // window.setTimeout(function() {
+    //   $('#beast').css('opacity', 1);
+    // }, 100);
+    console.log('beat: XXX, bass: [ ]');
     drawDecorations();
   });
   document.addEventListener('bass', function(e) {
-    console.log('bass');
+    console.log('beat: [ ], bass: XXX');
     rippleInnerCircles();
-    drawSnakes();
   });
   document.addEventListener('hypeStart', function(e) {
     var boombox = document.querySelectorAll('#beast')[0];
@@ -41,7 +45,7 @@ $(document).ready(function() {
       twingBigSpeakers(-diff);
       twingOuterSpeakers(-diff);
       drawSnakes();
-    }, 20);
+    }, 1000/60);
   });
   document.addEventListener('hypeEnd', function(e) {
     var boombox = document.querySelectorAll('#beast')[0];
@@ -49,8 +53,5 @@ $(document).ready(function() {
     clearInterval(hypeInterval);
     twingBigSpeakers(0);
     twingOuterSpeakers(0);
-  });
-  document.addEventListener('hypeEnd', function(e) {
-    rebuildInnerFrame();
   });
 });

@@ -1,0 +1,269 @@
+$black: #333333;
+$white: #E5E5E5;
+$gray: #7F7F7F;
+
+$base-height: 600px;
+
+@mixin quote($left) {
+
+  font-size: 3em;
+  font-style: italic;
+  line-height: 1em;
+  position: absolute;
+  width: 30vw;
+  top: 20vh;
+  color: $white;
+
+  @if $left == true {
+    left: 55vw;
+  } @else {
+    right: 50vw;
+  }
+
+  &:before {
+    content: "\201C";
+    color: $white;
+    opacity: 0.5;
+    font-size: 4em;
+    position: absolute;
+    transform: translate(-125%, 50%);
+  }
+  &:after {
+    content: "\201D";
+    color: $white;
+    opacity: 0.5;
+    font-size: 4em;
+    position: absolute;
+    transform: translate(-25%, 0.5em);
+  }
+
+}
+
+body, html {
+  font-family: "garamond-premier-pro-display", "serif";
+}
+
+.proxima {
+  font-family: "proxima-nova";
+}
+
+.v-center {
+  position: relative;
+  top: 50vh;
+  transform: translateY(-50%);
+}
+
+.main {
+  width: 100vw;
+  height: $base-height;
+  background-color: $black;
+  box-sizing: border-box;
+}
+
+.dotted-line {
+  &::after {
+    content: "";
+    position: absolute;
+    height: 3800px;
+    border-left: 1px dashed $gray;
+    left: 10vw;
+    top: $base-height/6;
+  }
+}
+
+.container {
+  width: 38em;
+  max-width: 80%;
+  margin: 0 0 0 10%;
+  box-sizing: border-box;
+  padding: 0 2em;
+}
+
+.big-text {
+  height: $base-height;
+  padding-top: $base-height/6;
+
+  .head {
+    color: $white;
+    font-size: 2em;
+    font-family: "proxima-nova";
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    line-height: 2em;
+  }
+  .subhead {
+    font-size: 2em;
+    line-height: 1.2em;
+    color: $gray;
+  }
+}
+
+.project {
+  position: relative;
+  height: $base-height;
+  width: 100vw;
+
+  .project-cover {
+    position: absolute;
+    width: 40vw;
+    height: $base-height;
+
+
+    &.left {
+      left: 0;
+      padding-left: 10vw;
+
+      .quote {
+        @include quote(true);   
+      }
+
+      img {
+        position: absolute;
+        left: 55vw;
+        height: 300px;
+        top: 150px;
+        box-shadow: 0 0 10px $gray;
+      }
+
+      .text {
+        text-align: left;
+        padding-left: 2em;
+        left: 10vw;
+        top: 20vh;
+      }
+      &::before {
+        left: -50vw;
+        transform-origin: 100% 0;
+      }    }
+    &.right {
+      left: 60vw;
+      padding-right: 10vw;
+
+      .quote {
+        @include quote(false);   
+      }
+
+      img {
+        position: absolute;
+        right: 55vw;
+        height: 300px;
+        top: 150px;
+        box-shadow: 0 0 10px $gray;
+      }
+
+      .text {
+        text-align: right;
+        padding-right: 2em;
+        right: 10vw;
+        bottom: 20vh;
+      }
+      &::before {
+        left: -10vw;
+        transform-origin: 0 100%;
+      }
+    }
+
+    .text {
+      position: absolute;
+      box-sizing: border-box;
+      width: 25vw;
+
+      .head {
+        font-size: 1.4em;
+        font-family: "proxima-nova";
+        font-weight: 700;
+        color: $black;
+        text-transform: uppercase;
+        line-height: 2em;
+        letter-spacing: 0.2em;
+      }
+      .subhead {
+        color: $gray;
+        font-size: 1.4em;
+        line-height: 1.2em;
+        margin-bottom: 0.5em;
+        
+        a {
+          font-family: "proxima-nova";
+          font-size: 0.6em;
+          letter-spacing: 0.2em;
+          font-weight: 700;
+          text-decoration: none;
+          text-transform: uppercase;
+          color: $black;
+          transition: all 0.5s ease;
+
+          &:hover {
+            letter-spacing: 0.25em;
+            transition: all 0.5s ease;
+          }
+        }
+      }
+    }
+    
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 100vw;
+      height: $base-height;
+      background-color: $white;
+      transform: skew(-24deg);
+      z-index: -5;
+    }
+  }
+
+  .project-cover-photo {
+    width: 100vw;
+    height: $base-height;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -10;
+
+    &.red {
+      background-color: #E74C3C;
+    }
+
+    &.green {
+      background-color: #2ECC71;
+    }
+
+    &.purple {
+      background-color: #9B59B6;
+    }
+
+    &.placeholder {
+      background-image: url('../images/placeholder1.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+  }
+}
+
+.footer {
+  height: $base-height/6*4;
+  background-color: $black;
+  padding-top: $base-height/6;
+
+  .head {
+    color: $white;
+    font-size: 2em;
+    font-family: "proxima-nova";
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    line-height: 2em;
+  }
+  .subhead {
+    font-size: 2em;
+    line-height: 1.2em;
+    color: $gray;
+
+    a {
+      text-decoration: none;
+      color: $white;
+    }
+  }
+}

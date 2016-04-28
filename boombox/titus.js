@@ -78,7 +78,7 @@ var Titus = {
   },
 
   initBeatData: function() {
-    var decay = -1;
+    var decay = -0.5;
     // General
     genThreshold = 0;
     genDecay = decay;

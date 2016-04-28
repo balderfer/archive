@@ -598,55 +598,55 @@ var drawDecorations = function() {
 	// Top middle diamonds
 	parentSelector = '#tmldiamond';
 	mDrawLine('.circle', currentTime, 500);
-	mDrawLines('line', currentTime+500, 50, 100);
-	mDrawLines('.point path', currentTime+500, 0, 500);
+	mDrawLines('line', currentTime, 0, 100);
+	mDrawLines('.point path', currentTime, 0, 500);
 	parentSelector = '#tmrdiamond';
 	mDrawLine('.circle', currentTime, 500);
-	mDrawLines('line', currentTime+500, 50, 100);
-	mDrawLines('.point path', currentTime+500, 0, 500);
+	mDrawLines('line', currentTime, 0, 100);
+	mDrawLines('.point path', currentTime, 0, 500);
 
 	currentTime += 0;
 
 	// Top outside diamonds
 	parentSelector = '#tldiamond';
 	mDrawLine('.circle', currentTime, 500);
-	mDrawLines('line', currentTime+500, 50, 100);
-	mDrawLines('.point path', currentTime+500, 0, 500);
+	mDrawLines('line', currentTime, 0, 100);
+	mDrawLines('.point path', currentTime, 0, 500);
 	parentSelector = '#trdiamond';
 	mDrawLine('.circle', currentTime, 500);
-	mDrawLines('line', currentTime+500, 50, 100);
-	mDrawLines('.point path', currentTime+500, 0, 500);
+	mDrawLines('line', currentTime, 0, 100);
+	mDrawLines('.point path', currentTime, 0, 500);
 
 	// Bottom middle diamonds
 	parentSelector = '#bmldiamond';
 	mDrawLine('.circle', currentTime, 500);
-	mDrawLines('line', currentTime+500, 50, 100);
-	mDrawLines('.point path', currentTime+500, 0, 500);
+	mDrawLines('line', currentTime, 0, 100);
+	mDrawLines('.point path', currentTime, 0, 500);
 	parentSelector = '#bmrdiamond';
 	mDrawLine('.circle', currentTime, 500);
-	mDrawLines('line', currentTime+500, 50, 100);
-	mDrawLines('.point path', currentTime+500, 0, 500);
+	mDrawLines('line', currentTime, 0, 100);
+	mDrawLines('.point path', currentTime, 0, 500);
 
 	currentTime += 0;
 
 	// Bottom outside diamonds
 	parentSelector = '#bldiamond';
 	mDrawLine('.circle', currentTime, 500);
-	mDrawLines('line', currentTime+500, 50, 100);
-	mDrawLines('.point path', currentTime+500, 0, 500);
+	mDrawLines('line', currentTime, 0, 100);
+	mDrawLines('.point path', currentTime, 0, 500);
 	parentSelector = '#brdiamond';
 	mDrawLine('.circle', currentTime, 500);
-	mDrawLines('line', currentTime+500, 50, 100);
-	mDrawLines('.point path', currentTime+500, 0, 500);
+	mDrawLines('line', currentTime, 0, 100);
+	mDrawLines('.point path', currentTime, 0, 500);
 
 	currentTime += 0;
 
 	// Bottom triangle
 	parentSelector = '#bmtriangle';
 	mDrawLine('.border', currentTime, 500);
-	mDrawLines('.lslants', currentTime+500, 150, 500);
-	mDrawLines('.rslants', currentTime+500, 150, 500);
-	mDrawLines('.hslants', currentTime+500, 150, 500);
+	mDrawLines('.lslants', currentTime, 0, 500);
+	mDrawLines('.rslants', currentTime, 0, 500);
+	mDrawLines('.hslants', currentTime, 0, 500);
 
 	currentTime = 0;
 
@@ -654,20 +654,20 @@ var drawDecorations = function() {
 	parentSelector = '#bdecoration';
 	mDrawLines('.hslant', currentTime, 0, 500);
 	parentSelector += ' .triangle';
-	mDrawLines('.left', currentTime+250, 0, 1000);
-	mDrawLines('.right', currentTime+250, 0, 1000);
-	mDrawLines('.luslants', currentTime+1000, 100, 250);
-	mDrawLines('.ruslants', currentTime+1000, 100, 250);
-	mDrawLines('.ldslants', currentTime+1500, 100, 250);
-	mDrawLines('.rdslants', currentTime+1500, 100, 250);
-	mDrawLines('#lunotches0 line', currentTime+1250, 100, 250);
-	mDrawLines('#runotches0 line', currentTime+1250, 100, 250);
-	mDrawLines('#lunotches1 line', currentTime+1500, 100, 250);
-	mDrawLines('#runotches1 line', currentTime+1500, 100, 250);
-	mDrawLines('#ldnotches0 line', currentTime+1750, 100, 250);
-	mDrawLines('#rdnotches0 line', currentTime+1750, 100, 250);
-	mDrawLines('#ldnotches1 line', currentTime+2000, 100, 250);
-	mDrawLines('#rdnotches1 line', currentTime+2000, 100, 250);
+	mDrawLines('.left', currentTime, 0, 1000);
+	mDrawLines('.right', currentTime, 0, 1000);
+	mDrawLines('.luslants', currentTime, 0, 250);
+	mDrawLines('.ruslants', currentTime, 0, 250);
+	mDrawLines('.ldslants', currentTime, 0, 250);
+	mDrawLines('.rdslants', currentTime, 0, 250);
+	mDrawLines('#lunotches0 line', currentTime, 0, 250);
+	mDrawLines('#runotches0 line', currentTime, 0, 250);
+	mDrawLines('#lunotches1 line', currentTime, 0, 250);
+	mDrawLines('#runotches1 line', currentTime, 0, 250);
+	mDrawLines('#ldnotches0 line', currentTime, 0, 250);
+	mDrawLines('#rdnotches0 line', currentTime, 0, 250);
+	mDrawLines('#ldnotches1 line', currentTime, 0, 250);
+	mDrawLines('#rdnotches1 line', currentTime, 0, 250);
 
 	// Top decoration
 	parentSelector = '#tdecoration';
