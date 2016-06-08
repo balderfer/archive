@@ -1,0 +1,58 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Particle.js</title>
+  <script src="build/particle.js"></script>
+</head>
+<body>
+  <canvas id="particles"></canvas>
+  <script>
+    Particles.init('particles');
+    Particles.behavior({
+      path: function(x) {
+        var y = 0;
+        y = 300 + (50 * Math.sin(x / 100));
+        return y;
+      },
+      speed: function() {
+        return 2 + (Math.random() * 4);
+      },
+      offset: function() {
+        return (Math.random() * 2) - 1;
+      },
+      color: function() {
+        var rn = Math.random();
+        if (rn < 0.1) {
+          return 'rgba(241, 196, 15, 1.0)';
+        } else if (rn < 0.2) {
+          return 'rgba(241, 196, 15, 0.8)';
+        } else if (rn < 0.3) {
+          return 'rgba(241, 196, 15, 0.6)';
+        } else if (rn < 0.4) {
+          return 'rgba(241, 196, 15, 0.4)';
+        } else if (rn < 0.5) {
+          return 'rgba(241, 196, 15, 0.2)';
+        } else if (rn < 0.6) {
+          return 'rgba(243, 156, 18, 1.0)';
+        } else if (rn < 0.7) {
+          return 'rgba(243, 156, 18, 0.8)';
+        } else if (rn < 0.8) {
+          return 'rgba(243, 156, 18, 0.6)';
+        } else if (rn < 0.9) {
+          return 'rgba(243, 156, 18, 0.4)';
+        } else {
+          return 'rgba(243, 156, 18, 0.2)';
+        }
+      },
+      count: 2000,
+      placement: 'random',
+      blackHole: {
+        x: 0.5,
+        y: 0.5,
+        r: 150
+      }
+    });
+    Particles.start();
+  </script>
+</body>
+</html>
