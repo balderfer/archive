@@ -93,7 +93,7 @@ var Particles = {
 
   update: function() {
     this.context.clearRect(0, 0, this.width, this.height);
-    this.context.fillStyle = 'rgba(44, 62, 80, 1.0)';
+    this.context.fillStyle = 'black';
     this.context.fillRect(0, 0, this.width, this.height);
     // TODO: draw based on initialized style
     for (var i = 0; i < this.pArray.length; i++) {
