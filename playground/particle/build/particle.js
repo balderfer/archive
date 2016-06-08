@@ -13,6 +13,7 @@ var Particles = {
   offsetFunction: 0,
   blackHole: null,
   colorFunction: null,
+  interval: null,
 
   init: function(canvasId, options) {
     if (!canvasId) {
@@ -43,6 +44,8 @@ var Particles = {
     this.particlePlacement = options.placement;
     this.blackHole = options.blackHole;
     this.colorFunction = options.color;
+    this.backgroundColor = options.backgroundColor;
+    this.size = options.size;
   },
 
   constructParticle: function(x, speed) {
@@ -50,8 +53,23 @@ var Particles = {
     if (this.blackHole) {
       var bhx = Particles.width * Particles.blackHole.x;
       var bhy = Particles.height * Particles.blackHole.y;
-      var maxDiag = Math.sqrt(bhx*bhx + bhy*bhy);
+
+      var maxDiag, tbhx, tbhy;
+      if (Particles.blackHole.x < 0.5) {
+        tbhx = Particles.width - bhx;
+      } else {
+        tbhx = bhx;
+      }
+      if (Particles.blackHole.y < 0.5) {
+        tbhy = Particles.height - bhy;
+      } else {
+        tbhy = bhy;
+      }
+      maxDiag = Math.sqrt(tbhx*tbhx + tbhy*tbhy);
+
       offset *= Math.sqrt(maxDiag*maxDiag - Math.pow(bhx - x, 2));
+    } else {
+      offset *= this.height / 2;
     }
 
     return {
@@ -72,7 +90,7 @@ var Particles = {
   initX: function(i) {
     switch (this.particlePlacement) {
       case 'random':
-        return Math.random() * this.width;
+        return Math.random() * (this.width + (this.padding * 2)) - this.padding;
       case 'linear':
       default:
         return i * (this.width / this.particleCount);
@@ -86,35 +104,57 @@ var Particles = {
   },
 
   startLoop: function() {
-    var interval = window.setInterval(function() {
+    this.interval = window.setInterval(function() {
       Particles.update();
     }, 1000 / this.refreshRate);
   },
 
+  stop: function() {
+    window.clearInterval(this.interval);
+    this.pArray = [];
+  },
+
   update: function() {
     this.context.clearRect(0, 0, this.width, this.height);
-    this.context.fillStyle = 'black';
+    this.context.fillStyle = this.backgroundColor;
     this.context.fillRect(0, 0, this.width, this.height);
+    
+    if (Particles.blackHole) {
+      var bhx = Particles.width * Particles.blackHole.x;
+      var bhy = Particles.height * Particles.blackHole.y;
+      var radius = this.blackHole.radius;
+      // this.context.beginPath();
+      // this.context.arc(bhx, bhy, radius, 0, 2 * Math.PI, false);
+      // this.context.fillStyle = 'rgba(44, 62, 80, 1.0)';
+      // this.context.fillStyle = 'red';
+      // this.context.fill();
+
+
+      var maxDiag, tbhx, tbhy;
+      if (Particles.blackHole.x < 0.5) {
+        tbhx = Particles.width - bhx;
+      } else {
+        tbhx = bhx;
+      }
+      if (Particles.blackHole.y < 0.5) {
+        tbhy = Particles.height - bhy;
+      } else {
+        tbhy = bhy;
+      }
+      maxDiag = Math.sqrt(tbhx*tbhx + tbhy*tbhy);
+    }
+    
     // TODO: draw based on initialized style
     for (var i = 0; i < this.pArray.length; i++) {
       this.pArray[i].x += this.pArray[i].speed;
       var tempY = drawBlackSquare(this.pArray[i]);
       
       if (this.blackHole) {
-        var bhx = Particles.width * Particles.blackHole.x;
-        var bhy = Particles.height * Particles.blackHole.y;
-        var radius = this.blackHole.r;
-        // this.context.beginPath();
-        // this.context.arc(bhx, bhy, radius, 0, 2 * Math.PI, false);
-        // this.context.fillStyle = 'rgba(44, 62, 80, 1.0)';
-        // this.context.fillStyle = 'red';
-        // this.context.fill();
-
         var dx = this.pArray[i].x - bhx;
         var dy = tempY - bhy;
         var delta = Math.sqrt(dx*dx + dy*dy);
-        var maxDiag = Math.sqrt(bhx*bhx + bhy*bhy);
-        if (delta >= maxDiag) {
+
+        if (delta > maxDiag && dx > 0) {
           this.pArray[i].x = bhx - Math.abs(dx);
         }
 
@@ -131,35 +171,35 @@ var Particles = {
 var drawBlackSquare = function(p) {
   Particles.context.fillStyle = p.color;
   var tempX = p.x;
-  var tempY = Particles.path(p.x) + p.offset;
+  var tempY = Particles.path(p.x) + p.offset + (Particles.height / 2);
 
   if (Particles.blackHole) {
     var bhx = Particles.width * Particles.blackHole.x;
     var bhy = Particles.height * Particles.blackHole.y;
-    var radius = Particles.blackHole.r;
+    var radius = Particles.blackHole.radius;
+    var strength = Particles.blackHole.strength; 
 
     var deltaX = tempX - bhx;
     var deltaY = tempY - bhy;
     var delta = Math.sqrt(deltaX*deltaX + deltaY*deltaY);
     var theta = Math.atan2(deltaY, deltaX);
 
-    if (delta < (radius * 2)) {
-      delta = (delta / 2) + radius;
+    if (delta < (radius * 4)) {
+      delta = (delta * 3/4) + radius;
       tempX = (Math.cos(theta) * delta) + bhx;
       tempY = (Math.sin(theta) * delta) + bhy;
     }
 
     var diff = delta - radius;
     if (diff < 1) diff = 1;
-    var breakPoint = 0.1;
     // var deltam = Math.pow(((radius - (radius * 0.1)) / diff), 4) + radius * 0.1;
-    var deltam = (radius * breakPoint) + (radius / delta) * (radius * (1 - breakPoint));
+    var deltam = (radius * strength) + (radius / delta) * (radius * (1 - strength));
     var xm = (Math.cos(theta + Math.PI) * deltam) + bhx;
     var ym = (Math.sin(theta + Math.PI) * deltam) + bhy;
-    Particles.context.fillRect(xm, ym, 1, 1);
+    Particles.context.fillRect(xm, ym, Particles.size, Particles.size);
     
   }
 
-  Particles.context.fillRect(tempX, tempY, 1, 1);
+  Particles.context.fillRect(tempX, tempY, Particles.size, Particles.size);
   return tempY;
 };

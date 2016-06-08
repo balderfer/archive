@@ -3,56 +3,123 @@
   <meta charset="UTF-8">
   <title>Particle.js</title>
   <script src="build/particle.js"></script>
+  <script src="main.js"></script>
+  <style>
+    html, body, canvas {
+      padding: 0;
+      margin: 0;
+    }
+    #canvas button {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+    }
+
+    .codearea {
+      display: block;
+    }
+    .codearea textarea, .codearea p {
+      display: inline-block;
+    }
+  </style>
 </head>
 <body>
-  <canvas id="particles"></canvas>
-  <script>
-    Particles.init('particles');
-    Particles.behavior({
-      path: function(x) {
-        var y = 0;
-        y = 300 + (50 * Math.sin(x / 100));
-        return y;
-      },
-      speed: function() {
-        return 2 + (Math.random() * 4);
-      },
-      offset: function() {
-        return (Math.random() * 2) - 1;
-      },
-      color: function() {
-        var rn = Math.random();
-        if (rn < 0.1) {
-          return 'rgba(255, 255, 255, 1.0)';
-        } else if (rn < 0.2) {
-          return 'rgba(255, 255, 255, 0.8)';
-        } else if (rn < 0.3) {
-          return 'rgba(255, 255, 255, 0.6)';
-        } else if (rn < 0.4) {
-          return 'rgba(255, 255, 255, 0.4)';
-        } else if (rn < 0.5) {
-          return 'rgba(255, 255, 255, 0.2)';
-        } else if (rn < 0.6) {
-          return 'rgba(243, 156, 18, 1.0)';
-        } else if (rn < 0.7) {
-          return 'rgba(243, 156, 18, 0.8)';
-        } else if (rn < 0.8) {
-          return 'rgba(243, 156, 18, 0.6)';
-        } else if (rn < 0.9) {
-          return 'rgba(243, 156, 18, 0.4)';
-        } else {
-          return 'rgba(243, 156, 18, 0.2)';
-        }
-      },
-      count: 5000,
-      placement: 'random',
-      blackHole: {
-        x: 0.5,
-        y: 0.5,
-        r: 150
-      }
-    });
-    Particles.start();
-  </script>
+  <div id="form">
+    <label for="behavior">Presets:</label>
+    <button onclick="selectPreset('ocean')">Ocean</button>
+    <button onclick="selectPreset('blackhole')">Black Hole</button>
+    <button onclick="selectPreset('sinwave')">Sin Wave</button>
+    <br>
+    <div class="codearea">
+      <textarea name="behavior" id="behavior" cols="50" rows="40" style="font-family: monospace;">
+{
+  path: function(x) {
+    var y = 0;
+    y = 50 * Math.sin(x / 100);
+    return y;
+  },
+  speed: function() {
+    return 2 + (Math.random() * 4);
+  },
+  offset: function() {
+    return (Math.random() * 3) - 1.5;
+  },
+  backgroundColor: 'rgba(52, 152, 219, 1.0)',
+  color: function() {
+    var rn = Math.random();
+    if (rn < 0.2) {
+      return 'rgba(255, 255, 255, 1.0)';
+    } else if (rn < 0.4) {
+      return 'rgba(255, 255, 255, 0.6)';
+    } else if (rn < 0.6) {
+      return 'rgba(41, 128, 185,1.0)';
+    } else if (rn < 0.8) {
+      return 'rgba(26, 188, 156,1.0)';
+    } else {
+      return 'rgba(46, 204, 113,1.0)';
+    }
+  },
+  size: 3,
+  count: 5000,
+  placement: 'random'
+}
+      </textarea>
+      <textarea readonly cols="50" rows="40" style="font-family: monospace; opacity: 0.5;">
+// EXAMPLE CONFIGURATION
+{
+  
+  // path() function defines the path
+  // the particle follows
+  path: function(x) {
+    var y = 50 * Math.sin(x / 100);
+    return y;
+  },
+
+  // speed() calculates a one time
+  // constant speed that determines
+  // the incrementation rate of x
+  speed: function() {
+    return 2 + (Math.random() * 4);
+  },
+
+  // offset() generates a percentage (decimal)
+  // that spreads the particles out over
+  // the canvas
+  offset: function() {
+    return (Math.random() * 3) - 1.5;
+  },
+
+  // defines the background color
+  backgroundColor: 'rgba(52, 152, 219, 1.0)',
+
+  // color() is called once for each particle
+  // to generate their color
+  color: function() {
+    var rn = Math.random();
+    if (rn < 0.5) {
+      return 'rgba(255, 255, 255, 1.0)';
+    } else {
+      return 'rgba(46, 204, 113,1.0)';
+    }
+  },
+
+  // size of each particle
+  size: 3,
+
+  // number of particles
+  count: 5000,
+
+  // ¯\_(ツ)_/¯
+  placement: 'random'
+}
+      </textarea>
+    </div>
+    <br>
+    <button onclick="submitBehavior()">Run it!</button>
+  </div>
+  <div id="canvas" style="display: none;">
+    <button onclick="returnToMenu()">Go back</button>
+    <canvas id="particles"></canvas>
+  </div>
 </body>
 </html>
