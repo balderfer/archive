@@ -20,7 +20,7 @@ var selectPreset = function(id) {
     return 'red';\n\
   },\n\
   size: 10,\n\
-  count: 1000,\n\
+  count: 100,\n\
   placement: 'random',\n\
 }"
       break;
@@ -54,7 +54,7 @@ var selectPreset = function(id) {
     }\n\
   },\n\
   size: 3,\n\
-  count: 5000,\n\
+  count: 2000,\n\
   placement: 'random'\n\
 }"
       break;
