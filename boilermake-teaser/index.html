@@ -11,13 +11,14 @@
         <meta name="description" content="Purdue University's Major League Hackathon.">
         <meta name="author" content="The BoilerMake Team">
         <link rel="stylesheet" href="css/style.css" type="text/css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
     </head>
     <body>
 
         <div class="column-container">
             <div class="column col-1">
                 <div class="v-center a-right">
-                    <img id="spaceblob" src="img/spaceblob.svg" alt="">
+                    <img class="non-selectable" id="spaceblob" src="img/spaceblob.svg" alt="">
                 </div>
             </div>
             <div class="column col-2">
@@ -29,19 +30,19 @@
                         A <span class="strikethrough">fall</span> <span class="highlight">spring</span> hackathon
                     </p>
                     <p class="info">
-                        Come back here on <span class="highlight">October 12th</span> for more information or sign up below to be one of the first to know!
+                        Come back here on <span class="highlight">October 12</span> for more information or sign up below to be one of the first to know!
                     </p>
 
                     <div class="input-button">
-                        <input type="email" placeholder="pete@purdue.edu">
-                        <button>&rarr;</button>
+                        <input onClick="this.focus();this.select();" type="email" placeholder="pete@purdue.edu">
+                        <button><i class="fa fa-arrow-right fa-2x" aria-hidden="true"></i></button>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="logomark">
-            <img src="img/hammers-purple.svg" alt="">
+            <img class="non-selectable" src="img/hammers-purple.svg" alt="">
         </div>
 
     </body>
