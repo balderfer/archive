@@ -10,6 +10,30 @@
           transform: rotate(360deg);
         }
       }
+      @-webkit-keyframes infinite-spinning {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      @-moz-keyframes infinite-spinning {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      @-o-keyframes infinite-spinning {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
 
       @keyframes infinite-spinning-2 {
         from {
@@ -19,6 +43,31 @@
           transform: rotate(30deg);
         }
       }
+      @-webkit-keyframes infinite-spinning-2 {
+        from {
+          transform: rotate(-15deg);
+        }
+        to {
+          transform: rotate(30deg);
+        }
+      }
+      @-moz-keyframes infinite-spinning-2 {
+        from {
+          transform: rotate(-15deg);
+        }
+        to {
+          transform: rotate(30deg);
+        }
+      }
+      @-o-keyframes infinite-spinning-2 {
+        from {
+          transform: rotate(-15deg);
+        }
+        to {
+          transform: rotate(30deg);
+        }
+      }
+
 
       @-webkit-keyframes fader {
         from {
@@ -184,6 +233,23 @@
         opacity: 0.1;
         isolation: isolate;
       }
+
+      .star {
+        -webkit-animation: fader-2 15s infinite;
+        -moz-animation:    fader-2 15s infinite;
+        -o-animation:      fader-2 15s infinite;
+        animation:         fader-2 15s infinite;
+        animation-direction: alternate;
+      }
+
+      .star-2 {
+        -webkit-animation: fader-2 45s infinite;
+        -moz-animation:    fader-2 45s infinite;
+        -o-animation:      fader-2 45s infinite;
+        animation:         fader-2 45s infinite;
+        animation-direction: alternate;
+      }
+
     </style>
     <clipPath id="clip-path" transform="translate(64.65 27.31)">
       <path class="cls-1 outline" d="M411.57,130.43l-12.51,38.75a63.45,63.45,0,0,0-.95,35.8l10.71,40.25a131.8,131.8,0,0,1-62.12,148.42l-8.31,4.74A134.3,134.3,0,0,1,187.57,386.2h0a63.44,63.44,0,0,0-56.89-11.76L91.8,385.26C46.42,397.9,3.54,358.28,12.54,312L30,222.2a63.44,63.44,0,0,0,1-16.6,63.44,63.44,0,0,0-4.43-19.19l-8.65-21.47C.43,121.49,34.44,74.71,81.17,78L138,81.91a63.45,63.45,0,0,0,60.57-33.8l2-3.84A63.42,63.42,0,0,1,301,28.3l1.42,1.32A63.45,63.45,0,0,0,348.9,47.54h0C392.9,46,425.09,88.54,411.57,130.43Z"/>
@@ -212,18 +278,18 @@
     <g class="cls-2">
       <g>
         <rect class="cls-3" x="0.5" y="0.5" width="533.79" height="495.4"/>
-        <circle class="cls-4" cx="179.04" cy="208.73" r="3.36" transform="translate(-9.05 127.67) rotate(-26.17)"/>
-        <circle class="cls-4" cx="98.76" cy="310.1" r="5.07" transform="translate(-61.99 102.65) rotate(-26.17)"/>
+        <circle class="cls-4 star" cx="179.04" cy="208.73" r="3.36" transform="translate(-9.05 127.67) rotate(-26.17)"/>
+        <circle class="cls-4 star-2" cx="98.76" cy="310.1" r="5.07" transform="translate(-61.99 102.65) rotate(-26.17)"/>
         <circle class="cls-4" cx="372.86" cy="167.03" r="3.89" transform="translate(29.21 208.88) rotate(-26.17)"/>
-        <circle class="cls-4" cx="103.04" cy="249.85" r="1.49" transform="translate(-34.98 98.37) rotate(-26.17)"/>
+        <circle class="cls-4 star" cx="103.04" cy="249.85" r="1.49" transform="translate(-34.98 98.37) rotate(-26.17)"/>
         <circle class="cls-4" cx="65.95" cy="129.86" r="1.49" transform="translate(14.14 69.71) rotate(-26.17)"/>
-        <circle class="cls-4" cx="198.49" cy="106.08" r="1.49" transform="translate(38.22 125.73) rotate(-26.17)"/>
-        <circle class="cls-4" cx="60.41" cy="286.94" r="1.49" transform="translate(-55.71 83.37) rotate(-26.17)"/>
+        <circle class="cls-4 star" cx="198.49" cy="106.08" r="1.49" transform="translate(38.22 125.73) rotate(-26.17)"/>
+        <circle class="cls-4 star-2" cx="60.41" cy="286.94" r="1.49" transform="translate(-55.71 83.37) rotate(-26.17)"/>
         <circle class="cls-4" cx="279.75" cy="152.4" r="1.49" transform="translate(26.11 166.31) rotate(-26.17)"/>
-        <circle class="cls-4" cx="260.64" cy="49.08" r="1.49" transform="translate(69.73 147.29) rotate(-26.17)"/>
-        <circle class="cls-4" cx="299.62" cy="125" r="1.49" transform="translate(40.24 172.26) rotate(-26.17)"/>
+        <circle class="cls-4 star-2" cx="260.64" cy="49.08" r="1.49" transform="translate(69.73 147.29) rotate(-26.17)"/>
+        <circle class="cls-4 star" cx="299.62" cy="125" r="1.49" transform="translate(40.24 172.26) rotate(-26.17)"/>
         <circle class="cls-4" cx="340.09" cy="76.79" r="1.49" transform="translate(65.65 185.17) rotate(-26.17)"/>
-        <circle class="cls-4" cx="351.07" cy="124.19" r="2.83" transform="translate(45.87 194.88) rotate(-26.17)"/>
+        <circle class="cls-4 star" cx="351.07" cy="124.19" r="2.83" transform="translate(45.87 194.88) rotate(-26.17)"/>
         <g class="planet-1">
           <path class="cls-5" d="M332.39,445.52a4.74,4.74,0,0,0,6.13,2.61L391,426.73a4.74,4.74,0,0,1,4.74.7,144.2,144.2,0,0,0-114.08-231h-1.1a143.83,143.83,0,0,0-107.61,48.24l-.2.08A144.23,144.23,0,0,0,228.59,475l.08.19a144.41,144.41,0,0,0,139.62-20.14,4.74,4.74,0,0,1,0-8.73l17.65-7.3a145,145,0,0,0,9.76-11.61,4.74,4.74,0,0,0-4.74-.7l-52.46,21.4a4.74,4.74,0,0,1-6.37-5.36A4.74,4.74,0,0,0,332.39,445.52Z" transform="translate(64.65 27.31)"/>
           <g>
