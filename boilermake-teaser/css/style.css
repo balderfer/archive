@@ -7,6 +7,7 @@ gray: #e9e8e8;
 
 */
 
+
 html, body {
     width: 100vw;
     font-family: "Avenir";
@@ -195,7 +196,6 @@ body, html {
 .logomark img {
     width: 3.75rem;
     height: 3.75rem;
-
 }
 
 }
