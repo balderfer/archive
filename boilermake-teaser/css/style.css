@@ -1,0 +1,119 @@
+/*
+
+darkPurple: #383051;
+purple: #4b3d6b;
+blue: #3cbfd0;
+gray: #e9e8e8;
+
+*/
+
+
+html, body {
+    width: 100vw;
+    height: 100vh;
+    font-family: "Avenir";
+    margin: 0;
+}
+
+h1 {
+    color: #383051;
+    font-weight: 600;
+    font-size: 80px;
+    line-height: 80px;
+    margin: 0;
+}
+
+.subtitle {
+    margin: 0;
+    color: #4b3d6b;
+    font-size: 36px;
+    font-weight: 400;
+}
+
+.info {
+    color: #4b3d6b;
+    font-size: 24px;
+}
+
+.strikethrough {
+    text-decoration: line-through;
+}
+
+.highlight {
+    color: #3cbfd0;
+}
+
+.column-container {
+    position: relative;
+    max-width: 960px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.column {
+    float: left;
+    width: 45%;
+    margin: 0 2.5% 0 2.5%;
+    height: 100%;
+}
+
+#spaceblob {
+    width: 425px;
+    height: 428px;
+}
+
+.v-center {
+    position: relative;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.a-right {
+    text-align: right;
+}
+
+.input-button {
+    position: relative;
+    height: 60px;
+}
+
+.input-button input {
+    float: left;
+    background-color: #e9e8e8;
+    height: 60px;
+    border-radius: 24px;
+    outline: none;
+    border: none;
+    color: #4b3d6b;
+    font-size: 24px;
+    font-family: inherit;
+    padding: 0 18px;
+}
+
+.input-button button {
+    float: left;
+    width: 60px;
+    height: 60px;
+    border-radius: 24px;
+    background-color: #3cbfd0;
+    margin-left: 12px;
+    color: white;
+    font-size: 36px;
+    outline: 0;
+    border: 0;
+    padding: 0;
+}
+
+.logomark {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 60px;
+    height: 60px;
+}
+
+.logomark img {
+    width: 60px;
+    height: 60px;    
+}
