@@ -1,5 +1,0 @@
-User-agent: *
-Disallow: /wordpress1/wp-admin/
-Disallow: /wordpress1/wp-includes/
-
-Sitemap: http://hhclaw.com/sitemap.xml.gz
