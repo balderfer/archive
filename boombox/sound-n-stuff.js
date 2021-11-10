@@ -19,7 +19,7 @@ var startTitus = function(fileName) {
   $('#menu').fadeOut('fast', function() {
     $('#beast').css('display', 'block');
     animate(function() {
-      Titus.init('sounds/' + fileName, false);
+      Titus.init('archive/sounds/' + fileName, false);
     });
   });
 }
